@@ -333,7 +333,7 @@
            ======================================== */
         .hero {
             position: relative;
-            min-height: 92vh;
+            min-height: 65vh;
             display: flex;
             align-items: center;
             overflow: hidden;
@@ -347,7 +347,7 @@
             background: rgba(195, 194, 174, 0.15);
             top: -100px;
             right: -150px;
-            animation: blob 12s ease-in-out infinite;
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
             z-index: 0;
         }
 
@@ -358,7 +358,7 @@
             background: rgba(156, 82, 89, 0.06);
             bottom: -80px;
             left: -100px;
-            animation: blob 15s ease-in-out infinite reverse;
+            border-radius: 50% 60% 30% 60% / 30% 50% 70% 60%;
             z-index: 0;
         }
 
@@ -523,7 +523,6 @@
             position: relative;
             border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
             overflow: hidden;
-            animation: blob 18s ease-in-out infinite;
             box-shadow: var(--shadow-xl);
         }
 
@@ -547,19 +546,16 @@
             padding: 16px 20px;
             border: 1px solid rgba(255, 255, 255, 0.6);
             box-shadow: var(--shadow-md);
-            animation: float 4s ease-in-out infinite;
         }
 
         .hero-floating-card.card-1 {
             bottom: 60px;
             left: -40px;
-            animation-delay: 0s;
         }
 
         .hero-floating-card.card-2 {
             top: 40px;
             right: -30px;
-            animation-delay: 1.5s;
         }
 
         .floating-stars {
@@ -589,6 +585,195 @@
         .hero-floating-card.card-2 .eco-icon {
             font-size: 24px;
             margin-bottom: 4px;
+        }
+
+        /* ========================================
+           TOP CATEGORIES BAR
+           ======================================== */
+        .top-categories-bar {
+            background: var(--white);
+            padding: 32px 0 28px;
+            position: relative;
+            overflow: hidden;
+            border-top: 1px solid rgba(195, 194, 174, 0.3);
+        }
+
+        .categories-title {
+            text-align: center;
+            font-family: var(--font-serif);
+            font-size: 24px;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-top: 8px;
+            margin-bottom: 24px;
+            letter-spacing: 2px;
+        }
+
+        .categories-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(195, 194, 174, 0.3), transparent);
+        }
+
+        .categories-bar::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(195, 194, 174, 0.3), transparent);
+        }
+
+        .categories-header {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .categories-header h3 {
+            font-family: var(--font-sans);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--terracotta);
+            position: relative;
+            display: inline-block;
+        }
+
+        .categories-header h3::before,
+        .categories-header h3::after {
+            content: '';
+            display: inline-block;
+            width: 30px;
+            height: 1px;
+            background: var(--sage);
+            vertical-align: middle;
+            margin: 0 14px;
+        }
+
+        .categories-scroll {
+            display: flex;
+            gap: 32px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            padding: 4px 0 8px;
+            justify-content: center;
+        }
+
+        .categories-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .category-chip {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            padding: 0;
+            background: transparent;
+            border: none;
+            white-space: nowrap;
+            font-family: var(--font-sans);
+            font-size: 12.5px;
+            font-weight: 500;
+            color: var(--text-primary);
+            letter-spacing: 0.3px;
+            cursor: pointer;
+            transition: all var(--transition-smooth);
+            text-decoration: none;
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .category-chip:hover {
+            transform: translateY(-4px);
+            color: var(--terracotta);
+        }
+
+        .category-chip-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+            transition: all var(--transition-smooth);
+            position: relative;
+            z-index: 1;
+            border: 3px solid rgba(195, 194, 174, 0.25);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+
+        .category-chip:hover .category-chip-image {
+            border-color: var(--terracotta);
+            box-shadow: 0 8px 25px rgba(156, 82, 89, 0.2);
+            transform: scale(1.05);
+        }
+
+        .category-chip-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .category-chip-label {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 100px;
+            white-space: normal;
+            line-height: 1.3;
+        }
+
+        @media (min-width: 769px) {
+            .top-categories-bar {
+                padding: 36px 0 32px;
+            }
+
+            .categories-scroll {
+                gap: 36px;
+            }
+
+            .hero {
+                min-height: 60vh;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .categories-bar {
+                padding: 28px 0 24px;
+            }
+
+            .categories-scroll {
+                justify-content: flex-start;
+                gap: 24px;
+                padding: 4px 8px;
+            }
+
+            .category-chip-image {
+                width: 68px;
+                height: 68px;
+            }
+
+            .category-chip {
+                font-size: 11.5px;
+                gap: 6px;
+            }
+
+            .category-chip-label {
+                max-width: 80px;
+            }
+
+            .categories-header {
+                margin-bottom: 20px;
+            }
         }
 
         /* ========================================
@@ -1585,6 +1770,7 @@
         <span>Free Shipping on Orders Over $50 &nbsp;&bull;&nbsp; Subscribe &amp; Save 15%</span>
     </div>
 
+
     <!-- ====== NAVIGATION ====== -->
     <nav class="nav" id="navbar">
         <div class="nav-inner">
@@ -1627,7 +1813,7 @@
                 </div>
                 <div class="hero-image-wrapper">
                     <div class="hero-image-container">
-                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/Naturally_Wyld_Ozonated_Skincare_Woman_In_Field_Hero_Image.webp" alt="Woman in a sunlit field using Naturally Wyld natural skincare products" loading="eager">
+                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/Naturally_Wyld_Header_Image_Optimized_Main_Image_1.png?v=1772736025" alt="Naturally Wyld natural skincare products header image" loading="eager">
                     </div>
                     <div class="hero-floating-card card-1">
                         <div class="floating-stars">
@@ -1646,6 +1832,57 @@
                         <div class="floating-card-sub">Eco-Friendly Packaging</div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== TOP CATEGORIES ====== -->
+    <section class="top-categories-bar">
+        <div class="container">
+            <h2 class="categories-title">TOP CATEGORIES</h2>
+            <div class="categories-scroll">
+                <a href="https://naturallywyld.ca/collections/all" class="category-chip">
+                    <div class="category-chip-image">
+                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/ShopAll_NaturallyWyld_compressed_94b57118-e814-4ab4-8afd-a4a9fb4111e7.webp?v=1728147008" alt="Shop All">
+                    </div>
+                    <span class="category-chip-label">Shop All</span>
+                </a>
+                <a href="https://naturallywyld.ca/collections/natural-lip-balm" class="category-chip">
+                    <div class="category-chip-image">
+                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/LipBalm_NaturallyWyld_compressed.webp?v=1728146891" alt="Natural Lip Balm">
+                    </div>
+                    <span class="category-chip-label">Lip Balm</span>
+                </a>
+                <a href="https://naturallywyld.ca/collections/natural-deodorant" class="category-chip">
+                    <div class="category-chip-image">
+                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/NaturalDeodorant_NaturallyWyld_compressed.webp?v=1728146875" alt="Natural Deodorant">
+                    </div>
+                    <span class="category-chip-label">Deodorants</span>
+                </a>
+                <a href="https://naturallywyld.ca/collections/ozonated-oils" class="category-chip">
+                    <div class="category-chip-image">
+                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/OzonatedOliveOil_NaturallyWyld_compressed.webp?v=1728146857" alt="Ozonated Oils">
+                    </div>
+                    <span class="category-chip-label">Ozonated Oils</span>
+                </a>
+                <a href="https://naturallywyld.ca/collections/multi-sticks" class="category-chip">
+                    <div class="category-chip-image">
+                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/Shop_All_Categories_Naturally_wyld_155_x_207_px_1.png?v=1772738880" alt="Real Fruit Makeup">
+                    </div>
+                    <span class="category-chip-label">Makeup</span>
+                </a>
+                <a href="https://naturallywyld.ca/collections/toothpaste" class="category-chip">
+                    <div class="category-chip-image">
+                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/Toothpaste_NaturallyWyld_compressed.webp?v=1728146842" alt="Natural Toothpaste">
+                    </div>
+                    <span class="category-chip-label">Toothpaste</span>
+                </a>
+                <a href="https://naturallywyld.ca/collections/tattoo-care" class="category-chip">
+                    <div class="category-chip-image">
+                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/Shop_All_Categories_Naturally_wyld_155_x_207_px.png?v=1772738336" alt="Tattoo Care">
+                    </div>
+                    <span class="category-chip-label">Tattoo Care</span>
+                </a>
             </div>
         </div>
     </section>
