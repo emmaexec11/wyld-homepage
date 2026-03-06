@@ -969,72 +969,7 @@
             }
         }
 
-        /* ========================================
-           TRUST SIGNALS
-           ======================================== */
-        .trust-bar {
-            background: var(--cream);
-            border-top: 1px solid rgba(195, 194, 174, 0.1);
-            border-bottom: 1px solid rgba(195, 194, 174, 0.15);
-            padding: 40px 0;
-            position: relative;
-        }
-
-        .trust-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 32px;
-            text-align: center;
-        }
-
-        .trust-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            padding: 16px;
-            position: relative;
-        }
-
-        .trust-item:not(:last-child)::after {
-            content: '';
-            position: absolute;
-            right: -16px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 1px;
-            height: 50px;
-            background: rgba(195, 194, 174, 0.3);
-        }
-
-        .trust-icon {
-            width: 48px;
-            height: 48px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background: rgba(195, 194, 174, 0.15);
-            color: var(--terracotta);
-            margin-bottom: 4px;
-        }
-
-        .trust-icon svg {
-            width: 22px;
-            height: 22px;
-        }
-
-        .trust-label {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--text-primary);
-            letter-spacing: 0.3px;
-        }
-
-        .trust-sublabel {
-            font-size: 12px;
-            color: var(--text-light);
-        }
+        /* Trust signals removed - redundant with hero section feature icons */
 
         /* ========================================
            SECTION UTILITIES
@@ -2122,41 +2057,7 @@
         </div>
     </section>
 
-    <!-- ====== TRUST SIGNALS ====== -->
-    <section class="trust-bar">
-        <div class="container">
-            <div class="trust-grid">
-                <div class="trust-item animate-on-scroll">
-                    <div class="trust-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                    </div>
-                    <div class="trust-label">Medical-Grade</div>
-                    <div class="trust-sublabel">Ozonated Oils</div>
-                </div>
-                <div class="trust-item animate-on-scroll stagger-1">
-                    <div class="trust-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                    </div>
-                    <div class="trust-label">Sensitive Skin Safe</div>
-                    <div class="trust-sublabel">Baking Soda-Free</div>
-                </div>
-                <div class="trust-item animate-on-scroll stagger-2">
-                    <div class="trust-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-                    </div>
-                    <div class="trust-label">780+ Reviews</div>
-                    <div class="trust-sublabel">5.0 Star Average</div>
-                </div>
-                <div class="trust-item animate-on-scroll stagger-3">
-                    <div class="trust-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    </div>
-                    <div class="trust-label">Canadian Made</div>
-                    <div class="trust-sublabel">Proudly Local</div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Trust signals removed - redundant with hero section -->
 
     <!-- ====== PRODUCTS SECTION ====== -->
     <section class="section products" id="products">
