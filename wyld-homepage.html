@@ -374,6 +374,9 @@
 
         .hero-content {
             animation: slideInLeft 1s ease-out;
+            filter: none !important;
+            box-shadow: none !important;
+            text-shadow: none !important;
         }
 
         .hero h1 {
@@ -491,9 +494,12 @@
             font-size: 14px;
             font-weight: 500;
             color: var(--text-primary);
-            filter: none;
-            box-shadow: none;
-            text-shadow: none;
+            filter: none !important;
+            box-shadow: none !important;
+            text-shadow: none !important;
+            -webkit-filter: none !important;
+            -webkit-box-shadow: none !important;
+            -webkit-text-shadow: none !important;
         }
         
         .hero-checks span {
@@ -502,14 +508,24 @@
             gap: 6px;
             color: #2C2C2C;
             font-weight: 600;
-            text-shadow: none;
+            text-shadow: none !important;
+            box-shadow: none !important;
+            filter: none !important;
+            -webkit-text-shadow: none !important;
+            -webkit-box-shadow: none !important;
+            -webkit-filter: none !important;
         }
         
         .hero-checks svg {
             width: 16px;
             height: 16px;
             color: var(--terracotta);
-            filter: none;
+            filter: none !important;
+            box-shadow: none !important;
+            text-shadow: none !important;
+            -webkit-filter: none !important;
+            -webkit-box-shadow: none !important;
+            drop-shadow: none !important;
         }
         
         .feature-visual-item {
