@@ -426,13 +426,13 @@
             align-items: center;
             gap: 24px;
             flex-wrap: wrap;
-            margin-top: 24px;
+            margin-top: 12px;
             margin-bottom: 8px;
             padding: 8px 0;
         }
         
         .hero-testimonial {
-            margin: 40px 0 24px 0;
+            margin: 20px 0 12px 0;
             padding: 12px 16px 8px 16px;
             background: transparent;
             border-radius: 16px;
@@ -463,6 +463,7 @@
             object-fit: cover;
             border: 2px solid rgba(195, 194, 174, 0.3);
             flex-shrink: 0;
+            transform: translateY(-8px);
         }
         
         .testimonial-text p {
@@ -475,7 +476,7 @@
         
         .testimonial-author {
             font-size: 13px;
-            color: var(--text-secondary);
+            color: var(--text-primary);
             font-weight: 500;
         }
         
@@ -492,7 +493,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 6px 14px;
-            margin: 8px 0 16px 0;
+            margin: 4px 0 8px 0;
             font-size: 14px;
             font-weight: 500;
             color: var(--text-primary);
@@ -697,14 +698,45 @@
         }
 
         /* ========================================
-           TOP CATEGORIES BAR
+           TRUST BANNER SECTION
            ======================================== */
-        .top-categories-bar {
-            background: var(--cream-warm);
-            padding: 20px 0 20px;
+        .trust-banner {
+            background: var(--brown);
+            padding: 16px 0;
             position: relative;
             overflow: hidden;
             border-top: 1px solid rgba(195, 194, 174, 0.2);
+            width: 100%;
+        }
+
+        .scrolling-content {
+            display: flex;
+            animation: scroll-left 120s linear infinite;
+            white-space: nowrap;
+            gap: 80px;
+            width: fit-content;
+        }
+
+        .scrolling-content span {
+            color: var(--cream);
+            font-family: var(--font-sans);
+            font-size: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        @keyframes scroll-left {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-33.333%);
+            }
         }
         
         .categories-container {
@@ -716,11 +748,11 @@
         .categories-title {
             text-align: left;
             font-family: var(--font-serif);
-            font-size: 24px;
-            font-weight: 500;
-            color: var(--text-primary);
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--cream);
             margin: 0;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             margin-left: -80px;
             flex-shrink: 0;
         }
@@ -772,125 +804,30 @@
             margin: 0 14px;
         }
 
-        .categories-scroll {
-            display: flex;
-            gap: 36px;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: none;
-            padding: 4px 0;
-            justify-content: center;
-            flex: 1;
-        }
+        /* Removed category styles - replaced with trust banner */
 
-        .categories-scroll::-webkit-scrollbar {
-            display: none;
-        }
-
-        .category-chip {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-            padding: 0;
-            background: transparent;
-            border: none;
-            white-space: nowrap;
-            font-family: var(--font-sans);
-            font-size: 12.5px;
-            font-weight: 500;
-            color: var(--text-primary);
-            letter-spacing: 0.3px;
-            cursor: pointer;
-            transition: all var(--transition-smooth);
-            text-decoration: none;
-            flex-shrink: 0;
-            position: relative;
-        }
-
-        .category-chip:hover {
-            transform: translateY(-4px);
-            color: var(--terracotta);
-        }
-
-        .category-chip-image {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            overflow: hidden;
-            flex-shrink: 0;
-            transition: all var(--transition-smooth);
-            position: relative;
-            z-index: 1;
-            border: 3px solid rgba(195, 194, 174, 0.25);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-        }
-
-        .category-chip:hover .category-chip-image {
-            border-color: var(--terracotta);
-            box-shadow: 0 8px 25px rgba(156, 82, 89, 0.2);
-            transform: scale(1.05);
-        }
-
-        .category-chip-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .category-chip-label {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            max-width: 100px;
-            white-space: normal;
-            line-height: 1.3;
-        }
-
-        @media (min-width: 769px) {
-            .top-categories-bar {
-                padding: 28px 0 36px;
-            }
-
-            .categories-scroll {
-                gap: 36px;
+        @media (max-width: 768px) {
+            .scrolling-content span {
+                font-size: 13px;
+                gap: 6px;
             }
 
             .hero {
                 min-height: 52vh;
-                padding-top: 50px;
+                padding: 50px 0 30px;
+                overflow: hidden;
             }
         }
 
-        @media (max-width: 768px) {
-            .top-categories-bar {
-                padding: 16px 0 16px;
+        @media (max-width: 480px) {
+            .scrolling-content span {
+                font-size: 11px;
+                gap: 4px;
             }
-
-            .categories-scroll {
-                justify-content: center;
-                gap: 28px;
-                padding: 4px;
-            }
-
-            .category-chip-image {
-                width: 68px;
-                height: 68px;
-            }
-
-            .category-chip {
-                font-size: 11.5px;
-                gap: 6px;
-            }
-
-            .category-chip-label {
-                max-width: 80px;
-            }
+        }
             
             .hero-testimonial {
-                margin: 8px 0;
+                margin: 6px 0;
                 padding: 10px 12px;
                 max-width: 100%;
             }
@@ -902,6 +839,7 @@
             .testimonial-avatar {
                 width: 38px;
                 height: 38px;
+                transform: translateY(-6px);
             }
             
             .testimonial-text p {
@@ -957,6 +895,7 @@
             .testimonial-avatar {
                 width: 34px;
                 height: 34px;
+                transform: translateY(-5px);
             }
             
             .testimonial-text p {
@@ -1055,6 +994,55 @@
             margin: 0 auto;
             line-height: 1.7;
             font-weight: 300;
+        }
+
+        /* ========================================
+           CREAM DIVIDER STRIP
+           ======================================== */
+        .cream-divider {
+            background: var(--cream);
+            padding: 0;
+            margin: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cream-blob-1 {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, #F5F2E8, #EDE8D8);
+            border-radius: 50%;
+            top: -100px;
+            right: 10%;
+            opacity: 0.6;
+        }
+
+        .cream-blob-2 {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(225deg, #F0EBD8, #E8E1CE);
+            border-radius: 50%;
+            bottom: -75px;
+            left: 15%;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .cream-blob-1 {
+                width: 120px;
+                height: 120px;
+                top: -60px;
+                right: 5%;
+            }
+            
+            .cream-blob-2 {
+                width: 100px;
+                height: 100px;
+                bottom: -50px;
+                left: 10%;
+            }
         }
 
         /* ========================================
@@ -1805,6 +1793,7 @@
             .hero {
                 min-height: calc(100vh - 200px);
                 padding: 40px 0 30px;
+                overflow: hidden;
             }
 
             .hero-inner {
@@ -1819,7 +1808,7 @@
 
             .hero-actions {
                 justify-content: center;
-                margin-top: 20px;
+                margin-top: 12px;
             }
 
             .hero-image-wrapper {
@@ -1896,13 +1885,15 @@
             .hero-actions {
                 flex-direction: column;
                 width: 100%;
-                margin-top: 16px;
+                margin-top: 8px;
             }
 
             .btn-primary, .btn-secondary {
                 width: 100%;
                 justify-content: center;
             }
+
+            /* Trust banner mobile styles already defined above */
 
             .hero-image-container img {
                 height: 300px;
@@ -1935,12 +1926,12 @@
         <div class="nav-inner">
             <a href="#" class="nav-logo">Naturally <span>Wyld</span></a>
             <div class="nav-links" id="navLinks">
-                <a href="#products">Shop</a>
-                <a href="#why">Our Story</a>
-                <a href="#testimonials">Reviews</a>
                 <a href="#subscribe">Subscribe</a>
-                <a href="#products" class="nav-cta">Shop Now</a>
+                <a href="#rewards">Rewards</a>
+                <a href="#routine-quiz">Find My Routine</a>
+                <a href="#why">Our Story</a>
             </div>
+            <a href="#products" class="nav-cta">Shop Now</a>
             <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
@@ -1978,10 +1969,10 @@
 
                     <div class="hero-actions">
                         <a href="#products" class="btn-primary">
-                            Shop All Products
+                            Shop Now
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </a>
-                        <a href="#why" class="btn-secondary">Our Story</a>
+                        <a href="#routine-quiz" class="btn-secondary">Build Your Routine</a>
                     </div>
                 </div>
                 <div class="hero-image-wrapper">
@@ -2005,62 +1996,48 @@
         </div>
     </section>
 
-    <!-- ====== TOP CATEGORIES ====== -->
-    <section class="top-categories-bar">
+    <!-- ====== TRUST BANNER ====== -->
+    <section class="trust-banner">
+        <div class="scrolling-content">
+            <span>🌱 CANADIAN MADE</span>
+            <span>💚 SUBSCRIBE & SAVE 15%</span>
+            <span>🌿 PLASTIC-FREE PACKAGING</span>
+            <span>⭐ 780+ VERIFIED REVIEWS</span>
+            <span>🧪 MEDICAL-GRADE OZONATED OILS</span>
+            <span>🌟 VOTED BEST LOCAL BRAND</span>
+            <span>🚫 BAKING SODA-FREE DEODORANTS</span>
+            <span>🇨🇦 PROUDLY MADE IN KELOWNA, BC</span>
+            <span>🌿 ECO-FRIENDLY</span>
+            <span>💎 PREMIUM QUALITY</span>
+            <span>🌱 CANADIAN MADE</span>
+            <span>💚 SUBSCRIBE & SAVE 15%</span>
+            <span>🌿 PLASTIC-FREE PACKAGING</span>
+            <span>⭐ 780+ VERIFIED REVIEWS</span>
+            <span>🧪 MEDICAL-GRADE OZONATED OILS</span>
+            <span>🌟 VOTED BEST LOCAL BRAND</span>
+            <span>🚫 BAKING SODA-FREE DEODORANTS</span>
+            <span>🇨🇦 PROUDLY MADE IN KELOWNA, BC</span>
+            <span>🌿 ECO-FRIENDLY</span>
+            <span>💎 PREMIUM QUALITY</span>
+            <span>🌱 CANADIAN MADE</span>
+            <span>💚 SUBSCRIBE & SAVE 15%</span>
+            <span>🌿 PLASTIC-FREE PACKAGING</span>
+            <span>⭐ 780+ VERIFIED REVIEWS</span>
+            <span>🧪 MEDICAL-GRADE OZONATED OILS</span>
+            <span>🌟 VOTED BEST LOCAL BRAND</span>
+            <span>🚫 BAKING SODA-FREE DEODORANTS</span>
+            <span>🇨🇦 PROUDLY MADE IN KELOWNA, BC</span>
+            <span>🌿 ECO-FRIENDLY</span>
+            <span>💎 PREMIUM QUALITY</span>
+        </div>
+    </section>
+
+    <!-- ====== CREAM DIVIDER STRIP ====== -->
+    <section class="cream-divider">
+        <div class="cream-blob-1"></div>
+        <div class="cream-blob-2"></div>
         <div class="container">
-            <div class="categories-container">
-                <h2 class="categories-title">TOP CATEGORIES</h2>
-                <div class="categories-scroll">
-                <a href="https://naturallywyld.ca/collections/all" class="category-chip">
-                    <div class="category-chip-image">
-                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/Rein_Forest_candle.jpg?v=1773615248" alt="Shop All">
-                    </div>
-                    <span class="category-chip-label">Shop All</span>
-                </a>
-                <a href="https://naturallywyld.ca/collections/natural-lip-balm" class="category-chip">
-                    <div class="category-chip-image">
-                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/Lemongrass_Lip_Balm_-_categories_lip_balm_1.jpg?v=1773611712" alt="Natural Lip Balm">
-                    </div>
-                    <span class="category-chip-label">Lip Balm</span>
-                </a>
-                <a href="https://naturallywyld.ca/collections/natural-deodorant" class="category-chip">
-                    <div class="category-chip-image">
-                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/Naturally_Wyld_Deodorant_category.jpg?v=1773610659" alt="Natural Deodorant">
-                    </div>
-                    <span class="category-chip-label">Deodorants</span>
-                </a>
-                <a href="https://naturallywyld.ca/collections/ozonated-oils" class="category-chip">
-                    <div class="category-chip-image">
-                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/Naturally_Wyld_Ozonated_oilive_oil_3.jpg?v=1773612968" alt="Ozonated Oils">
-                    </div>
-                    <span class="category-chip-label">Ozonated Oils</span>
-                </a>
-                <a href="https://naturallywyld.ca/collections/multi-sticks" class="category-chip">
-                    <div class="category-chip-image">
-                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/Fallen_leaves.jpg?v=1773614245" alt="Real Fruit Makeup">
-                    </div>
-                    <span class="category-chip-label">Makeup</span>
-                </a>
-                <a href="https://naturallywyld.ca/collections/skincare" class="category-chip">
-                    <div class="category-chip-image">
-                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/Naturally_Wyld_Citrus_toner.jpg?v=1773615458" alt="Natural Skincare">
-                    </div>
-                    <span class="category-chip-label">Skincare</span>
-                </a>
-                <a href="https://naturallywyld.ca/collections/toothpaste" class="category-chip">
-                    <div class="category-chip-image">
-                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/Naturally_Wyld_Mint_toothpaste_2.jpg?v=1773612475" alt="Natural Toothpaste">
-                    </div>
-                    <span class="category-chip-label">Toothpaste</span>
-                </a>
-                <a href="https://naturallywyld.ca/collections/tattoo-care" class="category-chip">
-                    <div class="category-chip-image">
-                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/Naturally_Wyld_Ozonated_Tattoo_1.jpg?v=1773613685" alt="Tattoo Care">
-                    </div>
-                    <span class="category-chip-label">Tattoo Care</span>
-                </a>
-                </div>
-            </div>
+            <div style="height: 60px;"></div>
         </div>
     </section>
 
