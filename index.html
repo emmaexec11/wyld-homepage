@@ -345,10 +345,9 @@
 
         .scroll-arrow {
             background: var(--cream);
-            padding: 0 0 40px;
+            padding: 32px 0 80px;
             text-align: center;
             position: relative;
-            margin-top: -24px;
         }
 
         .scroll-arrow-btn {
@@ -385,8 +384,7 @@
 
         @media (max-width: 768px) {
             .scroll-arrow {
-                padding: 0 0 30px;
-                margin-top: -20px;
+                padding: 24px 0 60px;
             }
             
             .scroll-arrow-btn {
@@ -2139,8 +2137,18 @@
         </div>
     </section>
 
+    <!-- ====== SCROLL ARROW ====== -->
+    <section class="scroll-arrow">
+        <button class="scroll-arrow-btn" onclick="document.querySelector('#navigation').scrollIntoView({behavior: 'smooth'});">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 5v14"/>
+                <path d="m19 12-7 7-7 7"/>
+            </svg>
+        </button>
+    </section>
+
     <!-- ====== NATIVE-STYLE NAVIGATION ====== -->
-    <section class="navigation-bar">
+    <section class="navigation-bar" id="navigation">
         <div class="container">
             <h2 class="navigation-title">Find Your Wyld</h2>
             <div class="nav-links-grid">
@@ -2151,16 +2159,6 @@
                 <a href="#bundles" class="nav-link">BUNDLES</a>
             </div>
         </div>
-    </section>
-
-    <!-- ====== SCROLL ARROW ====== -->
-    <section class="scroll-arrow">
-        <button class="scroll-arrow-btn" onclick="document.querySelector('#products').scrollIntoView({behavior: 'smooth'});">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 5v14"/>
-                <path d="m19 12-7 7-7-7"/>
-            </svg>
-        </button>
     </section>
 
     <!-- Cream divider removed -->
