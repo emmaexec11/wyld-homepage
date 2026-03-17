@@ -341,27 +341,7 @@
             padding: 40px 0 20px;
         }
 
-        .hero-blob-1 {
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            background: rgba(168, 167, 149, 0.25);
-            top: -100px;
-            right: -150px;
-            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-            z-index: 0;
-        }
-
-        .hero-blob-2 {
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            background: rgba(154, 107, 101, 0.12);
-            bottom: -80px;
-            left: -100px;
-            border-radius: 50% 60% 30% 60% / 30% 50% 70% 60%;
-            z-index: 0;
-        }
+        /* Hero blobs removed */
 
         .hero-inner {
             display: grid;
@@ -702,7 +682,7 @@
            ======================================== */
         .trust-banner {
             background: var(--sage);
-            padding: 20px 0 24px;
+            padding: 12px 0 16px;
             position: relative;
             overflow: hidden;
             border-top: 1px solid rgba(195, 194, 174, 0.2);
@@ -744,7 +724,7 @@
            ======================================== */
         .navigation-bar {
             background: var(--cream);
-            padding: 24px 0;
+            padding: 16px 0;
             border-bottom: 1px solid rgba(195, 194, 174, 0.15);
         }
 
@@ -2013,8 +1993,6 @@
 
     <!-- ====== HERO SECTION ====== -->
     <section class="hero">
-        <div class="hero-blob-1"></div>
-        <div class="hero-blob-2"></div>
         <div class="container">
             <div class="hero-inner">
                 <div class="hero-content">
@@ -2044,15 +2022,6 @@
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </a>
                         <a href="#routine-quiz" class="btn-secondary">Build Your Routine</a>
-                    </div>
-
-                    <!-- ====== NATIVE-STYLE NAVIGATION ====== -->
-                    <div class="nav-links-grid" style="margin-top: 32px;">
-                        <a href="#new-arrivals" class="nav-link">NEW ARRIVALS</a>
-                        <a href="#best-sellers" class="nav-link">BEST SELLERS</a>
-                        <a href="#ozonated-oils" class="nav-link">OZONATED OILS</a>
-                        <a href="#deodorants" class="nav-link">DEODORANTS</a>
-                        <a href="#bundles" class="nav-link">BUNDLES</a>
                     </div>
                 </div>
                 <div class="hero-image-wrapper">
@@ -2112,7 +2081,18 @@
         </div>
     </section>
 
-    <!-- Navigation moved to hero section -->
+    <!-- ====== NATIVE-STYLE NAVIGATION ====== -->
+    <section class="navigation-bar">
+        <div class="container">
+            <div class="nav-links-grid">
+                <a href="#new-arrivals" class="nav-link">NEW ARRIVALS</a>
+                <a href="#best-sellers" class="nav-link">BEST SELLERS</a>
+                <a href="#ozonated-oils" class="nav-link">OZONATED OILS</a>
+                <a href="#deodorants" class="nav-link">DEODORANTS</a>
+                <a href="#bundles" class="nav-link">BUNDLES</a>
+            </div>
+        </div>
+    </section>
 
     <!-- ====== CREAM DIVIDER STRIP ====== -->
     <section class="cream-divider">
