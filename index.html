@@ -682,7 +682,7 @@
            ======================================== */
         .trust-banner {
             background: var(--sage);
-            padding: 12px 0 16px;
+            padding: 10px 0 12px;
             position: relative;
             overflow: hidden;
             border-top: 1px solid rgba(195, 194, 174, 0.2);
@@ -724,8 +724,9 @@
            ======================================== */
         .navigation-bar {
             background: var(--cream);
-            padding: 20px 0;
+            padding: 16px 0 20px;
             border-bottom: 1px solid rgba(195, 194, 174, 0.15);
+            text-align: center;
         }
 
         .navigation-title {
@@ -734,9 +735,24 @@
             font-weight: 500;
             color: var(--text-primary);
             text-align: center;
-            margin: 0 0 24px 0;
+            margin: 0 0 16px 0;
             font-style: italic;
             line-height: 1.2;
+            position: relative;
+            display: inline-block;
+        }
+
+        .navigation-title::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 8px;
+            background: rgba(195, 194, 174, 0.5);
+            z-index: -1;
+            border-radius: 4px;
         }
 
         .nav-links-grid {
@@ -853,12 +869,12 @@
             }
 
             .navigation-bar {
-                padding: 16px 0;
+                padding: 14px 0 18px;
             }
 
             .navigation-title {
                 font-size: 28px;
-                margin-bottom: 18px;
+                margin-bottom: 14px;
             }
 
             .nav-links-grid {
@@ -885,7 +901,12 @@
 
             .navigation-title {
                 font-size: 24px;
-                margin-bottom: 16px;
+                margin-bottom: 12px;
+            }
+
+            .navigation-title::after {
+                height: 6px;
+                bottom: -2px;
             }
 
             .nav-links-grid {
