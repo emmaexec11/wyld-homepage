@@ -738,6 +738,55 @@
                 transform: translateX(-33.333%);
             }
         }
+
+        /* ========================================
+           NATIVE-STYLE NAVIGATION
+           ======================================== */
+        .navigation-bar {
+            background: var(--cream);
+            padding: 24px 0;
+            border-bottom: 1px solid rgba(195, 194, 174, 0.15);
+        }
+
+        .nav-links-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            font-family: var(--font-sans);
+            font-size: 13px;
+            font-weight: 500;
+            color: #2C2C2C;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all var(--transition-smooth);
+            position: relative;
+            padding: 8px 0;
+        }
+
+        .nav-link:hover {
+            color: var(--terracotta);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--terracotta);
+            transition: width var(--transition-smooth);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
         
         .categories-container {
             display: flex;
@@ -812,6 +861,19 @@
                 gap: 6px;
             }
 
+            .navigation-bar {
+                padding: 16px 0;
+            }
+
+            .nav-links-grid {
+                gap: 24px;
+            }
+
+            .nav-link {
+                font-size: 12px;
+                letter-spacing: 1px;
+            }
+
             .hero {
                 min-height: 52vh;
                 padding: 50px 0 30px;
@@ -823,6 +885,15 @@
             .scrolling-content span {
                 font-size: 11px;
                 gap: 4px;
+            }
+
+            .nav-links-grid {
+                gap: 16px;
+                flex-direction: column;
+            }
+
+            .nav-link {
+                font-size: 11px;
             }
         }
             
@@ -1948,7 +2019,7 @@
             <div class="hero-inner">
                 <div class="hero-content">
                     <h1>Nature's Most <em>Powerful</em> Skincare, <span class="line-accent">Simplified</span></h1>
-                    <p class="hero-subtitle"><strong>All natural personal care and skincare made in Canada</strong></p>
+                    <p class="hero-subtitle"><strong>All natural personal care and cosmetics made in Canada</strong></p>
                     
                     <div class="hero-testimonial">
                         <div class="testimonial-content">
@@ -2029,6 +2100,19 @@
             <span>• PROUDLY MADE IN KELOWNA, BC</span>
             <span>• ECO-FRIENDLY</span>
             <span>• PREMIUM QUALITY</span>
+        </div>
+    </section>
+
+    <!-- ====== NATIVE-STYLE NAVIGATION ====== -->
+    <section class="navigation-bar">
+        <div class="container">
+            <div class="nav-links-grid">
+                <a href="#new-arrivals" class="nav-link">NEW ARRIVALS</a>
+                <a href="#best-sellers" class="nav-link">BEST SELLERS</a>
+                <a href="#ozonated-oils" class="nav-link">OZONATED OILS</a>
+                <a href="#deodorants" class="nav-link">DEODORANTS</a>
+                <a href="#bundles" class="nav-link">BUNDLES</a>
+            </div>
         </div>
     </section>
 
