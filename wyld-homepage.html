@@ -1202,9 +1202,9 @@
         .products-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
+            gap: 16px;
             width: 100%;
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
@@ -1634,21 +1634,21 @@
             font-size: 18px;
         }
 
-        @media (max-width: 1600px) {
+        @media (max-width: 1400px) {
             .products-grid {
-                gap: 16px;
+                gap: 14px;
                 padding: 0 15px;
             }
         }
 
-        @media (max-width: 1400px) {
+        @media (max-width: 1200px) {
             .products-grid {
                 gap: 12px;
-                padding: 0 10px;
+                padding: 0 15px;
             }
         }
 
-        @media (max-width: 1200px) {
+        @media (max-width: 1000px) {
             .products-grid {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
@@ -1693,14 +1693,7 @@
 
             .products-grid {
                 gap: 10px;
-                overflow-x: auto;
-                padding-bottom: 10px;
-            }
-            
-            .product-showcase-card {
-                min-width: 220px;
-                max-width: 250px;
-                flex-shrink: 0;
+                padding: 0 15px;
             }
 
             .subscription-options {
@@ -1754,10 +1747,6 @@
                 border-bottom-color: var(--terracotta);
             }
 
-            .current-price {
-                font-size: 20px;
-            }
-
             .add-to-cart-btn {
                 padding: 12px 16px;
                 font-size: 14px;
@@ -1776,10 +1765,6 @@
             .subscription-info {
                 padding: 8px;
                 margin: 12px 0;
-            }
-
-            .current-price {
-                font-size: 18px;
             }
 
             .product-info {
