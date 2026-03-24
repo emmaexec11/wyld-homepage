@@ -1199,18 +1199,17 @@
         }
 
         .products-grid {
-            display: flex;
-            flex-wrap: nowrap;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
             gap: 20px;
             width: 100%;
+            max-width: 1800px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
         .product-showcase-card {
-            flex: 1 1 300px;
-            min-width: 280px;
-            max-width: 320px;
+            width: 100%;
         }
 
         .product-showcase-card {
@@ -1553,31 +1552,34 @@
             font-size: 18px;
         }
 
-        @media (max-width: 1400px) {
+        @media (max-width: 1600px) {
             .products-grid {
                 gap: 16px;
-                padding: 0 10px;
+                padding: 0 15px;
             }
-            
-            .product-showcase-card {
-                min-width: 260px;
-                max-width: 300px;
+        }
+
+        @media (max-width: 1400px) {
+            .products-grid {
+                gap: 12px;
+                padding: 0 10px;
             }
         }
 
         @media (max-width: 1200px) {
             .products-grid {
-                gap: 12px;
-                padding: 0;
+                display: flex;
+                flex-wrap: nowrap;
+                gap: 16px;
                 overflow-x: auto;
+                padding: 0 20px;
                 scrollbar-width: thin;
                 scrollbar-color: var(--sage) transparent;
             }
             
             .product-showcase-card {
-                min-width: 240px;
-                max-width: 280px;
-                flex-shrink: 0;
+                flex: 0 0 280px;
+                min-width: 280px;
             }
 
             .products-grid::-webkit-scrollbar {
@@ -1662,16 +1664,9 @@
                 border-bottom-color: var(--terracotta);
             }
 
-            .products-grid {
-                gap: 12px;
-                overflow-x: auto;
-                padding-bottom: 10px;
-            }
-            
             .product-showcase-card {
-                min-width: 200px;
-                max-width: 220px;
-                flex-shrink: 0;
+                flex: 0 0 240px;
+                min-width: 240px;
             }
 
             .product-info {
@@ -1684,16 +1679,9 @@
         }
 
         @media (max-width: 480px) {
-            .products-grid {
-                gap: 10px;
-                overflow-x: auto;
-                padding-bottom: 10px;
-            }
-            
             .product-showcase-card {
-                min-width: 180px;
-                max-width: 200px;
-                flex-shrink: 0;
+                flex: 0 0 220px;
+                min-width: 220px;
             }
 
             .product-info {
