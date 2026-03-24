@@ -1106,9 +1106,20 @@
            PRODUCT SHOWCASE (DR. SQUATCH STYLE)
            ======================================== */
         .product-showcase {
-            background: var(--cream);
-            padding: 60px 0 80px;
+            background: linear-gradient(135deg, #FFFBF8 0%, #F8F5F2 100%);
+            padding: 80px 0 100px;
             position: relative;
+            overflow: hidden;
+        }
+
+        .product-showcase::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(156, 82, 89, 0.1) 50%, transparent 100%);
         }
 
         .showcase-header {
@@ -1167,6 +1178,17 @@
 
         /* Section subtitle styles removed */
 
+        @keyframes pulse-glow {
+            0% { 
+                box-shadow: 0 4px 16px rgba(156, 82, 89, 0.3);
+                transform: scale(1);
+            }
+            100% { 
+                box-shadow: 0 6px 20px rgba(156, 82, 89, 0.5);
+                transform: scale(1.02);
+            }
+        }
+
         .product-categories {
             display: flex;
             justify-content: center;
@@ -1202,33 +1224,57 @@
         .products-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 16px;
+            gap: 20px;
             width: 100%;
-            max-width: 1200px;
+            max-width: 1240px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
         .product-showcase-card {
             width: 100%;
-            background: white;
-            border-radius: 12px;
+            background: linear-gradient(145deg, #ffffff 0%, #fefefe 100%);
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 
+                0 8px 32px rgba(149, 104, 79, 0.08),
+                0 2px 8px rgba(0, 0, 0, 0.04),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             position: relative;
+            border: 1px solid rgba(195, 194, 174, 0.12);
+        }
+
+        .product-showcase-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(156, 82, 89, 0.02) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 1;
         }
 
         .product-showcase-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 
+                0 20px 60px rgba(149, 104, 79, 0.15),
+                0 8px 24px rgba(0, 0, 0, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
         }
 
         .current-price {
-            font-size: 24px;
-            font-weight: 700;
-            color: #2d3436;
-            margin-right: 8px;
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--charcoal);
+            margin-right: 10px;
+            font-family: var(--font-serif);
+            background: linear-gradient(135deg, var(--charcoal) 0%, #2d2d2d 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .original-price {
@@ -1245,11 +1291,24 @@
         }
 
         .subscription-info {
-            margin: 16px 0;
-            padding: 12px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            border-left: 4px solid var(--sage);
+            margin: 20px 0;
+            padding: 16px 18px;
+            background: linear-gradient(135deg, rgba(195, 194, 174, 0.05) 0%, rgba(195, 194, 174, 0.02) 100%);
+            border-radius: 12px;
+            border: 1px solid rgba(195, 194, 174, 0.15);
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+
+        .subscription-info::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--sage) 0%, var(--terracotta) 100%);
+            border-radius: 0 2px 2px 0;
         }
 
         .subscribe-option {
@@ -1277,21 +1336,50 @@
 
         .add-to-cart-btn {
             width: 100%;
-            background: var(--terracotta);
+            background: linear-gradient(135deg, var(--terracotta) 0%, #B8616A 100%);
             color: white;
             border: none;
-            padding: 14px 20px;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
+            padding: 16px 24px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 12px;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            margin-top: 16px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                0 4px 16px rgba(156, 82, 89, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        .add-to-cart-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s ease;
         }
 
         .add-to-cart-btn:hover {
-            background: var(--terracotta-dark);
-            transform: translateY(-1px);
+            background: linear-gradient(135deg, var(--terracotta-dark) 0%, #A6555B 100%);
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 
+                0 8px 24px rgba(156, 82, 89, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+
+        .add-to-cart-btn:hover::before {
+            left: 100%;
+        }
+
+        .add-to-cart-btn:active {
+            transform: translateY(0) scale(0.98);
         }
 
         .product-showcase-card {
@@ -1314,35 +1402,43 @@
 
         .product-badge {
             position: absolute;
-            top: 12px;
-            left: 12px;
-            padding: 6px 12px;
-            border-radius: 50px;
-            font-size: 11px;
+            top: 16px;
+            left: 16px;
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-size: 9px;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            z-index: 2;
+            letter-spacing: 1px;
+            z-index: 10;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
         }
 
         .product-badge.bestseller {
-            background: var(--sage);
+            background: linear-gradient(135deg, var(--terracotta) 0%, #B8616A 100%);
             color: white;
+            box-shadow: 0 4px 16px rgba(156, 82, 89, 0.3);
         }
 
         .product-badge.exclusive {
-            background: var(--terracotta);
+            background: linear-gradient(135deg, var(--sage) 0%, #D4D3BE 100%);
             color: white;
+            box-shadow: 0 4px 16px rgba(195, 194, 174, 0.3);
         }
 
         .product-badge.sensitive {
-            background: var(--brown);
+            background: linear-gradient(135deg, var(--brown) 0%, #A6795F 100%);
             color: white;
+            box-shadow: 0 4px 16px rgba(149, 104, 79, 0.3);
         }
 
         .product-badge.limited {
-            background: #ff6b6b;
+            background: linear-gradient(135deg, var(--terracotta) 0%, #B8616A 100%);
             color: white;
+            box-shadow: 0 4px 16px rgba(156, 82, 89, 0.3);
+            animation: pulse-glow 2s ease-in-out infinite alternate;
         }
 
         .product-badge.value {
@@ -1400,7 +1496,10 @@
         }
 
         .product-info {
-            padding: 24px;
+            padding: 28px 24px 24px;
+            position: relative;
+            z-index: 2;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 1) 100%);
         }
 
         .product-title {
