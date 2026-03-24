@@ -1170,16 +1170,23 @@
         .showcase-header h2 {
             font-family: var(--font-serif);
             font-size: clamp(32px, 4vw, 42px);
-            font-weight: 600;
+            font-weight: 500;
             color: var(--charcoal);
-            text-transform: uppercase;
-            letter-spacing: 2px;
             margin: 0;
+            text-align: center;
+            position: relative;
         }
 
-        .wyld-emoji {
-            font-size: 1.2em;
-            margin: 0 8px;
+        .showcase-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: rgba(195, 194, 174, 0.4);
+            border-radius: 2px;
         }
 
         .product-categories {
@@ -2744,7 +2751,7 @@
     <section class="product-showcase" id="products">
         <div class="container">
             <div class="showcase-header">
-                <h2>What's <span class="wyld-emoji">🌿</span> at Naturally Wyld</h2>
+                <h2>Find Your Wyld</h2>
             </div>
             
             <div class="product-categories">
