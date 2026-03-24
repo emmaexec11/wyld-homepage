@@ -1182,7 +1182,7 @@
 
         .quiz-header h2 em {
             font-style: italic;
-            color: var(--brown-dark);
+            color: var(--terracotta);
         }
 
         .quiz-subtitle {
@@ -1201,7 +1201,7 @@
         }
 
         .question-number {
-            background: var(--brown-dark);
+            background: var(--terracotta);
             color: white;
             padding: 6px 12px;
             border-radius: 50px;
@@ -1239,12 +1239,12 @@
         }
 
         .quiz-option:hover {
-            border-color: var(--brown);
-            background: rgba(149, 104, 79, 0.05);
+            border-color: var(--sage);
+            background: rgba(195, 194, 174, 0.05);
         }
 
         .quiz-cta {
-            background: var(--brown-dark);
+            background: var(--terracotta);
             color: white;
             border: none;
             padding: 18px 32px;
@@ -1258,7 +1258,7 @@
         }
 
         .quiz-cta:hover {
-            background: #7d5843;
+            background: var(--terracotta-dark);
             transform: translateY(-2px);
         }
 
@@ -1269,33 +1269,21 @@
         }
 
         /* ========================================
-           NATIVE-INSPIRED SUBSCRIPTION BUNDLES
+           SUBSCRIPTION SECTION
            ======================================== */
-        .subscription-bundles {
-            background: linear-gradient(180deg, #FFFFFF 0%, var(--cream) 100%);
-            padding: 100px 0;
+        .subscription-section {
+            background: var(--cream);
+            padding: 80px 0;
             position: relative;
         }
 
-        .bundles-header {
+        .subscription-content {
+            max-width: 800px;
+            margin: 0 auto;
             text-align: center;
-            margin-bottom: 60px;
         }
 
-        .header-badge {
-            background: var(--brown-dark);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: inline-block;
-            margin-bottom: 20px;
-        }
-
-        .bundles-header h2 {
+        .subscription-header h2 {
             font-family: var(--font-serif);
             font-size: clamp(36px, 5vw, 48px);
             font-weight: 300;
@@ -1304,261 +1292,139 @@
             margin-bottom: 20px;
         }
 
-        .bundles-header h2 em {
+        .subscription-header h2 em {
             font-style: italic;
-            color: var(--brown-dark);
+            color: var(--terracotta);
         }
 
-        .bundles-header p {
+        .subscription-header p {
             font-size: 18px;
             color: var(--text-secondary);
             line-height: 1.6;
-            max-width: 600px;
-            margin: 0 auto;
+            margin-bottom: 40px;
         }
 
         .subscription-options {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-            margin-bottom: 60px;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 40px;
         }
 
-        .subscription-card {
-            background: #FFFFFF;
+        .subscription-option {
+            background: white;
             border-radius: var(--radius-lg);
             padding: 32px;
-            border: 2px solid rgba(154, 107, 101, 0.1);
+            border: 2px solid rgba(195, 194, 174, 0.2);
             transition: all var(--transition-smooth);
             position: relative;
-            box-shadow: 0 4px 24px rgba(149, 104, 79, 0.08);
         }
 
-        .subscription-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 40px rgba(149, 104, 79, 0.15);
-            border-color: var(--brown);
+        .subscription-option:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(156, 82, 89, 0.15);
+            border-color: var(--sage);
         }
 
-        .subscription-card.bestseller {
-            border-color: var(--brown-dark);
-            transform: scale(1.05);
+        .subscription-option.featured {
+            border-color: var(--terracotta);
+            transform: scale(1.02);
         }
 
-        .subscription-card.bestseller:hover {
-            transform: scale(1.05) translateY(-8px);
+        .subscription-option.featured:hover {
+            transform: scale(1.02) translateY(-4px);
         }
 
-        .card-badge {
+        .option-badge {
             position: absolute;
             top: -12px;
             left: 50%;
             transform: translateX(-50%);
-            background: var(--brown);
+            background: var(--terracotta);
             color: white;
-            padding: 8px 16px;
+            padding: 6px 16px;
             border-radius: 50px;
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
-
-        .card-badge.best-value {
-            background: var(--brown-dark);
-        }
-
-        .subscription-visual {
-            text-align: center;
-            margin-bottom: 24px;
-            position: relative;
-        }
-
-        .product-stack {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: -8px;
-            margin-bottom: 16px;
-            min-height: 80px;
-        }
-
-        .stack-product {
-            width: 60px;
-            height: 60px;
-            object-fit: cover;
-            border-radius: var(--radius-md);
-            border: 2px solid white;
-            box-shadow: 0 2px 8px rgba(149, 104, 79, 0.15);
-            margin: 0 -4px;
-        }
-
-        .delivery-badge {
-            background: rgba(149, 104, 79, 0.1);
-            color: var(--brown-dark);
-            padding: 6px 12px;
-            border-radius: 50px;
-            font-size: 11px;
+            font-size: 12px;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
-        .subscription-details h3 {
+        .option-header h3 {
             font-family: var(--font-serif);
             font-size: 24px;
             font-weight: 500;
             color: var(--charcoal);
-            margin-bottom: 8px;
-            text-align: center;
+            margin-bottom: 12px;
         }
 
-        .subscription-details p {
-            font-size: 14px;
-            color: var(--text-secondary);
-            text-align: center;
-            margin-bottom: 20px;
+        .option-price {
+            margin-bottom: 16px;
         }
 
-        .subscription-pricing {
-            text-align: center;
-            margin-bottom: 24px;
-            padding: 20px;
-            background: rgba(149, 104, 79, 0.05);
-            border-radius: var(--radius-md);
-        }
-
-        .retail-note {
-            font-size: 12px;
+        .price-original {
+            font-size: 16px;
             color: var(--text-light);
             text-decoration: line-through;
             display: block;
             margin-bottom: 4px;
         }
 
-        .subscription-price {
-            font-size: 28px;
+        .price-subscription {
+            font-size: 32px;
             font-weight: 700;
-            color: var(--charcoal);
-            display: block;
-            margin-bottom: 4px;
+            color: var(--terracotta);
         }
 
-        .per-delivery {
+        .option-products {
             font-size: 14px;
-            font-weight: 400;
             color: var(--text-secondary);
-        }
-
-        .annual-savings {
-            font-size: 12px;
-            font-weight: 600;
-            color: var(--brown-dark);
-            background: rgba(149, 104, 79, 0.1);
-            padding: 4px 8px;
-            border-radius: 50px;
-            display: inline-block;
-            margin-top: 8px;
-        }
-
-        .subscription-perks {
             margin-bottom: 24px;
         }
 
-        .perk {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 8px;
-            font-size: 13px;
-            color: var(--text-primary);
-        }
-
-        .perk-icon {
-            font-size: 16px;
-        }
-
-        .subscription-cta {
+        .subscription-btn {
             width: 100%;
-            background: var(--brown);
+            background: var(--terracotta);
             color: white;
             border: none;
             padding: 16px 24px;
             border-radius: var(--radius-md);
-            font-size: 15px;
+            font-size: 16px;
             font-weight: 600;
             cursor: pointer;
             transition: all var(--transition-smooth);
-            margin-bottom: 12px;
         }
 
-        .subscription-cta:hover {
-            background: var(--brown-dark);
+        .subscription-btn:hover {
+            background: var(--terracotta-dark);
             transform: translateY(-2px);
         }
 
-        .subscription-cta.featured {
-            background: var(--brown-dark);
+        .subscription-btn.featured {
+            background: var(--sage);
             padding: 18px 24px;
-            font-size: 16px;
         }
 
-        .subscription-cta.outline {
-            background: transparent;
-            border: 2px solid var(--brown);
-            color: var(--brown);
+        .subscription-btn.featured:hover {
+            background: var(--sage-dark);
         }
 
-        .subscription-cta.outline:hover {
-            background: var(--brown);
-            color: white;
-        }
-
-        .customer-count {
-            text-align: center;
-            font-size: 12px;
-            color: var(--text-secondary);
-        }
-
-        .subscription-guarantee {
-            background: #FFFFFF;
-            border-radius: var(--radius-lg);
-            padding: 40px;
-            text-align: center;
-            border: 1px solid rgba(154, 107, 101, 0.1);
-        }
-
-        .subscription-guarantee h4 {
-            font-family: var(--font-serif);
-            font-size: 24px;
-            font-weight: 500;
-            color: var(--charcoal);
-            margin-bottom: 12px;
-        }
-
-        .subscription-guarantee p {
-            font-size: 16px;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .guarantee-badges {
+        .subscription-benefits {
             display: flex;
             justify-content: center;
-            gap: 16px;
+            gap: 40px;
             flex-wrap: wrap;
         }
 
-        .guarantee-badges .badge {
-            background: rgba(149, 104, 79, 0.1);
-            color: var(--brown-dark);
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        .benefit {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: var(--text-primary);
+        }
+
+        .benefit-icon {
+            font-size: 18px;
         }
 
         @media (max-width: 1024px) {
@@ -1569,10 +1435,10 @@
 
             .subscription-options {
                 grid-template-columns: 1fr;
-                gap: 24px;
+                gap: 20px;
             }
 
-            .subscription-card.bestseller {
+            .subscription-option.featured {
                 transform: none;
                 order: -1;
             }
@@ -1583,21 +1449,17 @@
                 padding: 60px 0;
             }
 
-            .subscription-bundles {
-                padding: 80px 0;
+            .subscription-section {
+                padding: 60px 0;
             }
 
-            .subscription-card {
+            .subscription-option {
                 padding: 24px;
             }
 
-            .subscription-guarantee {
-                padding: 32px 24px;
-            }
-
-            .guarantee-badges {
+            .subscription-benefits {
                 flex-direction: column;
-                align-items: center;
+                gap: 16px;
             }
         }
 
@@ -2756,142 +2618,55 @@
         </div>
     </section>
 
-    <!-- ====== NATIVE-INSPIRED SUBSCRIPTION BUNDLES ====== -->
-    <section class="subscription-bundles" id="bundles">
+    <!-- ====== SUBSCRIPTION SECTION ====== -->
+    <section class="subscription-section" id="subscribe">
         <div class="container">
-            <div class="bundles-header">
-                <div class="header-badge">Never Run Out</div>
-                <h2>Auto-Delivery That <em>Just Works</em></h2>
-                <p>Join 14,000+ Canadians who never think about running out. Delivered fresh to your door, exactly when you need it.</p>
-            </div>
-
-            <div class="subscription-options">
-                <div class="subscription-card bestseller">
-                    <div class="card-badge">Most Popular</div>
-                    <div class="subscription-visual">
-                        <div class="product-stack">
-                            <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/products/Organic_Ozonated_Olive_Oil_Natural_Skincare_Canada.webp" alt="Ozonated Oil" class="stack-product">
-                            <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/natural_deodorant_baking_soda_free_canada.webp" alt="Deodorant" class="stack-product">
+            <div class="subscription-content">
+                <div class="subscription-header">
+                    <h2>Subscribe & <em>Save</em></h2>
+                    <p>Never run out of your favorite products. Get 15% off every order with free shipping.</p>
+                </div>
+                <div class="subscription-options">
+                    <div class="subscription-option">
+                        <div class="option-header">
+                            <h3>Essential Bundle</h3>
+                            <div class="option-price">
+                                <span class="price-original">$51.90</span>
+                                <span class="price-subscription">$44.12</span>
+                            </div>
                         </div>
-                        <div class="delivery-badge">Every 60 days</div>
+                        <div class="option-products">
+                            <span>Ozonated Oil + Deodorant</span>
+                        </div>
+                        <button class="subscription-btn">Subscribe Now</button>
                     </div>
-                    <div class="subscription-details">
-                        <h3>Essential Duo</h3>
-                        <p>Your skincare basics, delivered</p>
-                        <div class="subscription-pricing">
-                            <div class="price-breakdown">
-                                <span class="retail-note">Retail: $51.90</span>
-                                <span class="subscription-price">$44.12<span class="per-delivery">/delivery</span></span>
-                                <span class="annual-savings">Save $187/year</span>
+                    <div class="subscription-option featured">
+                        <div class="option-badge">Most Popular</div>
+                        <div class="option-header">
+                            <h3>Complete Bundle</h3>
+                            <div class="option-price">
+                                <span class="price-original">$89.85</span>
+                                <span class="price-subscription">$76.37</span>
                             </div>
                         </div>
-                        <div class="subscription-perks">
-                            <div class="perk">
-                                <span class="perk-icon">📦</span>
-                                <span>Free shipping always</span>
-                            </div>
-                            <div class="perk">
-                                <span class="perk-icon">⏰</span>
-                                <span>Skip or pause anytime</span>
-                            </div>
-                            <div class="perk">
-                                <span class="perk-icon">🎁</span>
-                                <span>Exclusive subscriber perks</span>
-                            </div>
+                        <div class="option-products">
+                            <span>All essentials + Makeup</span>
                         </div>
-                        <button class="subscription-cta">Start My Subscription</button>
-                        <div class="customer-count">Join 8,247 subscribers</div>
+                        <button class="subscription-btn featured">Subscribe Now</button>
                     </div>
                 </div>
-
-                <div class="subscription-card complete">
-                    <div class="card-badge best-value">Best Value</div>
-                    <div class="subscription-visual">
-                        <div class="product-stack large">
-                            <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/products/Organic_Ozonated_Olive_Oil_Natural_Skincare_Canada.webp" alt="Ozonated Oil" class="stack-product">
-                            <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/natural_deodorant_baking_soda_free_canada.webp" alt="Deodorant" class="stack-product">
-                            <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/real_fruit_makeup_natural_skincare_canada.webp" alt="Makeup" class="stack-product">
-                        </div>
-                        <div class="delivery-badge">Every 90 days</div>
+                <div class="subscription-benefits">
+                    <div class="benefit">
+                        <span class="benefit-icon">📦</span>
+                        <span>Free shipping always</span>
                     </div>
-                    <div class="subscription-details">
-                        <h3>Complete Routine</h3>
-                        <p>Everything for glowing skin</p>
-                        <div class="subscription-pricing">
-                            <div class="price-breakdown">
-                                <span class="retail-note">Retail: $89.85</span>
-                                <span class="subscription-price">$72.36<span class="per-delivery">/delivery</span></span>
-                                <span class="annual-savings">Save $280/year</span>
-                            </div>
-                        </div>
-                        <div class="subscription-perks">
-                            <div class="perk">
-                                <span class="perk-icon">📦</span>
-                                <span>Free shipping + returns</span>
-                            </div>
-                            <div class="perk">
-                                <span class="perk-icon">⏰</span>
-                                <span>Smart timing reminders</span>
-                            </div>
-                            <div class="perk">
-                                <span class="perk-icon">🌟</span>
-                                <span>Early access to new products</span>
-                            </div>
-                        </div>
-                        <button class="subscription-cta featured">Start My Subscription</button>
-                        <div class="customer-count">Join 4,892 subscribers</div>
+                    <div class="benefit">
+                        <span class="benefit-icon">⏰</span>
+                        <span>Skip or cancel anytime</span>
                     </div>
-                </div>
-
-                <div class="subscription-card custom">
-                    <div class="card-badge">Customizable</div>
-                    <div class="subscription-visual">
-                        <div class="custom-products">
-                            <div class="custom-placeholder">
-                                <span class="plus-icon">+</span>
-                                <span>Your Choice</span>
-                            </div>
-                        </div>
-                        <div class="delivery-badge">Your Schedule</div>
-                    </div>
-                    <div class="subscription-details">
-                        <h3>Build Your Own</h3>
-                        <p>Choose products & timing</p>
-                        <div class="subscription-pricing">
-                            <div class="price-breakdown">
-                                <span class="retail-note">15% off retail always</span>
-                                <span class="subscription-price">From $28<span class="per-delivery">/delivery</span></span>
-                                <span class="annual-savings">Savings vary</span>
-                            </div>
-                        </div>
-                        <div class="subscription-perks">
-                            <div class="perk">
-                                <span class="perk-icon">🎯</span>
-                                <span>100% personalized</span>
-                            </div>
-                            <div class="perk">
-                                <span class="perk-icon">📅</span>
-                                <span>Flexible delivery dates</span>
-                            </div>
-                            <div class="perk">
-                                <span class="perk-icon">🔄</span>
-                                <span>Change anytime</span>
-                            </div>
-                        </div>
-                        <button class="subscription-cta outline">Customize My Box</button>
-                        <div class="customer-count">Join 1,708 subscribers</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="subscription-guarantee">
-                <div class="guarantee-content">
-                    <h4>The Naturally Wyld Promise</h4>
-                    <p>Love your subscription or get 100% of your money back. No questions, no hassle, no risk.</p>
-                    <div class="guarantee-badges">
-                        <span class="badge">30-day guarantee</span>
-                        <span class="badge">Cancel anytime</span>
-                        <span class="badge">Free returns</span>
+                    <div class="benefit">
+                        <span class="benefit-icon">💰</span>
+                        <span>15% off every order</span>
                     </div>
                 </div>
             </div>
