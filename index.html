@@ -1201,35 +1201,16 @@
         .products-grid {
             display: flex;
             flex-wrap: nowrap;
-            gap: 12px;
+            gap: 20px;
             width: 100%;
             margin: 0 auto;
-            overflow-x: auto;
-            scrollbar-width: thin;
-            scrollbar-color: var(--sage) transparent;
-        }
-
-        .products-grid::-webkit-scrollbar {
-            height: 6px;
-        }
-
-        .products-grid::-webkit-scrollbar-track {
-            background: transparent;
-        }
-
-        .products-grid::-webkit-scrollbar-thumb {
-            background: var(--sage);
-            border-radius: 3px;
-        }
-
-        .products-grid::-webkit-scrollbar-thumb:hover {
-            background: var(--sage-dark);
+            padding: 0 20px;
         }
 
         .product-showcase-card {
-            flex: 1 1 calc(16.666% - 10px);
-            min-width: 200px;
-            max-width: 250px;
+            flex: 1 1 300px;
+            min-width: 280px;
+            max-width: 320px;
         }
 
         .product-showcase-card {
@@ -1338,15 +1319,15 @@
         }
 
         .product-info {
-            padding: 16px;
+            padding: 24px;
         }
 
         .product-title {
             font-family: var(--font-serif);
-            font-size: 14px;
+            font-size: 18px;
             font-weight: 600;
             color: var(--charcoal);
-            margin-bottom: 8px;
+            margin-bottom: 12px;
             line-height: 1.3;
         }
 
@@ -1366,7 +1347,7 @@
 
         .sale-price,
         .price {
-            font-size: 14px;
+            font-size: 18px;
             font-weight: 700;
             color: var(--terracotta);
         }
@@ -1407,9 +1388,9 @@
         }
 
         .product-description {
-            font-size: 11px;
+            font-size: 14px;
             color: var(--text-secondary);
-            line-height: 1.3;
+            line-height: 1.4;
             margin: 0;
         }
 
@@ -1574,23 +1555,42 @@
 
         @media (max-width: 1400px) {
             .products-grid {
-                gap: 10px;
+                gap: 16px;
+                padding: 0 10px;
             }
             
             .product-showcase-card {
-                min-width: 180px;
-                max-width: 220px;
+                min-width: 260px;
+                max-width: 300px;
             }
         }
 
         @media (max-width: 1200px) {
             .products-grid {
-                gap: 8px;
+                gap: 12px;
+                padding: 0;
+                overflow-x: auto;
+                scrollbar-width: thin;
+                scrollbar-color: var(--sage) transparent;
             }
             
             .product-showcase-card {
-                min-width: 160px;
-                max-width: 200px;
+                min-width: 240px;
+                max-width: 280px;
+                flex-shrink: 0;
+            }
+
+            .products-grid::-webkit-scrollbar {
+                height: 6px;
+            }
+
+            .products-grid::-webkit-scrollbar-track {
+                background: transparent;
+            }
+
+            .products-grid::-webkit-scrollbar-thumb {
+                background: var(--sage);
+                border-radius: 3px;
             }
         }
 
@@ -1600,14 +1600,15 @@
             }
 
             .products-grid {
-                gap: 6px;
+                gap: 10px;
                 overflow-x: auto;
                 padding-bottom: 10px;
             }
             
             .product-showcase-card {
-                min-width: 140px;
-                max-width: 180px;
+                min-width: 220px;
+                max-width: 250px;
+                flex-shrink: 0;
             }
 
             .subscription-options {
@@ -1662,14 +1663,15 @@
             }
 
             .products-grid {
-                gap: 8px;
+                gap: 12px;
                 overflow-x: auto;
                 padding-bottom: 10px;
             }
             
             .product-showcase-card {
-                min-width: 160px;
-                max-width: 180px;
+                min-width: 200px;
+                max-width: 220px;
+                flex-shrink: 0;
             }
 
             .product-info {
@@ -1683,14 +1685,15 @@
 
         @media (max-width: 480px) {
             .products-grid {
-                gap: 6px;
+                gap: 10px;
                 overflow-x: auto;
                 padding-bottom: 10px;
             }
             
             .product-showcase-card {
-                min-width: 140px;
-                max-width: 160px;
+                min-width: 180px;
+                max-width: 200px;
+                flex-shrink: 0;
             }
 
             .product-info {
@@ -2840,17 +2843,16 @@
                         </div>
                     </div>
                     <div class="product-info">
-                        <h3 class="product-title">Essential Bundle</h3>
+                        <h3 class="product-title">Ozonated Olive Oil</h3>
                         <div class="product-pricing">
-                            <span class="original-price">$76.85</span>
-                            <span class="sale-price">$65.00</span>
-                            <span class="discount-badge">Save 15%</span>
+                            <span class="price">$32.95</span>
+                            <span class="subscription-note">$28.01/mo with subscription</span>
                         </div>
                         <div class="product-rating">
                             <div class="stars">★★★★★</div>
-                            <span class="review-count">847 Reviews</span>
+                            <span class="review-count">160+ Reviews</span>
                         </div>
-                        <p class="product-description">Ozonated Oil + Deodorant + Body Butter</p>
+                        <p class="product-description">Medical-grade ozonated healing oil - Only in Canada</p>
                     </div>
                 </div>
 
@@ -2890,7 +2892,7 @@
                             <div class="stars">★★★★★</div>
                             <span class="review-count">240+ Reviews</span>
                         </div>
-                        <p class="product-description">Works for sensitive skin, aluminum-free</p>
+                        <p class="product-description">Baking soda-free, perfect for sensitive skin</p>
                     </div>
                 </div>
 
