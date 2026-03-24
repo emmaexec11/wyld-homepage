@@ -1154,118 +1154,247 @@
         /* Cream divider blobs removed */
 
         /* ========================================
-           NATIVE-INSPIRED QUIZ SECTION
+           PRODUCT SHOWCASE (DR. SQUATCH STYLE)
            ======================================== */
-        .quiz-section {
+        .product-showcase {
             background: var(--cream);
             padding: 80px 0;
             position: relative;
         }
 
-        .quiz-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
+        .showcase-header {
+            text-align: center;
+            margin-bottom: 40px;
         }
 
-        .quiz-header h2 {
+        .showcase-header h2 {
             font-family: var(--font-serif);
-            font-size: clamp(36px, 5vw, 48px);
-            font-weight: 300;
+            font-size: clamp(32px, 4vw, 42px);
+            font-weight: 600;
             color: var(--charcoal);
-            line-height: 1.2;
-            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0;
         }
 
-        .quiz-header h2 em {
-            font-style: italic;
+        .wyld-emoji {
+            font-size: 1.2em;
+            margin: 0 8px;
+        }
+
+        .product-categories {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .category-tab {
+            background: none;
+            border: none;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 12px 0;
+            border-bottom: 3px solid transparent;
+            cursor: pointer;
+            transition: all var(--transition-smooth);
+            position: relative;
+        }
+
+        .category-tab:hover,
+        .category-tab.active {
+            color: var(--terracotta);
+            border-bottom-color: var(--terracotta);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .product-showcase-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(195, 194, 174, 0.15);
+            transition: all var(--transition-smooth);
+            position: relative;
+            border: 1px solid rgba(195, 194, 174, 0.1);
+        }
+
+        .product-showcase-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 32px rgba(195, 194, 174, 0.25);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            padding: 6px 12px;
+            border-radius: 50px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            z-index: 2;
+        }
+
+        .product-badge.bestseller {
+            background: var(--sage);
+            color: white;
+        }
+
+        .product-badge.exclusive {
+            background: var(--terracotta);
+            color: white;
+        }
+
+        .product-badge.sensitive {
+            background: var(--brown);
+            color: white;
+        }
+
+        .product-badge.limited {
+            background: #ff6b6b;
+            color: white;
+        }
+
+        .product-badge.value {
+            background: var(--sage);
+            color: white;
+        }
+
+        .product-badge.new {
+            background: var(--terracotta);
+            color: white;
+        }
+
+        .product-image-container {
+            position: relative;
+            aspect-ratio: 1;
+            overflow: hidden;
+        }
+
+        .product-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-smooth);
+        }
+
+        .product-showcase-card:hover .product-image-container img {
+            transform: scale(1.05);
+        }
+
+        .bundle-indicator {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 8px 12px;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .bundle-count {
+            background: var(--terracotta);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .product-info {
+            padding: 24px;
+        }
+
+        .product-title {
+            font-family: var(--font-serif);
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .product-pricing {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .original-price {
+            font-size: 14px;
+            color: var(--text-light);
+            text-decoration: line-through;
+        }
+
+        .sale-price,
+        .price {
+            font-size: 18px;
+            font-weight: 700;
             color: var(--terracotta);
         }
 
-        .quiz-subtitle {
-            font-size: 18px;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 32px;
-        }
-
-        .quiz-preview {
-            background: #FFFFFF;
-            border-radius: var(--radius-lg);
-            padding: 32px;
-            box-shadow: 0 8px 32px rgba(149, 104, 79, 0.1);
-            border: 1px solid rgba(154, 107, 101, 0.1);
-        }
-
-        .question-number {
-            background: var(--terracotta);
+        .discount-badge {
+            background: var(--sage);
             color: white;
-            padding: 6px 12px;
+            padding: 2px 8px;
             border-radius: 50px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .subscription-note {
             font-size: 12px;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 16px;
-        }
-
-        .quiz-question h3 {
-            font-family: var(--font-serif);
-            font-size: 22px;
-            font-weight: 500;
-            color: var(--charcoal);
-            margin-bottom: 20px;
-        }
-
-        .question-options {
-            display: grid;
-            gap: 12px;
-            margin-bottom: 24px;
-        }
-
-        .quiz-option {
-            background: var(--cream);
-            border: 2px solid rgba(154, 107, 101, 0.15);
-            border-radius: var(--radius-md);
-            padding: 16px 20px;
-            text-align: left;
-            font-size: 14px;
-            font-weight: 500;
-            color: var(--text-primary);
-            cursor: pointer;
-            transition: all var(--transition-smooth);
-        }
-
-        .quiz-option:hover {
-            border-color: var(--sage);
-            background: rgba(195, 194, 174, 0.05);
-        }
-
-        .quiz-cta {
-            background: var(--terracotta);
-            color: white;
-            border: none;
-            padding: 18px 32px;
-            border-radius: var(--radius-md);
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all var(--transition-smooth);
-            margin-bottom: 16px;
-            width: 100%;
-        }
-
-        .quiz-cta:hover {
-            background: var(--terracotta-dark);
-            transform: translateY(-2px);
-        }
-
-        .quiz-stats {
-            text-align: center;
-            font-size: 14px;
             color: var(--text-secondary);
+            width: 100%;
+            margin-top: 4px;
+        }
+
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .stars {
+            color: #ffa500;
+            font-size: 14px;
+        }
+
+        .review-count {
+            font-size: 12px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .product-description {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.4;
+            margin: 0;
         }
 
         /* ========================================
@@ -1428,9 +1557,13 @@
         }
 
         @media (max-width: 1024px) {
-            .quiz-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
+            .product-categories {
+                gap: 20px;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 24px;
             }
 
             .subscription-options {
@@ -1445,8 +1578,46 @@
         }
 
         @media (max-width: 768px) {
-            .quiz-section {
+            .product-showcase {
                 padding: 60px 0;
+            }
+
+            .showcase-header h2 {
+                font-size: 28px;
+                letter-spacing: 1px;
+            }
+
+            .product-categories {
+                flex-direction: column;
+                align-items: center;
+                gap: 16px;
+                margin-bottom: 40px;
+            }
+
+            .category-tab {
+                padding: 8px 16px;
+                border: 1px solid rgba(195, 194, 174, 0.3);
+                border-radius: 50px;
+                border-bottom: 1px solid rgba(195, 194, 174, 0.3);
+                width: 200px;
+                text-align: center;
+            }
+
+            .category-tab:hover,
+            .category-tab.active {
+                background: var(--terracotta);
+                color: white;
+                border-color: var(--terracotta);
+                border-bottom-color: var(--terracotta);
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .product-info {
+                padding: 20px;
             }
 
             .subscription-section {
@@ -2569,50 +2740,150 @@
         </button>
     </section>
 
-    <!-- ====== NATIVE-INSPIRED QUIZ SECTION ====== -->
-    <section class="quiz-section" id="quiz">
+    <!-- ====== PRODUCT SHOWCASE (DR. SQUATCH STYLE) ====== -->
+    <section class="product-showcase" id="products">
         <div class="container">
-            <div class="quiz-content">
-                <div class="quiz-header">
-                    <h2 class="quiz-title">Find Your Perfect <em>Natural</em> Routine</h2>
-                    <p class="quiz-subtitle">Take our 60-second quiz to discover products made just for your skin type and goals.</p>
-                </div>
-                <div class="quiz-preview">
-                    <div class="quiz-questions">
-                        <div class="quiz-question active">
-                            <div class="question-number">1/4</div>
-                            <h3>What's your main skin concern?</h3>
-                            <div class="question-options">
-                                <button class="quiz-option" data-value="acne">Acne & Breakouts</button>
-                                <button class="quiz-option" data-value="dryness">Dryness & Irritation</button>
-                                <button class="quiz-option" data-value="aging">Anti-Aging & Firmness</button>
-                                <button class="quiz-option" data-value="sensitive">Sensitive Skin</button>
-                            </div>
+            <div class="showcase-header">
+                <h2>What's <span class="wyld-emoji">🌿</span> at Naturally Wyld</h2>
+            </div>
+            
+            <div class="product-categories">
+                <button class="category-tab active" data-category="bundles">BUNDLES</button>
+                <button class="category-tab" data-category="ozonated">OZONATED OILS</button>
+                <button class="category-tab" data-category="deodorants">DEODORANTS</button>
+                <button class="category-tab" data-category="makeup">MAKEUP</button>
+                <button class="category-tab" data-category="new">NEW ARRIVALS</button>
+            </div>
+
+            <div class="products-grid">
+                <!-- Bundle Product -->
+                <div class="product-showcase-card" data-categories="bundles">
+                    <div class="product-badge bestseller">BEST SELLER</div>
+                    <div class="product-image-container">
+                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/products/Organic_Ozonated_Olive_Oil_Natural_Skincare_Canada.webp" alt="Essential Bundle">
+                        <div class="bundle-indicator">
+                            <span class="bundle-count">3</span>
+                            <span class="bundle-text">Bundle</span>
                         </div>
                     </div>
-                    <div class="quiz-results-preview">
-                        <div class="results-card">
-                            <h4>Your Personalized Bundle</h4>
-                            <div class="result-products">
-                                <div class="result-product">
-                                    <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/products/Organic_Ozonated_Olive_Oil_Natural_Skincare_Canada.webp" alt="Ozonated Oil">
-                                    <span>Ozonated Olive Oil</span>
-                                </div>
-                                <div class="result-product">
-                                    <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/natural_deodorant_baking_soda_free_canada.webp" alt="Deodorant">
-                                    <span>Natural Deodorant</span>
-                                </div>
-                            </div>
-                            <div class="result-pricing">
-                                <span class="result-price">$48.90</span>
-                                <span class="result-subscription">$41.57/month with subscription</span>
-                            </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Essential Bundle</h3>
+                        <div class="product-pricing">
+                            <span class="original-price">$76.85</span>
+                            <span class="sale-price">$65.00</span>
+                            <span class="discount-badge">Save 15%</span>
                         </div>
+                        <div class="product-rating">
+                            <div class="stars">★★★★★</div>
+                            <span class="review-count">847 Reviews</span>
+                        </div>
+                        <p class="product-description">Ozonated Oil + Deodorant + Body Butter</p>
                     </div>
                 </div>
-                <button class="quiz-cta">Get My Custom Routine</button>
-                <div class="quiz-stats">
-                    <span>✨ 12,847+ happy customers found their perfect match</span>
+
+                <!-- Ozonated Oil -->
+                <div class="product-showcase-card" data-categories="ozonated bundles">
+                    <div class="product-badge exclusive">ONLY IN CANADA</div>
+                    <div class="product-image-container">
+                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/products/Organic_Ozonated_Olive_Oil_Natural_Skincare_Canada.webp" alt="Ozonated Olive Oil">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Ozonated Olive Oil</h3>
+                        <div class="product-pricing">
+                            <span class="price">$32.95</span>
+                            <span class="subscription-note">$28.01/mo with subscription</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">★★★★★</div>
+                            <span class="review-count">160+ Reviews</span>
+                        </div>
+                        <p class="product-description">Medical-grade ozonated healing oil</p>
+                    </div>
+                </div>
+
+                <!-- Deodorant -->
+                <div class="product-showcase-card" data-categories="deodorants bundles">
+                    <div class="product-badge sensitive">BAKING SODA-FREE</div>
+                    <div class="product-image-container">
+                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/natural_deodorant_baking_soda_free_canada.webp" alt="Natural Deodorant">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Natural Deodorant</h3>
+                        <div class="product-pricing">
+                            <span class="price">$18.95</span>
+                            <span class="subscription-note">$16.11/mo with subscription</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">★★★★★</div>
+                            <span class="review-count">240+ Reviews</span>
+                        </div>
+                        <p class="product-description">Works for sensitive skin, aluminum-free</p>
+                    </div>
+                </div>
+
+                <!-- Real Fruit Makeup -->
+                <div class="product-showcase-card" data-categories="makeup new">
+                    <div class="product-badge limited">LIMITED EDITION</div>
+                    <div class="product-image-container">
+                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/real_fruit_makeup_natural_skincare_canada.webp" alt="Real Fruit Makeup">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Real Fruit Makeup</h3>
+                        <div class="product-pricing">
+                            <span class="price">$24.95</span>
+                            <span class="subscription-note">$21.21/mo with subscription</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">★★★★★</div>
+                            <span class="review-count">95+ Reviews</span>
+                        </div>
+                        <p class="product-description">Natural makeup made with real fruit</p>
+                    </div>
+                </div>
+
+                <!-- Complete Bundle -->
+                <div class="product-showcase-card" data-categories="bundles new">
+                    <div class="product-badge value">BEST VALUE</div>
+                    <div class="product-image-container">
+                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/products/Organic_Ozonated_Olive_Oil_Natural_Skincare_Canada.webp" alt="Complete Bundle">
+                        <div class="bundle-indicator">
+                            <span class="bundle-count">5</span>
+                            <span class="bundle-text">Bundle</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Complete Bundle</h3>
+                        <div class="product-pricing">
+                            <span class="original-price">$118.75</span>
+                            <span class="sale-price">$95.00</span>
+                            <span class="discount-badge">Save 20%</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">★★★★★</div>
+                            <span class="review-count">1,243 Reviews</span>
+                        </div>
+                        <p class="product-description">Everything for a complete routine</p>
+                    </div>
+                </div>
+
+                <!-- Body Butter -->
+                <div class="product-showcase-card" data-categories="new ozonated">
+                    <div class="product-badge new">NEW</div>
+                    <div class="product-image-container">
+                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/natural_body_butter_canada.webp" alt="Ozonated Body Butter">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Ozonated Body Butter</h3>
+                        <div class="product-pricing">
+                            <span class="price">$24.95</span>
+                            <span class="subscription-note">$21.21/mo with subscription</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">★★★★★</div>
+                            <span class="review-count">78 Reviews</span>
+                        </div>
+                        <p class="product-description">Rich, healing body moisturizer</p>
+                    </div>
                 </div>
             </div>
         </div>
