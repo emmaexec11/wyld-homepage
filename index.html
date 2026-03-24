@@ -1167,6 +1167,37 @@
             margin-bottom: 40px;
         }
 
+        .showcase-header .section-tag {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .showcase-header .section-tag::before,
+        .showcase-header .section-tag::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 40px;
+            height: 1px;
+            background: var(--text-light);
+        }
+
+        .showcase-header .section-tag::before {
+            right: 100%;
+            margin-right: 16px;
+        }
+
+        .showcase-header .section-tag::after {
+            left: 100%;
+            margin-left: 16px;
+        }
+
         .showcase-header h2 {
             font-family: var(--font-serif);
             font-size: clamp(32px, 4vw, 42px);
@@ -1591,7 +1622,13 @@
 
             .showcase-header h2 {
                 font-size: 28px;
-                letter-spacing: 1px;
+            }
+
+            .showcase-header .section-tag::before,
+            .showcase-header .section-tag::after {
+                width: 20px;
+                margin-left: 8px;
+                margin-right: 8px;
             }
 
             .product-categories {
@@ -2751,6 +2788,7 @@
     <section class="product-showcase" id="products">
         <div class="container">
             <div class="showcase-header">
+                <div class="section-tag">Our Bestsellers</div>
                 <h2>Find Your Wyld</h2>
             </div>
             
