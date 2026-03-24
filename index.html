@@ -1200,16 +1200,97 @@
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 20px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
             width: 100%;
-            max-width: 1800px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
         .product-showcase-card {
             width: 100%;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .product-showcase-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .current-price {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2d3436;
+            margin-right: 8px;
+        }
+
+        .original-price {
+            font-size: 16px;
+            color: #636e72;
+            text-decoration: line-through;
+            margin-right: 8px;
+        }
+
+        .discount-text {
+            font-size: 14px;
+            color: #00b894;
+            font-weight: 600;
+        }
+
+        .subscription-info {
+            margin: 16px 0;
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid var(--sage);
+        }
+
+        .subscribe-option {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .subscribe-option input[type="radio"] {
+            margin-right: 8px;
+            accent-color: var(--sage);
+        }
+
+        .subscribe-option label {
+            font-weight: 600;
+            color: var(--sage);
+            cursor: pointer;
+        }
+
+        .shipped-note {
+            font-size: 12px;
+            color: #636e72;
+            font-style: italic;
+        }
+
+        .add-to-cart-btn {
+            width: 100%;
+            background: #d63031;
+            color: white;
+            border: none;
+            padding: 14px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 12px;
+        }
+
+        .add-to-cart-btn:hover {
+            background: #b71c1c;
+            transform: translateY(-1px);
         }
 
         .product-showcase-card {
@@ -1568,11 +1649,19 @@
 
         @media (max-width: 1200px) {
             .products-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .products-grid {
                 display: flex;
                 flex-wrap: nowrap;
                 gap: 16px;
                 overflow-x: auto;
-                padding: 0 20px;
+                padding: 0 20px 20px;
                 scrollbar-width: thin;
                 scrollbar-color: var(--sage) transparent;
             }
@@ -1664,9 +1753,13 @@
                 border-bottom-color: var(--terracotta);
             }
 
-            .product-showcase-card {
-                flex: 0 0 240px;
-                min-width: 240px;
+            .current-price {
+                font-size: 20px;
+            }
+
+            .add-to-cart-btn {
+                padding: 12px 16px;
+                font-size: 14px;
             }
 
             .product-info {
@@ -1679,9 +1772,13 @@
         }
 
         @media (max-width: 480px) {
-            .product-showcase-card {
-                flex: 0 0 220px;
-                min-width: 220px;
+            .subscription-info {
+                padding: 8px;
+                margin: 12px 0;
+            }
+
+            .current-price {
+                font-size: 18px;
             }
 
             .product-info {
@@ -2820,134 +2917,124 @@
             </div>
 
             <div class="products-grid">
-                <!-- Bundle Product -->
-                <div class="product-showcase-card" data-categories="bundles">
+                <!-- Ozonated Olive Oil - Best Seller -->
+                <div class="product-showcase-card" data-categories="ozonated bestsellers">
                     <div class="product-badge bestseller">BEST SELLER</div>
-                    <div class="product-image-container">
-                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/products/Organic_Ozonated_Olive_Oil_Natural_Skincare_Canada.webp" alt="Essential Bundle">
-                        <div class="bundle-indicator">
-                            <span class="bundle-count">3</span>
-                            <span class="bundle-text">Bundle</span>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Ozonated Olive Oil</h3>
-                        <div class="product-pricing">
-                            <span class="price">$32.95</span>
-                            <span class="subscription-note">$28.01/mo with subscription</span>
-                        </div>
-                        <div class="product-rating">
-                            <div class="stars">★★★★★</div>
-                            <span class="review-count">160+ Reviews</span>
-                        </div>
-                        <p class="product-description">Medical-grade ozonated healing oil - Only in Canada</p>
-                    </div>
-                </div>
-
-                <!-- Ozonated Oil -->
-                <div class="product-showcase-card" data-categories="ozonated bundles">
-                    <div class="product-badge exclusive">ONLY IN CANADA</div>
                     <div class="product-image-container">
                         <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/products/Organic_Ozonated_Olive_Oil_Natural_Skincare_Canada.webp" alt="Ozonated Olive Oil">
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">Ozonated Olive Oil</h3>
                         <div class="product-pricing">
-                            <span class="price">$32.95</span>
-                            <span class="subscription-note">$28.01/mo with subscription</span>
+                            <span class="current-price">$32.95</span>
+                            <span class="original-price">$42.00</span>
+                            <span class="discount-text">Save 22%</span>
                         </div>
                         <div class="product-rating">
                             <div class="stars">★★★★★</div>
                             <span class="review-count">160+ Reviews</span>
                         </div>
-                        <p class="product-description">Medical-grade ozonated healing oil</p>
+                        <p class="product-description">Medical-grade ozonated healing oil - Only in Canada</p>
+                        <div class="subscription-info">
+                            <div class="subscribe-option">
+                                <input type="radio" id="subscribe-oil" name="oil-option" checked>
+                                <label for="subscribe-oil">Subscribe Save 15%</label>
+                            </div>
+                            <span class="shipped-note">Shipped every 3 months</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
                     </div>
                 </div>
 
-                <!-- Deodorant -->
-                <div class="product-showcase-card" data-categories="deodorants bundles">
-                    <div class="product-badge sensitive">BAKING SODA-FREE</div>
+                <!-- Natural Deodorant -->
+                <div class="product-showcase-card" data-categories="deodorants bestsellers">
+                    <div class="product-badge bestseller">BEST SELLER</div>
                     <div class="product-image-container">
                         <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/natural_deodorant_baking_soda_free_canada.webp" alt="Natural Deodorant">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-title">Natural Deodorant</h3>
+                        <h3 class="product-title">Deodorant 4-Pack</h3>
                         <div class="product-pricing">
-                            <span class="price">$18.95</span>
-                            <span class="subscription-note">$16.11/mo with subscription</span>
+                            <span class="current-price">$44.00</span>
+                            <span class="original-price">$52.00</span>
+                            <span class="discount-text">Save 15%</span>
                         </div>
                         <div class="product-rating">
                             <div class="stars">★★★★★</div>
                             <span class="review-count">240+ Reviews</span>
                         </div>
-                        <p class="product-description">Baking soda-free, perfect for sensitive skin</p>
+                        <p class="product-description">Your choice of 4 natural deodorants</p>
+                        <div class="subscription-info">
+                            <div class="subscribe-option">
+                                <input type="radio" id="subscribe-deodorant" name="deodorant-option" checked>
+                                <label for="subscribe-deodorant">Subscribe Save 15%</label>
+                            </div>
+                            <span class="shipped-note">Shipped every 3 months</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
                     </div>
                 </div>
 
-                <!-- Real Fruit Makeup -->
-                <div class="product-showcase-card" data-categories="makeup new">
+                <!-- Essential Bundle -->
+                <div class="product-showcase-card" data-categories="bundles">
                     <div class="product-badge limited">LIMITED EDITION</div>
                     <div class="product-image-container">
-                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/real_fruit_makeup_natural_skincare_canada.webp" alt="Real Fruit Makeup">
+                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/products/Essential_Bundle_Skincare_Collection.webp" alt="Essential Bundle">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-title">Real Fruit Makeup</h3>
+                        <h3 class="product-title">Essential Bundle 3-Pack</h3>
                         <div class="product-pricing">
-                            <span class="price">$24.95</span>
-                            <span class="subscription-note">$21.21/mo with subscription</span>
+                            <span class="current-price">$22.80</span>
+                            <span class="original-price">$24.00</span>
+                            <span class="discount-text">Save 5%</span>
                         </div>
                         <div class="product-rating">
                             <div class="stars">★★★★★</div>
                             <span class="review-count">95+ Reviews</span>
                         </div>
-                        <p class="product-description">Natural makeup made with real fruit</p>
+                        <p class="product-description">Triple the power with essential skincare bundle</p>
+                        <div class="subscription-info">
+                            <div class="subscribe-option">
+                                <input type="radio" id="subscribe-bundle" name="bundle-option" checked>
+                                <label for="subscribe-bundle">Subscribe Save 25%</label>
+                            </div>
+                            <span class="shipped-note">Shipped every 3 months</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
                     </div>
                 </div>
 
-                <!-- Complete Bundle -->
+                <!-- Complete Collection -->
                 <div class="product-showcase-card" data-categories="bundles new">
-                    <div class="product-badge value">BEST VALUE</div>
+                    <div class="product-badge limited">LIMITED EDITION</div>
                     <div class="product-image-container">
-                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/products/Organic_Ozonated_Olive_Oil_Natural_Skincare_Canada.webp" alt="Complete Bundle">
-                        <div class="bundle-indicator">
-                            <span class="bundle-count">5</span>
-                            <span class="bundle-text">Bundle</span>
-                        </div>
+                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/products/Complete_Skincare_Collection.webp" alt="Complete Collection">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-title">Complete Bundle</h3>
+                        <h3 class="product-title">Complete Collection 4-Pack</h3>
                         <div class="product-pricing">
-                            <span class="original-price">$118.75</span>
-                            <span class="sale-price">$95.00</span>
-                            <span class="discount-badge">Save 20%</span>
+                            <span class="current-price">$24.00</span>
+                            <span class="original-price">$32.00</span>
+                            <span class="discount-text">Save 25%</span>
                         </div>
                         <div class="product-rating">
                             <div class="stars">★★★★★</div>
                             <span class="review-count">1,243 Reviews</span>
                         </div>
-                        <p class="product-description">Everything for a complete routine</p>
+                        <p class="product-description">Get ready for the final battle with these 4 HRICs inspired by the mysterious and epic adventures that shape Hawkins</p>
+                        <div class="subscription-info">
+                            <div class="subscribe-option">
+                                <input type="radio" id="subscribe-complete" name="complete-option" checked>
+                                <label for="subscribe-complete">Subscribe Save 25%</label>
+                            </div>
+                            <span class="shipped-note">Shipped every 3 months</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
                     </div>
                 </div>
 
                 <!-- Body Butter -->
-                <div class="product-showcase-card" data-categories="new ozonated">
-                    <div class="product-badge new">NEW</div>
-                    <div class="product-image-container">
-                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/natural_body_butter_canada.webp" alt="Ozonated Body Butter">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Ozonated Body Butter</h3>
-                        <div class="product-pricing">
-                            <span class="price">$24.95</span>
-                            <span class="subscription-note">$21.21/mo with subscription</span>
-                        </div>
-                        <div class="product-rating">
-                            <div class="stars">★★★★★</div>
-                            <span class="review-count">78 Reviews</span>
-                        </div>
-                        <p class="product-description">Rich, healing body moisturizer</p>
-                    </div>
-                </div>
+                <!-- REMOVED: Only showing 4 products like Dr. Squatch -->
             </div>
         </div>
     </section>
