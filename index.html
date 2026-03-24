@@ -20,13 +20,14 @@
             --sage: #C3C2AE;
             --sage-light: #d4d3c3;
             --sage-dark: #a8a795;
-            --cream: #FEFEFE;
+            --cream: #FFFBF8;
             --cream-warm: #FFF6EF;
             --terracotta: #9C5259;
             --terracotta-light: #b8727a;
             --terracotta-dark: #7d4147;
             --brown: #9A6B65;
             --brown-light: #b08a85;
+            --brown-dark: #95684F;
             --brown-dark: #7a5550;
             --charcoal: #2C2C2C;
             --text-primary: #3a3a3a;
@@ -1168,13 +1169,13 @@
         }
 
         .bundle-card {
-            background: #FFFFFF;
+            background: var(--cream);
             border-radius: var(--radius-lg);
             padding: 32px;
-            border: 2px solid rgba(195, 194, 174, 0.2);
+            border: 2px solid rgba(154, 107, 101, 0.15);
             transition: all var(--transition-smooth);
             position: relative;
-            box-shadow: 0 4px 20px rgba(195, 194, 174, 0.1);
+            box-shadow: 0 4px 20px rgba(149, 104, 79, 0.1);
         }
 
         .bundle-card:hover {
@@ -1184,10 +1185,10 @@
         }
 
         .bundle-card.featured {
-            background: linear-gradient(135deg, #FFFFFF 0%, #FEFEFE 100%);
-            border: 2px solid var(--sage);
+            background: linear-gradient(135deg, var(--cream) 0%, #FFFFFF 100%);
+            border: 2px solid var(--brown-dark);
             transform: scale(1.05);
-            box-shadow: 0 8px 32px rgba(156, 82, 89, 0.15);
+            box-shadow: 0 8px 32px rgba(149, 104, 79, 0.2);
         }
 
         .bundle-card.featured:hover {
@@ -1199,7 +1200,7 @@
             top: -12px;
             left: 50%;
             transform: translateX(-50%);
-            background: var(--sage);
+            background: var(--brown);
             color: white;
             padding: 8px 16px;
             border-radius: 50px;
@@ -1210,7 +1211,7 @@
         }
 
         .bundle-badge.recommended {
-            background: var(--terracotta);
+            background: var(--brown-dark);
         }
 
         .bundle-header {
@@ -1236,7 +1237,7 @@
             text-align: center;
             margin-bottom: 24px;
             padding: 20px;
-            background: rgba(195, 194, 174, 0.05);
+            background: rgba(149, 104, 79, 0.06);
             border-radius: var(--radius-md);
         }
 
@@ -1302,9 +1303,9 @@
         .bundle-subscription {
             margin-bottom: 24px;
             padding: 16px;
-            background: rgba(195, 194, 174, 0.05);
+            background: rgba(149, 104, 79, 0.06);
             border-radius: var(--radius-md);
-            border: 1px solid rgba(195, 194, 174, 0.2);
+            border: 1px solid rgba(154, 107, 101, 0.15);
         }
 
         .subscription-toggle {
@@ -1341,7 +1342,7 @@
         }
 
         .subscription-toggle input[type="checkbox"]:checked + .toggle-slider {
-            background: var(--sage);
+            background: var(--brown);
         }
 
         .subscription-toggle input[type="checkbox"]:checked + .toggle-slider::before {
@@ -1354,7 +1355,7 @@
 
         .bundle-cta {
             width: 100%;
-            background: var(--sage);
+            background: var(--brown);
             color: white;
             border: none;
             padding: 16px 24px;
@@ -1367,18 +1368,18 @@
         }
 
         .bundle-cta:hover {
-            background: var(--sage-dark);
+            background: var(--brown-dark);
             transform: translateY(-2px);
         }
 
         .bundle-cta.featured {
-            background: var(--terracotta);
+            background: var(--brown-dark);
             font-size: 18px;
             padding: 20px 24px;
         }
 
         .bundle-cta.featured:hover {
-            background: #854752;
+            background: #7d5843;
         }
 
         .bundle-social-proof {
@@ -1595,7 +1596,7 @@
             align-items: center;
             gap: 4px;
             padding: 8px 12px;
-            border: 2px solid rgba(195, 194, 174, 0.2);
+            border: 2px solid rgba(154, 107, 101, 0.2);
             border-radius: var(--radius-sm);
             cursor: pointer;
             transition: all var(--transition-smooth);
@@ -1603,8 +1604,8 @@
         }
 
         .price-option:hover {
-            border-color: var(--sage);
-            background: rgba(195, 194, 174, 0.05);
+            border-color: var(--brown);
+            background: rgba(149, 104, 79, 0.06);
         }
 
         .price-option.volume-discount {
@@ -1648,9 +1649,9 @@
 
         .subscription-option {
             padding: 12px;
-            background: rgba(195, 194, 174, 0.05);
+            background: rgba(149, 104, 79, 0.06);
             border-radius: var(--radius-sm);
-            border: 1px solid rgba(195, 194, 174, 0.2);
+            border: 1px solid rgba(154, 107, 101, 0.15);
         }
 
         .product-subscription-toggle {
@@ -1687,7 +1688,7 @@
         }
 
         .product-subscription-toggle input[type="checkbox"]:checked + .subscription-slider {
-            background: var(--sage);
+            background: var(--brown);
         }
 
         .product-subscription-toggle input[type="checkbox"]:checked + .subscription-slider::before {
