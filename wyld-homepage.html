@@ -1201,9 +1201,10 @@
         .products-grid {
             display: grid;
             grid-template-columns: repeat(6, 1fr);
-            gap: 24px;
-            max-width: 1400px;
+            gap: 16px;
+            width: 100%;
             margin: 0 auto;
+            grid-auto-rows: auto;
         }
 
         .product-showcase-card {
@@ -1309,15 +1310,15 @@
         }
 
         .product-info {
-            padding: 20px;
+            padding: 16px;
         }
 
         .product-title {
             font-family: var(--font-serif);
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 600;
             color: var(--charcoal);
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             line-height: 1.3;
         }
 
@@ -1337,7 +1338,7 @@
 
         .sale-price,
         .price {
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 700;
             color: var(--terracotta);
         }
@@ -1378,9 +1379,9 @@
         }
 
         .product-description {
-            font-size: 13px;
+            font-size: 11px;
             color: var(--text-secondary);
-            line-height: 1.4;
+            line-height: 1.3;
             margin: 0;
         }
 
@@ -1543,10 +1544,17 @@
             font-size: 18px;
         }
 
+        @media (max-width: 1400px) {
+            .products-grid {
+                grid-template-columns: repeat(6, 1fr);
+                gap: 12px;
+            }
+        }
+
         @media (max-width: 1200px) {
             .products-grid {
-                grid-template-columns: repeat(4, 1fr);
-                gap: 20px;
+                grid-template-columns: repeat(6, 1fr);
+                gap: 10px;
             }
         }
 
@@ -1556,8 +1564,8 @@
             }
 
             .products-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 20px;
+                grid-template-columns: repeat(6, 1fr);
+                gap: 8px;
             }
 
             .subscription-options {
@@ -1612,8 +1620,8 @@
             }
 
             .products-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 16px;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 12px;
             }
 
             .product-info {
@@ -1627,21 +1635,21 @@
 
         @media (max-width: 480px) {
             .products-grid {
-                grid-template-columns: 1fr;
-                gap: 16px;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
             }
 
             .product-info {
-                padding: 20px;
+                padding: 12px;
             }
 
             .product-title {
-                font-size: 18px;
+                font-size: 13px;
             }
 
             .sale-price,
             .price {
-                font-size: 18px;
+                font-size: 13px;
             }
 
             .subscription-option {
