@@ -1826,15 +1826,18 @@
         .hover-add-to-cart {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 10px;
             background: transparent;
             color: var(--charcoal);
             border: 1px solid var(--charcoal);
-            padding: 16px 36px;
-            border-radius: 4px;
-            font-size: 14px;
+            padding: 20px 40px;
+            border-radius: 2px;
+            font-size: 13px;
             font-weight: 500;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+            min-height: 60px;
+            width: 80%;
             text-transform: uppercase;
             transition: all var(--transition-smooth);
             position: relative;
@@ -2345,8 +2348,11 @@
             }
 
             .add-to-cart-btn {
-                padding: 12px 16px;
-                font-size: 14px;
+                padding: 18px 24px;
+                font-size: 13px;
+                min-height: 56px;
+                letter-spacing: 1.5px;
+                border-radius: 2px;
             }
 
             .product-info {
@@ -2590,14 +2596,18 @@
             background: transparent;
             color: var(--charcoal);
             border: 1px solid var(--charcoal);
-            padding: 12px 24px;
-            font-size: 14px;
+            padding: 18px 24px;
+            font-size: 13px;
             font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            border-radius: 4px;
+            letter-spacing: 1.5px;
+            border-radius: 2px;
             transition: all 0.3s ease;
             cursor: pointer;
+            min-height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .bundle-btn:hover {
