@@ -2522,7 +2522,7 @@
 
         .bundle-cards {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 24px;
         }
 
@@ -2594,22 +2594,24 @@
 
         .bundle-btn {
             width: 100%;
-            background: transparent;
-            color: var(--charcoal);
-            border: 1px solid var(--charcoal);
+            background: var(--terracotta);
+            color: white;
+            border: none;
             padding: 12px 24px;
             font-size: 14px;
-            font-weight: 500;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
-            border-radius: 4px;
+            border-radius: 50px;
             transition: all 0.3s ease;
             cursor: pointer;
+            box-shadow: 0 4px 12px rgba(156, 82, 89, 0.2);
         }
 
         .bundle-btn:hover {
-            background: var(--charcoal);
-            color: white;
+            background: var(--terracotta-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(156, 82, 89, 0.3);
         }
 
         /* Mobile Responsive */
@@ -2636,12 +2638,14 @@
             }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
             .bundle-cards {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 16px;
             }
+        }
 
+        @media (max-width: 768px) {
             .bundles-title {
                 font-size: 28px;
             }
@@ -5713,6 +5717,7 @@
                 <div class="bundles-hero-content">
                     <h3 class="bundles-intro">New to Natural?</h3>
                     <h2>STARTER<br>BUNDLES</h2>
+                    <div style="background: var(--terracotta); color: white; padding: 8px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; display: inline-block;">Save 20% on Bundles</div>
                     <p>We've got you covered. Discover our tried and true natural favorites, curated for your wellness journey.</p>
                     <div class="bundles-actions">
                         <a href="#bundles-grid" class="bundles-shop-btn">
@@ -5781,22 +5786,7 @@
                         </div>
                     </div>
 
-                    <!-- Bundle 4 -->
-                    <div class="bundle-card">
-                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/products/Organic_Ozonated_Olive_Oil_Natural_Skincare_Canada.webp" alt="Premium Ozonated Oil Bundle" class="bundle-image">
-                        <div class="bundle-info">
-                            <div class="bundle-name">Premium Oil Collection</div>
-                            <div class="bundle-rating">
-                                <span class="bundle-stars">★★★★★</span>
-                                <span class="bundle-reviews">203 reviews</span>
-                            </div>
-                            <div class="bundle-price">
-                                <span class="bundle-current-price">$95.00</span>
-                                <span class="bundle-original-price">$125.00</span>
-                            </div>
-                            <button class="bundle-btn">Shop Now</button>
-                        </div>
-                    </div>
+                    <!-- Removed 4th bundle to keep only 3 in one row -->
                 </div>
             </div>
         </div>
