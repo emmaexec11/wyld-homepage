@@ -224,14 +224,30 @@
            NAVIGATION
            ======================================== */
         .nav {
-            background: rgba(255, 251, 248, 0.92);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            background: rgba(255, 251, 248, 0.85);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(195, 194, 174, 0.2);
-            transition: box-shadow var(--transition-smooth);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 4px 32px rgba(0, 0, 0, 0.08);
+        }
+
+        .nav::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, 
+                rgba(255, 255, 255, 0.1) 0%, 
+                rgba(255, 255, 255, 0.05) 50%, 
+                rgba(255, 255, 255, 0.1) 100%);
+            pointer-events: none;
+            z-index: -1;
         }
 
         .nav.scrolled {
@@ -334,12 +350,53 @@
            ======================================== */
         .hero {
             position: relative;
-            min-height: 70vh;
+            min-height: 80vh;
             display: flex;
             align-items: center;
             overflow: hidden;
-            background: var(--cream);
-            padding: 40px 0 20px;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(156, 82, 89, 0.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 20%, rgba(195, 194, 174, 0.12) 0%, transparent 60%),
+                radial-gradient(circle at 40% 90%, rgba(149, 104, 79, 0.05) 0%, transparent 50%),
+                linear-gradient(135deg, #FFFBF8 0%, #F8F5F2 30%, #FEFAF6 60%, #FFFBF8 100%);
+            padding: 60px 0 40px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(45deg, transparent 30%, rgba(195, 194, 174, 0.03) 50%, transparent 70%),
+                linear-gradient(-45deg, transparent 40%, rgba(156, 82, 89, 0.02) 60%, transparent 80%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 25% 75%, rgba(195, 194, 174, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 75% 25%, rgba(156, 82, 89, 0.06) 0%, transparent 40%);
+            animation: float 20s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: rotate(0deg) translateY(0px); }
+            25% { transform: rotate(1deg) translateY(-10px); }
+            50% { transform: rotate(-1deg) translateY(-20px); }
+            75% { transform: rotate(0.5deg) translateY(-10px); }
         }
 
         /* Hero blobs removed for clean, professional design */
@@ -351,33 +408,105 @@
         .hero-inner {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            gap: 80px;
             align-items: center;
             position: relative;
-            z-index: 2;
+            z-index: 3;
+            backdrop-filter: blur(1px);
         }
 
         .hero-content {
-            animation: slideInLeft 1s ease-out;
-            filter: none !important;
-            box-shadow: none !important;
-            text-shadow: none !important;
+            animation: slideInLeft 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 32px;
+            padding: 48px 40px 40px 40px;
+            position: relative;
+            z-index: 4;
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .hero-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(195, 194, 174, 0.05) 100%);
+            border-radius: 32px;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .hero-content:hover {
+            transform: translateY(-8px);
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(25px);
         }
 
         .hero h1 {
             font-family: var(--font-serif);
-            font-size: clamp(42px, 5.5vw, 72px);
+            font-size: clamp(48px, 5.5vw, 78px);
             font-weight: 300;
-            line-height: 1.1;
-            color: var(--charcoal);
-            margin-bottom: 12px;
-            letter-spacing: -1px;
+            line-height: 1.05;
+            background: linear-gradient(135deg, var(--charcoal) 0%, #1a1a1a  50%, var(--charcoal) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+            letter-spacing: -2px;
+            position: relative;
+            animation: textShine 3s ease-in-out infinite;
+        }
+
+        @keyframes textShine {
+            0%, 100% { 
+                background: linear-gradient(135deg, var(--charcoal) 0%, #1a1a1a 50%, var(--charcoal) 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+            50% { 
+                background: linear-gradient(135deg, var(--charcoal) 0%, #0a0a0a 50%, var(--charcoal) 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
         }
 
         .hero h1 em {
             font-style: italic;
-            color: var(--terracotta);
+            background: linear-gradient(135deg, #9C5259 0%, #B85E66 50%, #A85760 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             font-weight: 400;
+            position: relative;
+            text-shadow: 0 2px 8px rgba(156, 82, 89, 0.3);
+        }
+
+        .hero h1 em::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent 0%, #9C5259 50%, transparent 100%);
+            border-radius: 2px;
+            animation: underlineGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes underlineGlow {
+            0%, 100% { opacity: 0.6; transform: scaleX(1); }
+            50% { opacity: 1; transform: scaleX(1.05); }
         }
 
         .hero h1 .line-accent {
@@ -391,10 +520,72 @@
             bottom: 4px;
             left: 0;
             width: 100%;
-            height: 8px;
-            background: rgba(195, 194, 174, 0.5);
+            height: 10px;
+            background: linear-gradient(90deg, rgba(195, 194, 174, 0.3) 0%, rgba(195, 194, 174, 0.6) 50%, rgba(195, 194, 174, 0.3) 100%);
             z-index: -1;
-            border-radius: 4px;
+            border-radius: 6px;
+            animation: highlightPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes highlightPulse {
+            0%, 100% { 
+                background: linear-gradient(90deg, rgba(195, 194, 174, 0.3) 0%, rgba(195, 194, 174, 0.6) 50%, rgba(195, 194, 174, 0.3) 100%);
+                transform: scaleY(1);
+            }
+            50% { 
+                background: linear-gradient(90deg, rgba(195, 194, 174, 0.4) 0%, rgba(195, 194, 174, 0.8) 50%, rgba(195, 194, 174, 0.4) 100%);
+                transform: scaleY(1.1);
+            }
+        }
+
+        /* Premium floating particles */
+        .hero-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: radial-gradient(circle, rgba(195, 194, 174, 0.6) 0%, rgba(195, 194, 174, 0.2) 70%, transparent 100%);
+            border-radius: 50%;
+            animation: floatParticles 15s ease-in-out infinite;
+        }
+
+        .particle:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .particle:nth-child(2) { left: 20%; animation-delay: -2s; }
+        .particle:nth-child(3) { left: 30%; animation-delay: -4s; }
+        .particle:nth-child(4) { left: 40%; animation-delay: -6s; }
+        .particle:nth-child(5) { left: 50%; animation-delay: -8s; }
+        .particle:nth-child(6) { left: 60%; animation-delay: -10s; }
+        .particle:nth-child(7) { left: 70%; animation-delay: -12s; }
+        .particle:nth-child(8) { left: 80%; animation-delay: -14s; }
+        .particle:nth-child(9) { left: 90%; animation-delay: -1s; }
+
+        @keyframes floatParticles {
+            0%, 100% {
+                transform: translateY(100vh) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+                transform: translateY(90vh) scale(1);
+            }
+            90% {
+                opacity: 1;
+                transform: translateY(10vh) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(0vh) scale(0);
+            }
         }
 
         .hero-subtitle {
@@ -1463,10 +1654,32 @@
            PRODUCT SHOWCASE (DR. SQUATCH STYLE)
            ======================================== */
         .product-showcase {
-            background: linear-gradient(135deg, #FFFBF8 0%, #F8F5F2 100%);
-            padding: 40px 0 100px;
+            background: 
+                radial-gradient(circle at 30% 20%, rgba(195, 194, 174, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(156, 82, 89, 0.06) 0%, transparent 50%),
+                linear-gradient(135deg, #FFFBF8 0%, #F8F5F2 30%, #FEFAF6 70%, #FFFBF8 100%);
+            padding: 60px 0 120px;
             position: relative;
             overflow: hidden;
+        }
+
+        .product-showcase::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(45deg, transparent 0%, rgba(255, 255, 255, 0.1) 25%, transparent 50%, rgba(255, 255, 255, 0.1) 75%, transparent 100%);
+            pointer-events: none;
+            z-index: 1;
+            animation: shimmer 8s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
         }
 
         .product-showcase .container {
@@ -1893,21 +2106,49 @@
         }
 
         .product-showcase-card {
-            background: white;
-            border-radius: var(--radius-lg);
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(195, 194, 174, 0.15);
-            transition: all var(--transition-smooth);
+            box-shadow: 
+                0 8px 32px rgba(195, 194, 174, 0.15),
+                0 2px 8px rgba(0, 0, 0, 0.05),
+                inset 0 1px 0 rgba(255, 255, 255, 0.6);
+            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             position: relative;
-            border: 1px solid rgba(195, 194, 174, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             flex: 1;
             min-width: 180px;
             max-width: 220px;
+            z-index: 2;
+        }
+
+        .product-showcase-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(195, 194, 174, 0.1) 0%, rgba(156, 82, 89, 0.05) 100%);
+            opacity: 0;
+            transition: opacity 0.6s ease;
+            border-radius: 24px;
+            pointer-events: none;
+            z-index: -1;
         }
 
         .product-showcase-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 32px rgba(195, 194, 174, 0.25);
+            transform: translateY(-16px) scale(1.02);
+            box-shadow: 
+                0 20px 60px rgba(195, 194, 174, 0.25),
+                0 8px 24px rgba(156, 82, 89, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(25px);
+        }
+
+        .product-showcase-card:hover::before {
+            opacity: 1;
         }
 
         .product-badge {
@@ -5144,6 +5385,17 @@
 
     <!-- ====== HERO SECTION ====== -->
     <section class="hero">
+        <div class="hero-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
         <div class="container">
             <div class="hero-inner">
                 <div class="hero-content">
