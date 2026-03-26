@@ -2405,32 +2405,25 @@
 
         .bundles-inner {
             display: grid;
-            grid-template-columns: 400px 1fr;
-            gap: 60px;
-            align-items: center;
+            grid-template-columns: 450px 1fr;
+            gap: 80px;
+            align-items: flex-start;
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 24px;
         }
 
         .bundles-hero {
-            background: linear-gradient(135deg, #2C2C2C 0%, #1a1a1a 100%);
+            background: linear-gradient(135deg, #C3C2AE 0%, #B5B49A 100%);
             border-radius: 16px;
-            padding: 48px 40px;
-            color: white;
+            padding: 60px 40px;
+            text-align: center;
             position: relative;
             overflow: hidden;
-        }
-
-        .bundles-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(156, 82, 89, 0.1) 0%, transparent 50%);
-            pointer-events: none;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .bundles-hero-content {
@@ -2438,41 +2431,80 @@
             z-index: 2;
         }
 
+        .bundles-intro {
+            font-size: 12px;
+            font-weight: 600;
+            color: rgba(44, 44, 44, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+
         .bundles-hero h2 {
             font-family: var(--font-serif);
-            font-size: 42px;
+            font-size: 48px;
             font-weight: 300;
             line-height: 1.2;
-            margin-bottom: 16px;
+            margin-bottom: 24px;
+            color: var(--charcoal);
         }
 
         .bundles-hero p {
             font-size: 16px;
-            opacity: 0.9;
-            margin-bottom: 32px;
+            color: rgba(44, 44, 44, 0.8);
+            margin-bottom: 40px;
             line-height: 1.6;
+            max-width: 320px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .bundles-hero-product {
-            width: 120px;
-            height: 120px;
-            object-fit: cover;
-            border-radius: 12px;
-            border: 2px solid rgba(255, 255, 255, 0.2);
+        .bundles-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: center;
         }
 
-        .bundles-cta {
+        .bundles-shop-btn {
+            background: var(--terracotta);
             color: white;
-            text-decoration: underline;
+            padding: 14px 32px;
+            border-radius: 50px;
             font-size: 14px;
-            font-weight: 500;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
-            transition: opacity 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
         }
 
-        .bundles-cta:hover {
-            opacity: 0.8;
+        .bundles-shop-btn:hover {
+            background: var(--terracotta-dark);
+            transform: translateY(-2px);
+        }
+
+        .bundle-builder-btn {
+            background: transparent;
+            color: var(--charcoal);
+            border: 1px solid var(--charcoal);
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .bundle-builder-btn:hover {
+            background: var(--charcoal);
+            color: white;
         }
 
         .bundles-content {
@@ -2490,7 +2522,7 @@
 
         .bundle-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 24px;
         }
 
@@ -2581,6 +2613,13 @@
         }
 
         /* Mobile Responsive */
+        @media (max-width: 1200px) {
+            .bundles-inner {
+                grid-template-columns: 400px 1fr;
+                gap: 40px;
+            }
+        }
+
         @media (max-width: 1024px) {
             .bundles-inner {
                 grid-template-columns: 1fr;
@@ -2588,7 +2627,12 @@
             }
 
             .bundles-hero {
-                text-align: center;
+                min-height: 300px;
+                padding: 40px 30px;
+            }
+
+            .bundles-hero h2 {
+                font-size: 36px;
             }
         }
 
@@ -2601,6 +2645,14 @@
             .bundles-title {
                 font-size: 28px;
             }
+
+            .bundles-hero {
+                padding: 30px 20px;
+            }
+
+            .bundles-hero h2 {
+                font-size: 32px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -2610,6 +2662,16 @@
 
             .bundles-inner {
                 padding: 0 16px;
+            }
+
+            .bundles-actions {
+                width: 100%;
+            }
+
+            .bundles-shop-btn,
+            .bundle-builder-btn {
+                width: 100%;
+                justify-content: center;
             }
         }
 
@@ -5649,18 +5711,24 @@
             <!-- Left Hero Section -->
             <div class="bundles-hero">
                 <div class="bundles-hero-content">
-                    <h2>Three Products.<br>One Kit. All Natural.</h2>
-                    <p>Build your own routine to unlock savings up to 25% OFF.</p>
-                    <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/Multi_colour_cream_bundle_sharpened.jpg?v=1756846735" alt="Natural Beauty Bundle" class="bundles-hero-product">
-                    <div style="margin-top: 24px;">
-                        <a href="#" class="bundles-cta">Choose My Products</a>
+                    <h3 class="bundles-intro">New to Natural?</h3>
+                    <h2>STARTER<br>BUNDLES</h2>
+                    <p>We've got you covered. Discover our tried and true natural favorites, curated for your wellness journey.</p>
+                    <div class="bundles-actions">
+                        <a href="#bundles-grid" class="bundles-shop-btn">
+                            Shop Bundles
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                        <a href="#bundle-builder" class="bundle-builder-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            Build a Bundle
+                        </a>
                     </div>
                 </div>
             </div>
 
             <!-- Right Product Grid -->
             <div class="bundles-content">
-                <h2 class="bundles-title">Your Everyday Bundle Essentials</h2>
                 <div class="bundle-cards">
                     <!-- Bundle 1 -->
                     <div class="bundle-card">
