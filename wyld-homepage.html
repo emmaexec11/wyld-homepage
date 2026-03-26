@@ -1416,51 +1416,75 @@
         }
 
         .add-to-cart-btn {
+            display: none; /* Hide the original buttons */
+        }
+
+        .product-image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px 12px 0 0;
+        }
+
+        .product-image-container img {
             width: 100%;
+            height: 280px;
+            object-fit: cover;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .product-hover-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 5;
+        }
+
+        .hover-add-to-cart {
             background: linear-gradient(135deg, var(--terracotta) 0%, #B8616A 100%);
             color: white;
             border: none;
-            padding: 16px 24px;
-            border-radius: 10px;
+            padding: 14px 28px;
+            border-radius: 8px;
             font-size: 14px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
             cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            margin-top: 16px;
-            position: relative;
-            overflow: hidden;
+            transition: all 0.2s ease;
             box-shadow: 
-                0 4px 16px rgba(156, 82, 89, 0.3),
+                0 4px 16px rgba(156, 82, 89, 0.4),
                 inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            transform: translateY(20px);
         }
 
-        .add-to-cart-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.6s ease;
+        .product-showcase-card:hover .product-hover-overlay {
+            opacity: 1;
+            visibility: visible;
         }
 
-        .add-to-cart-btn:hover {
+        .product-showcase-card:hover .hover-add-to-cart {
+            transform: translateY(0);
+        }
+
+        .product-showcase-card:hover .product-image-container img {
+            transform: scale(1.05);
+        }
+
+        .hover-add-to-cart:hover {
             background: linear-gradient(135deg, var(--terracotta-dark) 0%, #A6555B 100%);
-            transform: translateY(-2px) scale(1.02);
+            transform: translateY(-2px);
             box-shadow: 
-                0 8px 24px rgba(156, 82, 89, 0.4),
+                0 6px 20px rgba(156, 82, 89, 0.5),
                 inset 0 1px 0 rgba(255, 255, 255, 0.3);
-        }
-
-        .add-to-cart-btn:hover::before {
-            left: 100%;
-        }
-
-        .add-to-cart-btn:active {
-            transform: translateY(0) scale(0.98);
         }
 
         .product-showcase-card {
@@ -3096,6 +3120,9 @@
                     <div class="product-badge bestseller">BEST SELLER</div>
                     <div class="product-image-container">
                         <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/optimized-lavender-jasmine-deodorant.webp?v=1750293861" alt="Natural Vegan Eco-Friendly Deodorants">
+                        <div class="product-hover-overlay">
+                            <button class="hover-add-to-cart">ADD TO CART</button>
+                        </div>
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">Natural Deodorant</h3>
@@ -3109,14 +3136,7 @@
                             <span class="review-count">160+ Reviews</span>
                         </div>
                         <p class="product-description">Medical-grade ozonated healing oil - Only in Canada</p>
-                        <div class="subscription-info">
-                            <div class="subscribe-option">
-                                <input type="radio" id="subscribe-oil" name="oil-option" checked>
-                                <label for="subscribe-oil">Subscribe Save 15%</label>
-                            </div>
-                            <span class="shipped-note">Shipped every 3 months</span>
-                        </div>
-                        <button class="add-to-cart-btn">Add to Cart</button>
+                        <!-- Hover add to cart replaces subscription info -->
                     </div>
                 </div>
 
@@ -3125,6 +3145,9 @@
                     <div class="product-badge bestseller">BEST SELLER</div>
                     <div class="product-image-container">
                         <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/compressed_deodorants_image.png?v=1750293854" alt="5 Deodorant Gift Pack">
+                        <div class="product-hover-overlay">
+                            <button class="hover-add-to-cart">ADD TO CART</button>
+                        </div>
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">Deodorant 5-Pack</h3>
@@ -3138,14 +3161,7 @@
                             <span class="review-count">240+ Reviews</span>
                         </div>
                         <p class="product-description">Your choice of 4 natural deodorants</p>
-                        <div class="subscription-info">
-                            <div class="subscribe-option">
-                                <input type="radio" id="subscribe-deodorant" name="deodorant-option" checked>
-                                <label for="subscribe-deodorant">Subscribe Save 15%</label>
-                            </div>
-                            <span class="shipped-note">Shipped every 3 months</span>
-                        </div>
-                        <button class="add-to-cart-btn">Add to Cart</button>
+                        <!-- Hover add to cart replaces subscription info -->
                     </div>
                 </div>
 
@@ -3154,6 +3170,9 @@
                     <div class="product-badge limited">LIMITED EDITION</div>
                     <div class="product-image-container">
                         <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/Naturally_Wyld_Ozonated_Whitening_Toothpaste_Activated_Charcoal_Fluoride-Free_SLS-Free_Remineralizing_Formula..jpg?v=1755557553" alt="Teeth Whitening Polish">
+                        <div class="product-hover-overlay">
+                            <button class="hover-add-to-cart">ADD TO CART</button>
+                        </div>
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">Whitening Toothpaste</h3>
@@ -3167,14 +3186,7 @@
                             <span class="review-count">95+ Reviews</span>
                         </div>
                         <p class="product-description">Triple the power with essential skincare bundle</p>
-                        <div class="subscription-info">
-                            <div class="subscribe-option">
-                                <input type="radio" id="subscribe-bundle" name="bundle-option" checked>
-                                <label for="subscribe-bundle">Subscribe Save 25%</label>
-                            </div>
-                            <span class="shipped-note">Shipped every 3 months</span>
-                        </div>
-                        <button class="add-to-cart-btn">Add to Cart</button>
+                        <!-- Hover add to cart replaces subscription info -->
                     </div>
                 </div>
 
@@ -3183,6 +3195,9 @@
                     <div class="product-badge limited">LIMITED EDITION</div>
                     <div class="product-image-container">
                         <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/Multi_colour_cream_bundle_sharpened.jpg?v=1756846735" alt="Multi Colour Cream Tester Pack">
+                        <div class="product-hover-overlay">
+                            <button class="hover-add-to-cart">ADD TO CART</button>
+                        </div>
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">Fruit Makeup 3-Pack</h3>
@@ -3196,14 +3211,7 @@
                             <span class="review-count">1,243 Reviews</span>
                         </div>
                         <p class="product-description">Natural fruit pigmented makeup - full size trio</p>
-                        <div class="subscription-info">
-                            <div class="subscribe-option">
-                                <input type="radio" id="subscribe-complete" name="complete-option" checked>
-                                <label for="subscribe-complete">Subscribe Save 25%</label>
-                            </div>
-                            <span class="shipped-note">Shipped every 3 months</span>
-                        </div>
-                        <button class="add-to-cart-btn">Add to Cart</button>
+                        <!-- Hover add to cart replaces subscription info -->
                     </div>
                 </div>
 
