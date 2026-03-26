@@ -2522,7 +2522,7 @@
 
         .bundle-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(5, 1fr);
             gap: 20px;
             width: 100%;
         }
@@ -2619,10 +2619,20 @@
         }
 
         /* Mobile Responsive */
+        @media (max-width: 1400px) {
+            .bundle-cards {
+                gap: 16px;
+            }
+        }
+
         @media (max-width: 1200px) {
             .bundles-inner {
-                grid-template-columns: 400px 1fr;
-                gap: 40px;
+                grid-template-columns: 350px 1fr;
+                gap: 30px;
+            }
+
+            .bundle-cards {
+                gap: 12px;
             }
         }
 
@@ -2640,11 +2650,16 @@
             .bundles-hero h2 {
                 font-size: 36px;
             }
+
+            .bundle-cards {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: 768px) {
             .bundle-cards {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                grid-template-columns: repeat(2, 1fr);
                 gap: 16px;
             }
         }
