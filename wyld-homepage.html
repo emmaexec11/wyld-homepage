@@ -1198,6 +1198,72 @@
             flex-wrap: wrap;
             width: 100%;
             text-align: center;
+            position: relative;
+        }
+
+        .category-more {
+            position: relative;
+        }
+
+        .more-tab {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .more-tab svg {
+            transition: transform 0.3s ease;
+        }
+
+        .more-tab.active svg {
+            transform: rotate(180deg);
+        }
+
+        .more-dropdown {
+            position: absolute;
+            top: calc(100% + 12px);
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(145deg, #ffffff 0%, #fefefe 100%);
+            border-radius: 12px;
+            box-shadow: 
+                0 12px 40px rgba(149, 104, 79, 0.12),
+                0 4px 12px rgba(0, 0, 0, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(195, 194, 174, 0.15);
+            padding: 12px;
+            min-width: 220px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(-50%) translateY(-10px);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 100;
+        }
+
+        .more-dropdown.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .dropdown-item {
+            width: 100%;
+            justify-content: flex-start;
+            padding: 10px 16px;
+            margin: 0 0 4px 0;
+            font-size: 13px;
+            letter-spacing: 0.8px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .dropdown-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .dropdown-item:hover {
+            background: rgba(156, 82, 89, 0.08);
+            color: var(--terracotta);
         }
 
         .category-tab {
@@ -1832,6 +1898,17 @@
             .category-tab {
                 padding: 8px 16px;
                 border: 1px solid rgba(195, 194, 174, 0.3);
+            }
+
+            .more-dropdown {
+                min-width: 200px;
+                max-height: 300px;
+                overflow-y: auto;
+            }
+
+            .dropdown-item {
+                font-size: 12px;
+                padding: 8px 12px;
                 border-radius: 50px;
                 border-bottom: 1px solid rgba(195, 194, 174, 0.3);
                 width: 200px;
@@ -2996,9 +3073,25 @@
             <div class="product-categories">
                 <button class="category-tab active" data-category="bundles">BUNDLES</button>
                 <button class="category-tab" data-category="ozonated">OZONATED OILS</button>
-                <button class="category-tab" data-category="deodorants">DEODORANTS</button>
-                <button class="category-tab" data-category="makeup">MAKEUP</button>
-                <button class="category-tab" data-category="new">NEW ARRIVALS</button>
+                <button class="category-tab" data-category="deodorants">NATURAL DEODORANT</button>
+                <button class="category-tab" data-category="makeup">REAL FRUIT MAKEUP</button>
+                <button class="category-tab" data-category="skincare">SKINCARE</button>
+                <div class="category-more">
+                    <button class="category-tab more-tab" data-category="more">
+                        MORE
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M7 10l5 5 5-5z"/>
+                        </svg>
+                    </button>
+                    <div class="more-dropdown">
+                        <button class="category-tab dropdown-item" data-category="balms">MUSCLE COMFORT BALMS</button>
+                        <button class="category-tab dropdown-item" data-category="lipbalm">NATURAL LIP BALM</button>
+                        <button class="category-tab dropdown-item" data-category="oils">ESSENTIAL OIL BLENDS</button>
+                        <button class="category-tab dropdown-item" data-category="toothpaste">NATURAL TOOTHPASTE</button>
+                        <button class="category-tab dropdown-item" data-category="candles">COCONUT SOY CANDLES</button>
+                        <button class="category-tab dropdown-item" data-category="tattoo">TATTOO CARE</button>
+                    </div>
+                </div>
             </div>
 
             <div class="products-grid">
@@ -3122,6 +3215,82 @@
                 <!-- REMOVED: Only showing 4 products like Dr. Squatch -->
             </div>
         </div>
+
+        <script>
+            // Category dropdown functionality
+            document.addEventListener('DOMContentLoaded', function() {
+                const moreTab = document.querySelector('.more-tab');
+                const moreDropdown = document.querySelector('.more-dropdown');
+                let isDropdownOpen = false;
+
+                // Toggle dropdown
+                moreTab.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    isDropdownOpen = !isDropdownOpen;
+                    
+                    if (isDropdownOpen) {
+                        moreDropdown.classList.add('show');
+                        moreTab.classList.add('active');
+                    } else {
+                        moreDropdown.classList.remove('show');
+                        moreTab.classList.remove('active');
+                    }
+                });
+
+                // Close dropdown when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!e.target.closest('.category-more')) {
+                        moreDropdown.classList.remove('show');
+                        moreTab.classList.remove('active');
+                        isDropdownOpen = false;
+                    }
+                });
+
+                // Handle dropdown item clicks
+                const dropdownItems = document.querySelectorAll('.dropdown-item');
+                dropdownItems.forEach(item => {
+                    item.addEventListener('click', function() {
+                        // Remove active from all category tabs
+                        document.querySelectorAll('.category-tab').forEach(tab => {
+                            tab.classList.remove('active');
+                        });
+                        
+                        // Add active to clicked item
+                        this.classList.add('active');
+                        
+                        // Close dropdown
+                        moreDropdown.classList.remove('show');
+                        moreTab.classList.remove('active');
+                        isDropdownOpen = false;
+                        
+                        // Here you would typically filter products by category
+                        console.log('Selected category:', this.dataset.category);
+                    });
+                });
+
+                // Handle main category tab clicks
+                const mainTabs = document.querySelectorAll('.category-tab:not(.more-tab):not(.dropdown-item)');
+                mainTabs.forEach(tab => {
+                    tab.addEventListener('click', function() {
+                        // Remove active from all tabs
+                        document.querySelectorAll('.category-tab').forEach(t => {
+                            t.classList.remove('active');
+                        });
+                        
+                        // Add active to clicked tab
+                        this.classList.add('active');
+                        
+                        // Close dropdown if open
+                        moreDropdown.classList.remove('show');
+                        moreTab.classList.remove('active');
+                        isDropdownOpen = false;
+                        
+                        // Here you would typically filter products by category
+                        console.log('Selected category:', this.dataset.category);
+                    });
+                });
+            });
+        </script>
     </section>
 
     <!-- ====== SUBSCRIPTION SECTION ====== -->
