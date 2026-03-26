@@ -3992,6 +3992,146 @@
         }
 
         /* ========================================
+           FAQ SECTION
+           ======================================== */
+        .faq-section {
+            padding: 120px 0;
+            background: var(--cream);
+        }
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .faq-header .section-title {
+            font-family: var(--font-serif);
+            font-size: clamp(36px, 5vw, 48px);
+            font-weight: 300;
+            color: var(--charcoal);
+            margin-bottom: 16px;
+        }
+
+        .faq-header .section-title em {
+            color: var(--terracotta);
+            font-style: italic;
+        }
+
+        .faq-header .section-subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 16px;
+            border: 1px solid rgba(195, 194, 174, 0.15);
+            box-shadow: 0 4px 20px rgba(195, 194, 174, 0.1);
+            overflow: hidden;
+            transition: all var(--transition-smooth);
+        }
+
+        .faq-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(195, 194, 174, 0.15);
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 28px;
+            cursor: pointer;
+            background: white;
+            transition: all var(--transition-fast);
+        }
+
+        .faq-question:hover {
+            background: rgba(255, 251, 248, 0.8);
+        }
+
+        .faq-question h3 {
+            font-family: var(--font-serif);
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--charcoal);
+            margin: 0;
+            line-height: 1.4;
+            padding-right: 16px;
+        }
+
+        .faq-icon {
+            width: 20px;
+            height: 20px;
+            color: var(--terracotta);
+            flex-shrink: 0;
+            transition: transform var(--transition-fast);
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: all var(--transition-smooth);
+            background: rgba(255, 251, 248, 0.5);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+
+        .faq-answer p {
+            padding: 0 28px 28px;
+            margin: 0;
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 768px) {
+            .faq-section {
+                padding: 80px 0;
+            }
+
+            .faq-header {
+                margin-bottom: 60px;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .faq-question {
+                padding: 20px 24px;
+            }
+
+            .faq-question h3 {
+                font-size: 16px;
+                padding-right: 12px;
+            }
+
+            .faq-answer p {
+                padding: 0 24px 24px;
+                font-size: 15px;
+            }
+        }
+
+        /* ========================================
            FOOTER
            ======================================== */
         .footer {
@@ -5019,6 +5159,114 @@
 
     <!-- Old basic subscription section removed - keeping the high-converting version -->
 
+    <!-- ====== FAQ SECTION ====== -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-header">
+                <h2 class="section-title">Frequently Asked <em>Questions</em></h2>
+                <p class="section-subtitle">Everything you need to know about Naturally Wyld's natural skincare products.</p>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Are your products really 100% natural?</h3>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! All Naturally Wyld products are made with 100% natural ingredients, carefully selected based on EWG safety guidelines. We never use harsh chemicals, synthetic fragrances, parabens, or sulfates. Every ingredient serves a purpose and is safe for even the most sensitive skin.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What makes ozonated oils special?</h3>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ozonated oils are medical-grade healing oils infused with ozone gas, creating powerful compounds that promote skin repair and regeneration. We're the only Canadian brand offering this proven technology, which is clinically shown to help with eczema, dry skin, cuts, and anti-aging.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How fast is shipping to Canada?</h3>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We ship from Kelowna, BC within 1-2 business days. Most Canadian orders arrive within 3-7 business days. Free shipping on orders over $50, and all Subscribe & Save orders include free shipping regardless of order size.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Why don't you use baking soda in your deodorants?</h3>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Baking soda can irritate sensitive skin and cause darkening of underarms over time. Our aluminum-free deodorants use gentle, effective alternatives that work all day without irritation - even for the most sensitive skin.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Is your packaging really plastic-free?</h3>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! All our packaging is 100% compostable and plastic-free. We use sustainable materials like cardboard tubes, glass jars, and biodegradable wrapping. We're helping tackle the 120 billion plastic containers produced by the beauty industry each year.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I cancel my subscription anytime?</h3>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! You can pause, skip, or cancel your Subscribe & Save subscription anytime with no fees or commitments. Simply log into your account or email us at hello@naturallywyld.ca. We make it easy because we're confident you'll love our products.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you offer a money-back guarantee?</h3>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We offer a 30-day money-back guarantee. If you're not completely satisfied with any product, contact us within 30 days of purchase for a full refund. We stand behind the quality of our natural skincare products.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Are your products safe for sensitive skin?</h3>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! Our products are specifically formulated for sensitive skin. We avoid common irritants like baking soda, synthetic fragrances, and harsh chemicals. Many customers with eczema, allergies, and sensitive skin use our products daily with great results.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Old duplicate sections removed for clean structure -->
 
     <!-- ====== FOOTER ====== -->
@@ -5126,6 +5374,34 @@
 
         document.querySelectorAll('.animate-on-scroll').forEach(el => {
             observer.observe(el);
+        });
+
+        // FAQ functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    if (isActive) {
+                        item.classList.remove('active');
+                    } else {
+                        item.classList.add('active');
+                    }
+                });
+            });
         });
 
         // Performance optimizations
