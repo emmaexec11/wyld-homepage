@@ -2517,12 +2517,18 @@
 
         .testimonials-grid {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-columns: 2fr 1fr;
             grid-template-rows: auto auto;
             gap: 24px;
             margin-bottom: 80px;
             position: relative;
             z-index: 2;
+        }
+
+        .testimonials-right-column {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
         }
 
         .featured-testimonial {
@@ -2769,6 +2775,11 @@
                 grid-row: auto;
                 grid-column: auto;
             }
+
+            .testimonials-right-column {
+                gap: 20px;
+            }
+        }
 
             .social-proof-stats {
                 flex-wrap: wrap;
@@ -4324,8 +4335,9 @@
                     </div>
                 </div>
 
-                <!-- Premium Text Testimonials -->
-                <div class="testimonial-card text-testimonial">
+                <!-- Right Column with 3 Text Testimonials -->
+                <div class="testimonials-right-column">
+                    <div class="testimonial-card text-testimonial">
                     <div class="testimonial-header">
                         <div class="customer-avatar">
                             <img src="https://images.unsplash.com/photo-1494790108755-2616b612b977?w=80&h=80&fit=crop&crop=faces" alt="Jessica R.">
@@ -4376,21 +4388,7 @@
                     </div>
                 </div>
 
-                <div class="testimonial-card text-testimonial">
-                    <div class="testimonial-header">
-                        <div class="customer-avatar">
-                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=faces" alt="Rachel T.">
-                        </div>
-                        <div class="testimonial-meta">
-                            <h4>Rachel T.</h4>
-                            <div class="rating-stars">★★★★★</div>
-                            <span class="purchase-badge">Verified Purchase</span>
-                        </div>
-                    </div>
-                    <blockquote>"After years of expensive skincare that irritated my rosacea, this ozonated oil healed my skin completely. I wish I found this sooner!"</blockquote>
-                    <div class="product-mention">
-                        <span>✨ Ozonated Olive Oil - Medical Grade</span>
-                    </div>
+                <!-- Rachel T. testimonial removed to fix grid layout -->
                 </div>
 
                 <!-- Trust signal card removed per Devon's request -->
