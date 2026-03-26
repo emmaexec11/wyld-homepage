@@ -2415,6 +2415,469 @@
         }
 
         /* ========================================
+           ULTRA PREMIUM TESTIMONIALS SECTION
+           ======================================== */
+        .testimonials-hero-section {
+            padding: 120px 0;
+            background: linear-gradient(135deg, var(--charcoal) 0%, #1e2422 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonials-hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(195, 194, 174, 0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(156, 82, 89, 0.06) 0%, transparent 50%);
+        }
+
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .social-proof-stats {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 48px;
+            padding: 24px 48px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 100px;
+            display: inline-flex;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-family: var(--font-serif);
+            font-size: 32px;
+            font-weight: 300;
+            color: white;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        .header-stars {
+            color: #FFB800;
+            font-size: 16px;
+            margin-top: 4px;
+            letter-spacing: 2px;
+        }
+
+        .stat-divider {
+            width: 1px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .testimonials-title {
+            font-family: var(--font-serif);
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 300;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+
+        .testimonials-title em {
+            font-style: italic;
+            color: var(--sage);
+        }
+
+        .testimonials-subtitle {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 24px;
+            margin-bottom: 80px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .featured-testimonial {
+            grid-row: 1 / -1;
+            grid-column: 1;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 24px;
+            padding: 32px;
+            box-shadow: 
+                0 24px 60px rgba(0, 0, 0, 0.15),
+                0 8px 24px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--sage) 0%, var(--terracotta) 100%);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 
+                0 32px 80px rgba(0, 0, 0, 0.2),
+                0 12px 32px rgba(0, 0, 0, 0.15);
+        }
+
+        .featured-testimonial {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 251, 248, 0.98) 100%);
+        }
+
+        .video-thumbnail {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 24px;
+            height: 280px;
+        }
+
+        .video-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--terracotta);
+            font-size: 24px;
+            cursor: pointer;
+            transition: all var(--transition-smooth);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .play-button:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+            background: rgba(255, 255, 255, 1);
+        }
+
+        .video-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .customer-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--sage);
+            flex-shrink: 0;
+        }
+
+        .customer-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .testimonial-meta h4 {
+            font-family: var(--font-serif);
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--charcoal);
+            margin-bottom: 4px;
+        }
+
+        .rating-stars {
+            color: #FFB800;
+            font-size: 14px;
+            margin-bottom: 4px;
+            letter-spacing: 1px;
+        }
+
+        .purchase-badge {
+            font-size: 11px;
+            color: var(--sage);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .testimonial-content blockquote,
+        .text-testimonial blockquote {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            font-weight: 300;
+            quotes: '"' '"';
+            position: relative;
+        }
+
+        .testimonial-content blockquote::before,
+        .text-testimonial blockquote::before {
+            content: open-quote;
+            font-size: 60px;
+            color: var(--sage);
+            font-family: var(--font-serif);
+            position: absolute;
+            top: -20px;
+            left: -10px;
+            line-height: 1;
+        }
+
+        .customer-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .customer-details h4 {
+            font-family: var(--font-serif);
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--charcoal);
+            margin-bottom: 4px;
+        }
+
+        .customer-details span {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .verified-badge {
+            width: 32px;
+            height: 32px;
+            background: var(--sage);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .verified-badge svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .product-mention {
+            padding: 12px 16px;
+            background: rgba(195, 194, 174, 0.1);
+            border-radius: 12px;
+            margin-top: 16px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .trust-signal-card {
+            background: linear-gradient(135deg, var(--sage) 0%, var(--sage-dark) 100%);
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .trust-signal-card::before {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .badge-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            color: #FFB800;
+        }
+
+        .badge-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .trust-content h3 {
+            font-family: var(--font-serif);
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .trust-content p {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 24px;
+        }
+
+        .trust-stats {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .trust-stat {
+            text-align: center;
+        }
+
+        .trust-number {
+            display: block;
+            font-family: var(--font-serif);
+            font-size: 24px;
+            font-weight: 300;
+            margin-bottom: 4px;
+        }
+
+        .trust-label {
+            font-size: 11px;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .testimonials-cta {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .testimonials-cta h3 {
+            font-family: var(--font-serif);
+            font-size: 32px;
+            font-weight: 300;
+            color: white;
+            margin-bottom: 16px;
+        }
+
+        .testimonials-cta p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 32px;
+        }
+
+        .testimonials-btn {
+            background: var(--terracotta) !important;
+            font-size: 16px !important;
+            padding: 18px 40px !important;
+        }
+
+        @media (max-width: 1024px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .featured-testimonial {
+                grid-row: auto;
+                grid-column: auto;
+            }
+
+            .social-proof-stats {
+                flex-wrap: wrap;
+                gap: 24px;
+                padding: 20px 32px;
+            }
+
+            .stat-divider {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .testimonials-hero-section {
+                padding: 80px 0;
+            }
+
+            .testimonial-card {
+                padding: 24px;
+            }
+
+            .video-thumbnail {
+                height: 200px;
+            }
+
+            .testimonials-header {
+                margin-bottom: 60px;
+            }
+
+            .testimonials-grid {
+                margin-bottom: 60px;
+            }
+
+            .social-proof-stats {
+                padding: 16px 24px;
+                gap: 16px;
+            }
+
+            .stat-number {
+                font-size: 24px;
+            }
+        }
+
+        /* ========================================
            PRODUCTS SECTION
            ======================================== */
         .products {
@@ -3866,6 +4329,168 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== ULTRA PREMIUM TESTIMONIALS SECTION ====== -->
+    <section class="testimonials-hero-section">
+        <div class="container">
+            <div class="testimonials-header">
+                <div class="social-proof-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">12,847</span>
+                        <span class="stat-label">Happy Customers</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number">4.9</span>
+                        <span class="stat-label">Average Rating</span>
+                        <div class="header-stars">★★★★★</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">Repurchase Rate</span>
+                    </div>
+                </div>
+                <h2 class="testimonials-title">What Our <em>Community Says</em></h2>
+                <p class="testimonials-subtitle">Real results from real people who've transformed their skincare routine with Naturally Wyld.</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <!-- Featured Video Testimonial -->
+                <div class="testimonial-card featured-testimonial">
+                    <div class="video-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=300&fit=crop&crop=faces" alt="Sarah's Testimonial">
+                        <div class="play-button">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18c.62-.39.62-1.29 0-1.68L9.54 5.98C8.87 5.55 8 6.03 8 6.82z"/>
+                            </svg>
+                        </div>
+                        <div class="video-badge">
+                            <span>★★★★★</span>
+                            <span>VERIFIED</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <blockquote>"I've tried everything for my sensitive skin, and Naturally Wyld's ozonated oil is the only thing that actually worked. My dermatologist was amazed!"</blockquote>
+                        <div class="customer-info">
+                            <div class="customer-details">
+                                <h4>Sarah M.</h4>
+                                <span>Verified Customer • Vancouver, BC</span>
+                            </div>
+                            <div class="verified-badge">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Premium Text Testimonials -->
+                <div class="testimonial-card text-testimonial">
+                    <div class="testimonial-header">
+                        <div class="customer-avatar">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b977?w=80&h=80&fit=crop&crop=faces" alt="Jessica R.">
+                        </div>
+                        <div class="testimonial-meta">
+                            <h4>Jessica R.</h4>
+                            <div class="rating-stars">★★★★★</div>
+                            <span class="purchase-badge">Verified Purchase</span>
+                        </div>
+                    </div>
+                    <blockquote>"Finally, a deodorant that actually works all day! I'm a nurse working 12-hour shifts, and this is the first natural deodorant that keeps me confident. Game changer!"</blockquote>
+                    <div class="product-mention">
+                        <span>💚 Natural Deodorant - Lavender Jasmine</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card text-testimonial">
+                    <div class="testimonial-header">
+                        <div class="customer-avatar">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=faces" alt="Michael K.">
+                        </div>
+                        <div class="testimonial-meta">
+                            <h4>Michael K.</h4>
+                            <div class="rating-stars">★★★★★</div>
+                            <span class="purchase-badge">Verified Purchase</span>
+                        </div>
+                    </div>
+                    <blockquote>"My wife ordered this and I was skeptical. Now I'm a believer - this makeup gives the most natural glow I've ever seen. She looks radiant!"</blockquote>
+                    <div class="product-mention">
+                        <span>🎨 Real Fruit Makeup - Multi Color Cream</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card text-testimonial">
+                    <div class="testimonial-header">
+                        <div class="customer-avatar">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=faces" alt="Amanda L.">
+                        </div>
+                        <div class="testimonial-meta">
+                            <h4>Amanda L.</h4>
+                            <div class="rating-stars">★★★★★</div>
+                            <span class="purchase-badge">Verified Purchase</span>
+                        </div>
+                    </div>
+                    <blockquote>"I have extremely sensitive teeth and most whitening products are too harsh. This toothpaste whitened my teeth without any sensitivity. Plus it tastes amazing!"</blockquote>
+                    <div class="product-mention">
+                        <span>🦷 Activated Charcoal Whitening Toothpaste</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card text-testimonial">
+                    <div class="testimonial-header">
+                        <div class="customer-avatar">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=faces" alt="Rachel T.">
+                        </div>
+                        <div class="testimonial-meta">
+                            <h4>Rachel T.</h4>
+                            <div class="rating-stars">★★★★★</div>
+                            <span class="purchase-badge">Verified Purchase</span>
+                        </div>
+                    </div>
+                    <blockquote>"After years of expensive skincare that irritated my rosacea, this ozonated oil healed my skin completely. I wish I found this sooner!"</blockquote>
+                    <div class="product-mention">
+                        <span>✨ Ozonated Olive Oil - Medical Grade</span>
+                    </div>
+                </div>
+
+                <!-- Trust Signal Card -->
+                <div class="testimonial-card trust-signal-card">
+                    <div class="trust-content">
+                        <div class="trust-badge-large">
+                            <div class="badge-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                            </div>
+                            <h3>Voted Best Local Brand</h3>
+                            <p>Kelowna's #1 choice for natural skincare</p>
+                        </div>
+                        <div class="trust-stats">
+                            <div class="trust-stat">
+                                <span class="trust-number">780+</span>
+                                <span class="trust-label">5-Star Reviews</span>
+                            </div>
+                            <div class="trust-stat">
+                                <span class="trust-number">100%</span>
+                                <span class="trust-label">Natural Promise</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonials-cta">
+                <h3>Join Thousands of Happy Customers</h3>
+                <p>Experience the Naturally Wyld difference with our risk-free 30-day guarantee</p>
+                <a href="#products" class="btn-primary testimonials-btn">
+                    Shop Now & Save 15%
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
             </div>
         </div>
     </section>
