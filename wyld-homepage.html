@@ -2395,17 +2395,222 @@
         }
 
         /* ========================================
-           BUNDLES HERO SECTION
+           BUNDLES SECTION - RMS BEAUTY STYLE
            ======================================== */
-        .bundles-hero-section {
+        .bundles-section {
+            background: white;
+            padding: 80px 0;
             position: relative;
-            min-height: 600px;
-            background: linear-gradient(135deg, #C3C2AE 0%, #B5B49A 100%);
+        }
+
+        .bundles-inner {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 60px;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .bundles-hero {
+            background: linear-gradient(135deg, #2C2C2C 0%, #1a1a1a 100%);
+            border-radius: 16px;
+            padding: 48px 40px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bundles-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(156, 82, 89, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .bundles-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .bundles-hero h2 {
+            font-family: var(--font-serif);
+            font-size: 42px;
+            font-weight: 300;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .bundles-hero p {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        .bundles-hero-product {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .bundles-cta {
+            color: white;
+            text-decoration: underline;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: opacity 0.3s ease;
+        }
+
+        .bundles-cta:hover {
+            opacity: 0.8;
+        }
+
+        .bundles-content {
+            padding: 0;
+        }
+
+        .bundles-title {
+            font-family: var(--font-serif);
+            font-size: 36px;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 48px;
+            color: var(--charcoal);
+        }
+
+        .bundle-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .bundle-card {
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .bundle-card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .bundle-image {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+        }
+
+        .bundle-info {
+            padding: 20px;
+        }
+
+        .bundle-name {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--charcoal);
+        }
+
+        .bundle-rating {
             display: flex;
             align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            padding: 80px 0;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .bundle-stars {
+            color: #ffc107;
+            font-size: 14px;
+        }
+
+        .bundle-reviews {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .bundle-price {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .bundle-current-price {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--charcoal);
+        }
+
+        .bundle-original-price {
+            font-size: 14px;
+            text-decoration: line-through;
+            color: #999;
+        }
+
+        .bundle-btn {
+            width: 100%;
+            background: transparent;
+            color: var(--charcoal);
+            border: 1px solid var(--charcoal);
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .bundle-btn:hover {
+            background: var(--charcoal);
+            color: white;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .bundles-inner {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .bundles-hero {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .bundle-cards {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+
+            .bundles-title {
+                font-size: 28px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .bundle-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .bundles-inner {
+                padding: 0 16px;
+            }
         }
 
         .bundles-background {
@@ -5438,42 +5643,92 @@
         </script>
     </section>
 
-    <!-- ====== BUNDLES HERO SECTION ====== -->
-    <section class="bundles-hero-section">
-        <div class="bundles-background">
-            <div class="floating-product floating-product-1">
-                <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/optimized-lavender-jasmine-deodorant.webp?v=1750293861" alt="Natural Deodorant">
+    <!-- ====== BUNDLES SECTION - RMS BEAUTY STYLE ====== -->
+    <section class="bundles-section">
+        <div class="bundles-inner">
+            <!-- Left Hero Section -->
+            <div class="bundles-hero">
+                <div class="bundles-hero-content">
+                    <h2>Three Products.<br>One Kit. All Natural.</h2>
+                    <p>Build your own routine to unlock savings up to 25% OFF.</p>
+                    <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/Multi_colour_cream_bundle_sharpened.jpg?v=1756846735" alt="Natural Beauty Bundle" class="bundles-hero-product">
+                    <div style="margin-top: 24px;">
+                        <a href="#" class="bundles-cta">Choose My Products</a>
+                    </div>
+                </div>
             </div>
-            <div class="floating-product floating-product-2">
-                <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/Multi_colour_cream_bundle_sharpened.jpg?v=1756846735" alt="Makeup Bundle">
-            </div>
-            <div class="floating-product floating-product-3">
-                <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/Naturally_Wyld_Ozonated_Whitening_Toothpaste_Activated_Charcoal_Fluoride-Free_SLS-Free_Remineralizing_Formula..jpg?v=1755557553" alt="Whitening Toothpaste">
-            </div>
-            <div class="floating-product floating-product-4">
-                <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/compressed_deodorants_image.png?v=1750293854" alt="Deodorant 5-Pack">
-            </div>
-            <div class="floating-product floating-product-5">
-                <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/products/Organic_Ozonated_Olive_Oil_Natural_Skincare_Canada.webp" alt="Ozonated Olive Oil">
-            </div>
-            <div class="floating-leaves floating-leaves-1"></div>
-            <div class="floating-leaves floating-leaves-2"></div>
-            <div class="floating-leaves floating-leaves-3"></div>
-        </div>
-        <div class="bundles-content">
-            <div class="bundles-text">
-                <h3 class="bundles-intro">New to Natural?</h3>
-                <h2 class="bundles-title">STARTER BUNDLES</h2>
-                <p class="bundles-subtitle">We've got you covered. Discover our tried and true natural favorites, curated for your wellness journey.</p>
-                <div class="bundles-actions">
-                    <a href="#bundles-grid" class="btn-primary bundles-shop-btn">
-                        Shop Bundles
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </a>
-                    <a href="#bundle-builder" class="btn-secondary bundle-builder-btn">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        Build a Bundle
-                    </a>
+
+            <!-- Right Product Grid -->
+            <div class="bundles-content">
+                <h2 class="bundles-title">Your Everyday Bundle Essentials</h2>
+                <div class="bundle-cards">
+                    <!-- Bundle 1 -->
+                    <div class="bundle-card">
+                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/Multi_colour_cream_bundle_sharpened.jpg?v=1756846735" alt="Natural Beauty Starter Kit" class="bundle-image">
+                        <div class="bundle-info">
+                            <div class="bundle-name">Natural Beauty Starter Kit</div>
+                            <div class="bundle-rating">
+                                <span class="bundle-stars">★★★★★</span>
+                                <span class="bundle-reviews">287 reviews</span>
+                            </div>
+                            <div class="bundle-price">
+                                <span class="bundle-current-price">$65.00</span>
+                                <span class="bundle-original-price">$85.00</span>
+                            </div>
+                            <button class="bundle-btn">Shop Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Bundle 2 -->
+                    <div class="bundle-card">
+                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/compressed_deodorants_image.png?v=1750293854" alt="Essential Deodorant Kit" class="bundle-image">
+                        <div class="bundle-info">
+                            <div class="bundle-name">Essential Deodorant Kit</div>
+                            <div class="bundle-rating">
+                                <span class="bundle-stars">★★★★★</span>
+                                <span class="bundle-reviews">412 reviews</span>
+                            </div>
+                            <div class="bundle-price">
+                                <span class="bundle-current-price">$58.00</span>
+                                <span class="bundle-original-price">$75.00</span>
+                            </div>
+                            <button class="bundle-btn">Shop Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Bundle 3 -->
+                    <div class="bundle-card">
+                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/optimized-lavender-jasmine-deodorant.webp?v=1750293861" alt="Complete Skincare Kit" class="bundle-image">
+                        <div class="bundle-info">
+                            <div class="bundle-name">Complete Skincare Kit</div>
+                            <div class="bundle-rating">
+                                <span class="bundle-stars">★★★★★</span>
+                                <span class="bundle-reviews">156 reviews</span>
+                            </div>
+                            <div class="bundle-price">
+                                <span class="bundle-current-price">$89.00</span>
+                                <span class="bundle-original-price">$115.00</span>
+                            </div>
+                            <button class="bundle-btn">Shop Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Bundle 4 -->
+                    <div class="bundle-card">
+                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/products/Organic_Ozonated_Olive_Oil_Natural_Skincare_Canada.webp" alt="Premium Ozonated Oil Bundle" class="bundle-image">
+                        <div class="bundle-info">
+                            <div class="bundle-name">Premium Oil Collection</div>
+                            <div class="bundle-rating">
+                                <span class="bundle-stars">★★★★★</span>
+                                <span class="bundle-reviews">203 reviews</span>
+                            </div>
+                            <div class="bundle-price">
+                                <span class="bundle-current-price">$95.00</span>
+                                <span class="bundle-original-price">$125.00</span>
+                            </div>
+                            <button class="bundle-btn">Shop Now</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
