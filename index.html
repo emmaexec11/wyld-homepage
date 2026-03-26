@@ -2034,6 +2034,193 @@
         }
 
         /* ========================================
+           BUNDLES HERO SECTION
+           ======================================== */
+        .bundles-hero-section {
+            position: relative;
+            min-height: 600px;
+            background: linear-gradient(135deg, #2C3E35 0%, #1A2B20 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 80px 0;
+        }
+
+        .bundles-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+        }
+
+        .floating-product {
+            position: absolute;
+            width: 120px;
+            height: 140px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            transform-style: preserve-3d;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-product img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .floating-product-1 {
+            top: 15%;
+            left: 10%;
+            --rotation: -15deg;
+            animation-delay: 0s;
+        }
+
+        .floating-product-2 {
+            top: 60%;
+            left: 8%;
+            --rotation: 12deg;
+            animation-delay: -2s;
+        }
+
+        .floating-product-3 {
+            top: 20%;
+            right: 12%;
+            --rotation: 8deg;
+            animation-delay: -1s;
+        }
+
+        .floating-product-4 {
+            top: 65%;
+            right: 15%;
+            --rotation: -20deg;
+            animation-delay: -3s;
+        }
+
+        .floating-product-5 {
+            top: 45%;
+            left: 5%;
+            --rotation: 25deg;
+            animation-delay: -4s;
+        }
+
+        .floating-leaves {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: rgba(195, 194, 174, 0.1);
+            border-radius: 0 100% 0 100%;
+            animation: floatLeaves 8s ease-in-out infinite;
+        }
+
+        .floating-leaves-1 {
+            top: 25%;
+            left: 25%;
+            animation-delay: -1s;
+        }
+
+        .floating-leaves-2 {
+            top: 70%;
+            right: 25%;
+            animation-delay: -3s;
+        }
+
+        .floating-leaves-3 {
+            top: 40%;
+            right: 5%;
+            animation-delay: -5s;
+        }
+
+        @keyframes float {
+            0%, 100% { 
+                transform: translateY(0px) rotate(var(--rotation, 0deg)); 
+            }
+            50% { 
+                transform: translateY(-20px) rotate(calc(var(--rotation, 0deg) + 5deg)); 
+            }
+        }
+
+        @keyframes floatLeaves {
+            0%, 100% { 
+                transform: translateY(0px) rotate(0deg); 
+                opacity: 0.1;
+            }
+            50% { 
+                transform: translateY(-15px) rotate(180deg); 
+                opacity: 0.2;
+            }
+        }
+
+        .bundles-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 600px;
+            padding: 0 20px;
+        }
+
+        .bundles-intro {
+            font-size: 16px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+
+        .bundles-title {
+            font-family: var(--font-serif);
+            font-size: clamp(36px, 6vw, 72px);
+            font-weight: 300;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .bundles-subtitle {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .bundles-actions {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .bundles-shop-btn {
+            background: var(--terracotta) !important;
+        }
+
+        .bundle-builder-btn {
+            background: transparent !important;
+            border: 2px solid rgba(255, 255, 255, 0.3) !important;
+            color: white !important;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .bundle-builder-btn:hover {
+            background: rgba(255, 255, 255, 0.1) !important;
+            border-color: rgba(255, 255, 255, 0.6) !important;
+            transform: translateY(-3px) !important;
+        }
+
+        .bundle-builder-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* ========================================
            PRODUCTS SECTION
            ======================================== */
         .products {
@@ -3018,6 +3205,32 @@
             .subscribe-card-stack {
                 padding: 20px;
             }
+
+            .bundles-hero-section {
+                min-height: 500px;
+                padding: 60px 0;
+            }
+
+            .floating-product {
+                width: 80px;
+                height: 100px;
+            }
+
+            .floating-leaves {
+                width: 40px;
+                height: 40px;
+            }
+
+            .bundles-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .bundles-actions .btn-primary,
+            .bundles-actions .btn-secondary {
+                width: 280px;
+                justify-content: center;
+            }
         }
     </style>
 </head>
@@ -3342,6 +3555,47 @@
                 });
             });
         </script>
+    </section>
+
+    <!-- ====== BUNDLES HERO SECTION ====== -->
+    <section class="bundles-hero-section">
+        <div class="bundles-background">
+            <div class="floating-product floating-product-1">
+                <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/optimized-lavender-jasmine-deodorant.webp?v=1750293861" alt="Natural Deodorant">
+            </div>
+            <div class="floating-product floating-product-2">
+                <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/Multi_colour_cream_bundle_sharpened.jpg?v=1756846735" alt="Makeup Bundle">
+            </div>
+            <div class="floating-product floating-product-3">
+                <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/Naturally_Wyld_Ozonated_Whitening_Toothpaste_Activated_Charcoal_Fluoride-Free_SLS-Free_Remineralizing_Formula..jpg?v=1755557553" alt="Whitening Toothpaste">
+            </div>
+            <div class="floating-product floating-product-4">
+                <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/compressed_deodorants_image.png?v=1750293854" alt="Deodorant 5-Pack">
+            </div>
+            <div class="floating-product floating-product-5">
+                <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/products/Organic_Ozonated_Olive_Oil_Natural_Skincare_Canada.webp" alt="Ozonated Olive Oil">
+            </div>
+            <div class="floating-leaves floating-leaves-1"></div>
+            <div class="floating-leaves floating-leaves-2"></div>
+            <div class="floating-leaves floating-leaves-3"></div>
+        </div>
+        <div class="bundles-content">
+            <div class="bundles-text">
+                <h3 class="bundles-intro">New to Natural?</h3>
+                <h2 class="bundles-title">STARTER BUNDLES</h2>
+                <p class="bundles-subtitle">We've got you covered. Discover our tried and true natural favorites, curated for your wellness journey.</p>
+                <div class="bundles-actions">
+                    <a href="#bundles-grid" class="btn-primary bundles-shop-btn">
+                        Shop Bundles
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="#bundle-builder" class="btn-secondary bundle-builder-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        Build a Bundle Subscription
+                    </a>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- ====== SUBSCRIPTION SECTION ====== -->
