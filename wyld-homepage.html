@@ -4382,6 +4382,19 @@
             color: white;
         }
 
+        .animate-spin {
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
         @media (max-width: 768px) {
             .vip-signup-section {
                 padding: 60px 0;
@@ -5620,9 +5633,11 @@
                         </div>
                     </div>
 
-                    <div class="vip-form">
+                    <form class="vip-form" id="klaviyo-vip-form" action="https://manage.kmail-lists.com/subscriptions/subscribe" method="POST">
+                        <input type="hidden" name="g" value="YOUR_KLAVIYO_LIST_ID">
+                        <input type="hidden" name="$fields" value="$first_name,$last_name">
                         <div class="form-input-wrapper">
-                            <input type="email" placeholder="Enter your email address" class="vip-email-input" required>
+                            <input type="email" name="email" placeholder="Enter your email address" class="vip-email-input" required>
                             <button type="submit" class="vip-submit-btn">
                                 Get My 15% Off
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -5630,7 +5645,7 @@
                                 </svg>
                             </button>
                         </div>
-                    </div>
+                    </form>
 
                     <div class="vip-privacy">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -5750,6 +5765,48 @@
 
         document.querySelectorAll('.animate-on-scroll').forEach(el => {
             observer.observe(el);
+        });
+
+        // Klaviyo VIP form handling
+        document.addEventListener('DOMContentLoaded', function() {
+            const klaviyoForm = document.getElementById('klaviyo-vip-form');
+            const submitBtn = klaviyoForm.querySelector('.vip-submit-btn');
+            const originalBtnText = submitBtn.innerHTML;
+            
+            klaviyoForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Show loading state
+                submitBtn.innerHTML = '<svg class="animate-spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M14,2 14,6"/><path d="M14,18 14,22"/><path d="M4.93,4.93 6.34,6.34"/><path d="M17.66,17.66 19.07,19.07"/><path d="M2,14 6,14"/><path d="M18,14 22,14"/><path d="M4.93,19.07 6.34,17.66"/><path d="M17.66,6.34 19.07,4.93"/></svg>Joining...';
+                submitBtn.disabled = true;
+                
+                const formData = new FormData(klaviyoForm);
+                
+                fetch(klaviyoForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    mode: 'no-cors'
+                }).then(() => {
+                    // Success
+                    submitBtn.innerHTML = '✓ Welcome to the Family!';
+                    submitBtn.style.background = '#4ade80';
+                    klaviyoForm.querySelector('.vip-email-input').value = '';
+                    
+                    // Reset after 3 seconds
+                    setTimeout(() => {
+                        submitBtn.innerHTML = originalBtnText;
+                        submitBtn.style.background = '';
+                        submitBtn.disabled = false;
+                    }, 3000);
+                }).catch(() => {
+                    // Error
+                    submitBtn.innerHTML = 'Try Again';
+                    submitBtn.disabled = false;
+                    setTimeout(() => {
+                        submitBtn.innerHTML = originalBtnText;
+                    }, 2000);
+                });
+            });
         });
 
         // FAQ functionality
