@@ -2986,12 +2986,14 @@
         }
 
         .subscribe-save-inner {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            gap: 80px !important;
+            align-items: center !important;
             position: relative;
             z-index: 2;
+            width: 100%;
+            max-width: none;
         }
 
         .save-badge-hero {
@@ -3199,6 +3201,13 @@
 
         .subscription-preview {
             position: relative;
+            min-width: 0;
+            width: 100%;
+        }
+
+        .subscribe-save-content {
+            min-width: 0;
+            width: 100%;
         }
 
         .preview-card {
@@ -3383,9 +3392,10 @@
 
         @media (max-width: 1024px) {
             .subscribe-save-inner {
-                grid-template-columns: 1fr;
-                gap: 60px;
+                grid-template-columns: 1fr !important;
+                gap: 60px !important;
                 text-align: center;
+                display: grid !important;
             }
 
             .subscription-preview {
