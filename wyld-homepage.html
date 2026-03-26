@@ -1653,20 +1653,20 @@
         .products-grid {
             display: flex;
             flex-wrap: nowrap !important;
-            gap: 20px;
+            gap: 16px;
             width: 100%;
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 0 40px;
+            padding: 0;
             box-sizing: border-box;
-            justify-content: center;
+            justify-content: space-evenly;
         }
 
         .product-showcase-card {
-            flex: 0 0 calc(20% - 15px) !important;
-            width: calc(20% - 15px) !important;
-            min-width: 160px !important;
-            max-width: calc(20% - 15px) !important;
+            flex: 1;
+            width: auto;
+            min-width: 180px;
+            max-width: 220px;
             box-sizing: border-box;
             background: white;
             border-radius: var(--radius-lg);
@@ -1900,9 +1900,9 @@
             transition: all var(--transition-smooth);
             position: relative;
             border: 1px solid rgba(195, 194, 174, 0.1);
-            flex: 1 1 calc(18% - 10px);
-            min-width: 160px;
-            max-width: 200px;
+            flex: 1;
+            min-width: 180px;
+            max-width: 220px;
         }
 
         .product-showcase-card:hover {
@@ -2247,16 +2247,16 @@
             .products-grid {
                 display: flex !important;
                 flex-wrap: nowrap !important;
-                gap: 20px !important;
-                padding: 0 40px !important;
-                justify-content: center !important;
+                gap: 16px !important;
+                padding: 0 20px !important;
+                justify-content: space-evenly !important;
             }
             
             .product-showcase-card {
-                flex: 0 0 calc(22% - 15px) !important;
-                width: calc(22% - 15px) !important;
-                max-width: calc(22% - 15px) !important;
-                min-width: 160px !important;
+                flex: 1 !important;
+                width: auto !important;
+                max-width: 220px !important;
+                min-width: 180px !important;
             }
         }
 
@@ -2284,8 +2284,9 @@
             }
 
             .products-grid {
-                gap: 10px;
-                padding: 0 30px;
+                gap: 12px;
+                padding: 0 15px;
+                justify-content: space-evenly;
             }
 
             .subscription-options {
@@ -5309,7 +5310,7 @@
                 <div class="product-showcase-card" data-categories="ozonated bestsellers">
                     <div class="product-badge bestseller">BEST SELLER</div>
                     <div class="product-image-container">
-                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/Naturally_Wyld_Ozonated_Olive_Oil_60ml_Medical_Grade_Ozone_Therapy_Skincare.jpg?v=1755557553" alt="Medical Grade Ozonated Olive Oil">
+                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/ozonated-olive-oil-naturally-wyld.webp?v=1750293854" alt="Medical Grade Ozonated Olive Oil">
                         <div class="product-hover-overlay">
                             <button class="hover-add-to-cart">ADD TO CART</button>
                         </div>
