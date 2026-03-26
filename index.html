@@ -681,6 +681,148 @@
         }
 
         /* ========================================
+           CUSTOMER BENEFITS SECTION
+           ======================================== */
+        .customer-benefits-section {
+            padding: 60px 0;
+            background: var(--cream);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .benefit-card {
+            text-align: center;
+            background: white;
+            border-radius: 16px;
+            padding: 32px 20px;
+            border: 1px solid rgba(195, 194, 174, 0.15);
+            box-shadow: 0 4px 20px rgba(195, 194, 174, 0.08);
+            transition: all var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--sage) 0%, var(--terracotta) 100%);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(195, 194, 174, 0.15);
+        }
+
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--sage) 0%, var(--sage-dark) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            transition: all var(--transition-smooth);
+        }
+
+        .benefit-card:hover .benefit-icon {
+            background: linear-gradient(135deg, var(--terracotta) 0%, var(--terracotta-dark) 100%);
+            transform: scale(1.1);
+        }
+
+        .benefit-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke-width: 2;
+        }
+
+        .benefit-card h3 {
+            font-family: var(--font-serif);
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--charcoal);
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .benefit-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .benefit-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--terracotta);
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all var(--transition-smooth);
+            min-width: 100px;
+        }
+
+        .benefit-btn:hover {
+            background: var(--terracotta-dark);
+            transform: translateY(-1px);
+        }
+
+        @media (max-width: 1024px) {
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .customer-benefits-section {
+                padding: 50px 0;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .benefit-card {
+                padding: 28px 20px;
+            }
+
+            .benefit-icon {
+                width: 50px;
+                height: 50px;
+                margin-bottom: 16px;
+            }
+
+            .benefit-icon svg {
+                width: 20px;
+                height: 20px;
+            }
+
+            .benefit-card h3 {
+                font-size: 16px;
+            }
+        }
+
+        /* ========================================
            TRUST BANNER SECTION
            ======================================== */
         .trust-banner {
@@ -4825,6 +4967,61 @@
         </div>
     </section>
 
+    <!-- ====== CUSTOMER BENEFITS SECTION ====== -->
+    <section class="customer-benefits-section">
+        <div class="container">
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                            <path d="M12 17h.01"/>
+                        </svg>
+                    </div>
+                    <h3>Subscribe & Save</h3>
+                    <p>Save 15% and get deliveries right to your doorstep!</p>
+                    <a href="#subscribe" class="benefit-btn">SAVE</a>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <h3>Free Shipping</h3>
+                    <p>Free shipping for Kelowna locals and orders over $75</p>
+                    <a href="#products" class="benefit-btn">FREE</a>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3>30-Day Guarantee</h3>
+                    <p>Love it or your money back - no questions asked</p>
+                    <a href="#faq" class="benefit-btn">GUARANTEED</a>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </div>
+                    <h3>Join Our Newsletter</h3>
+                    <p>A special treat just for you when you join our mailing list</p>
+                    <a href="#vip-signup" class="benefit-btn">JOIN</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ====== TRUST BANNER ====== -->
     <section class="trust-banner">
         <div class="scrolling-content">
@@ -5576,7 +5773,7 @@
     <!-- Old duplicate sections removed for clean structure -->
 
     <!-- ====== VIP EMAIL SIGNUP SECTION ====== -->
-    <section class="vip-signup-section">
+    <section class="vip-signup-section" id="vip-signup">
         <div class="container">
             <div class="vip-signup-inner">
                 <div class="vip-content">
@@ -5699,10 +5896,11 @@
                 <div class="footer-col">
                     <h4>Support</h4>
                     <ul>
-                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#faq">FAQ</a></li>
                         <li><a href="#">Shipping</a></li>
                         <li><a href="#">Returns</a></li>
-                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Manage Subscription</a></li>
+                        <li><a href="#">Affiliate Program</a></li>
                         <li><a href="#">Track Order</a></li>
                     </ul>
                 </div>
@@ -5834,6 +6032,22 @@
                         item.classList.add('active');
                     }
                 });
+            });
+        });
+
+        // Smooth scrolling for benefit card links
+        document.querySelectorAll('.benefit-btn').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
         });
 
