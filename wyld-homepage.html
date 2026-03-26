@@ -2398,15 +2398,15 @@
            ======================================== */
         .bundles-section {
             background: white;
-            padding: 80px 40px;
+            padding: 80px 60px 80px 80px;
             position: relative;
             width: 100%;
         }
 
         .bundles-inner {
             display: grid;
-            grid-template-columns: 450px 1fr;
-            gap: 80px;
+            grid-template-columns: 400px 1fr;
+            gap: 60px;
             align-items: flex-start;
             max-width: 100%;
             margin: 0;
@@ -2522,8 +2522,9 @@
 
         .bundle-cards {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            width: 100%;
         }
 
         .bundle-card {
@@ -2643,7 +2644,7 @@
 
         @media (max-width: 900px) {
             .bundle-cards {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
                 gap: 16px;
             }
         }
@@ -5789,7 +5790,39 @@
                         </div>
                     </div>
 
-                    <!-- Removed 4th bundle to keep only 3 in one row -->
+                    <!-- Bundle 4 -->
+                    <div class="bundle-card">
+                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/products/Organic_Ozonated_Olive_Oil_Natural_Skincare_Canada.webp" alt="Premium Ozonated Oil Bundle" class="bundle-image">
+                        <div class="bundle-info">
+                            <div class="bundle-name">Premium Oil Collection</div>
+                            <div class="bundle-rating">
+                                <span class="bundle-stars">★★★★★</span>
+                                <span class="bundle-reviews">203 reviews</span>
+                            </div>
+                            <div class="bundle-price">
+                                <span class="bundle-current-price">$95.00</span>
+                                <span class="bundle-original-price">$125.00</span>
+                            </div>
+                            <button class="bundle-btn">Shop Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Bundle 5 -->
+                    <div class="bundle-card">
+                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/Naturally_Wyld_Ozonated_Whitening_Toothpaste_Activated_Charcoal_Fluoride-Free_SLS-Free_Remineralizing_Formula..jpg?v=1755557553" alt="Complete Oral Care Kit" class="bundle-image">
+                        <div class="bundle-info">
+                            <div class="bundle-name">Complete Oral Care Kit</div>
+                            <div class="bundle-rating">
+                                <span class="bundle-stars">★★★★★</span>
+                                <span class="bundle-reviews">89 reviews</span>
+                            </div>
+                            <div class="bundle-price">
+                                <span class="bundle-current-price">$72.00</span>
+                                <span class="bundle-original-price">$95.00</span>
+                            </div>
+                            <button class="bundle-btn">Shop Now</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
