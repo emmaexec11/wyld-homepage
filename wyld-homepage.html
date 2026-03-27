@@ -5200,7 +5200,7 @@
         }
     </style>
     <style>
-        /* OVERRIDE CSS TO MAKE PRODUCT SECTIONS MATCH PERFECTLY - CARDS + BUTTONS */
+        /* OVERRIDE CSS TO MAKE PRODUCT SECTIONS MATCH PERFECTLY - FORCE SAME COLUMN WIDTHS */
         .product-showcase-card, .bundle-card {
             background: white !important;
             border: 1px solid #eee !important;
@@ -5209,8 +5209,23 @@
             transition: all 0.3s ease !important;
             position: relative !important;
             box-shadow: none !important;
-            width: 100% !important;
+            width: 280px !important;
+            max-width: 280px !important;
+            min-width: 280px !important;
             height: auto !important;
+            margin: 0 auto !important;
+        }
+        .products-grid {
+            display: flex !important;
+            justify-content: center !important;
+            gap: 20px !important;
+            flex-wrap: wrap !important;
+        }
+        .bundles-grid {
+            display: flex !important;
+            justify-content: center !important;
+            gap: 20px !important;
+            flex-wrap: wrap !important;
         }
         .product-showcase-card:hover, .bundle-card:hover {
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1) !important;
