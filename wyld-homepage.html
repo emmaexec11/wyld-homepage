@@ -5200,7 +5200,16 @@
         }
     </style>
     <style>
-        /* OVERRIDE CSS TO MAKE PRODUCT SECTIONS MATCH PERFECTLY - FORCE SAME COLUMN WIDTHS */
+        /* DYNAMIC RESPONSIVE GRID + ALIGNED BUTTONS */
+        .products-grid, .bundles-grid {
+            display: grid !important;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+            gap: 30px !important;
+            max-width: 1400px !important;
+            margin: 0 auto !important;
+            padding: 0 40px !important;
+        }
+        
         .product-showcase-card, .bundle-card {
             background: white !important;
             border: 1px solid #eee !important;
@@ -5209,23 +5218,54 @@
             transition: all 0.3s ease !important;
             position: relative !important;
             box-shadow: none !important;
-            width: 280px !important;
-            max-width: 280px !important;
-            min-width: 280px !important;
-            height: auto !important;
-            margin: 0 auto !important;
-        }
-        .products-grid {
+            width: 100% !important;
             display: flex !important;
-            justify-content: center !important;
-            gap: 20px !important;
-            flex-wrap: wrap !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+            min-height: 500px !important;
         }
-        .bundles-grid {
+        
+        .product-info, .bundle-info {
+            padding: 20px !important;
             display: flex !important;
+            flex-direction: column !important;
+            flex-grow: 1 !important;
+            justify-content: space-between !important;
+        }
+        
+        /* Force buttons to bottom and same size */
+        .product-btn, .bundle-btn {
+            margin-top: auto !important;
+            width: 100% !important;
+            background: transparent !important;
+            color: var(--charcoal) !important;
+            border: 1px solid var(--charcoal) !important;
+            padding: 18px 24px !important;
+            font-size: 13px !important;
+            font-weight: 500 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 1.5px !important;
+            border-radius: 2px !important;
+            transition: all 0.3s ease !important;
+            cursor: pointer !important;
+            min-height: 56px !important;
+            display: flex !important;
+            align-items: center !important;
             justify-content: center !important;
-            gap: 20px !important;
-            flex-wrap: wrap !important;
+        }
+        
+        /* Responsive breakpoints for different desktop sizes */
+        @media (min-width: 1200px) {
+            .products-grid { grid-template-columns: repeat(6, 1fr) !important; }
+            .bundles-grid { grid-template-columns: repeat(4, 1fr) !important; }
+        }
+        @media (min-width: 900px) and (max-width: 1199px) {
+            .products-grid { grid-template-columns: repeat(4, 1fr) !important; }
+            .bundles-grid { grid-template-columns: repeat(3, 1fr) !important; }
+        }
+        @media (min-width: 768px) and (max-width: 899px) {
+            .products-grid { grid-template-columns: repeat(3, 1fr) !important; }
+            .bundles-grid { grid-template-columns: repeat(2, 1fr) !important; }
         }
         .product-showcase-card:hover, .bundle-card:hover {
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1) !important;
