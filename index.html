@@ -2381,11 +2381,11 @@
         .bundles-hero {
             background: linear-gradient(135deg, #C3C2AE 0%, #B5B49A 100%);
             border-radius: 16px;
-            padding: 25px 20px;
+            padding: 30px 25px;
             text-align: center;
             position: relative;
             overflow: hidden;
-            height: 370px;
+            height: 450px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -2434,26 +2434,28 @@
         }
 
         .bundles-shop-btn {
-            background: var(--terracotta);
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 50px;
-            font-size: 12px;
-            font-weight: 600;
+            background: transparent;
+            color: var(--charcoal);
+            border: 1px solid var(--charcoal);
+            padding: 18px 24px;
+            border-radius: 2px;
+            font-size: 13px;
+            font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             text-decoration: none;
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 6px;
             transition: all 0.3s ease;
+            min-height: 56px;
         }
 
         .bundles-shop-btn:hover {
-            background: var(--terracotta-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(156, 82, 89, 0.4);
+            background: var(--charcoal);
+            color: white;
+            transform: translateY(-1px);
         }
 
         .bundle-builder-btn {
@@ -2750,13 +2752,13 @@
 
             .bundles-hero {
                 height: auto;
-                min-height: 300px;
+                min-height: 350px;
                 padding: 40px 30px;
             }
 
             .bundles-hero {
-                height: 370px;
-                padding: 25px 20px;
+                height: 450px;
+                padding: 30px 25px;
             }
 
             .bundles-hero h2 {
@@ -2782,8 +2784,8 @@
             }
 
             .bundles-hero {
-                padding: 20px 15px;
-                height: 350px;
+                padding: 25px 20px;
+                height: 420px;
             }
 
             .bundles-hero h2 {
@@ -2961,8 +2963,9 @@
         }
 
         .bundles-shop-btn {
-            background: var(--terracotta) !important;
-            color: white !important;
+            background: transparent !important;
+            color: var(--charcoal) !important;
+            border: 1px solid var(--charcoal) !important;
         }
 
         .bundle-builder-btn {
