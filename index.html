@@ -5200,8 +5200,8 @@
         }
     </style>
     <style>
-        /* OVERRIDE CSS TO MAKE PRODUCT SECTIONS MATCH PERFECTLY */
-        .product-showcase-card {
+        /* OVERRIDE CSS TO MAKE PRODUCT SECTIONS MATCH PERFECTLY - CARDS + BUTTONS */
+        .product-showcase-card, .bundle-card {
             background: white !important;
             border: 1px solid #eee !important;
             border-radius: 8px !important;
@@ -5209,27 +5209,54 @@
             transition: all 0.3s ease !important;
             position: relative !important;
             box-shadow: none !important;
+            width: 100% !important;
+            height: auto !important;
         }
-        .product-showcase-card:hover {
+        .product-showcase-card:hover, .bundle-card:hover {
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1) !important;
             transform: translateY(-4px) !important;
         }
-        .product-image-container {
+        .product-image-container, .bundle-image {
             position: relative !important;
             overflow: hidden !important;
+            height: 240px !important;
         }
-        .product-image-container img {
+        .product-image-container img, .bundle-image img {
             width: 100% !important;
             height: 240px !important;
             object-fit: cover !important;
             transition: transform 0.3s ease !important;
         }
-        .product-info {
+        .product-info, .bundle-info {
             padding: 20px !important;
         }
         .product-stars, .bundle-stars {
             color: #FFD700 !important;
             font-size: 14px !important;
+        }
+        /* MAKE BUTTONS IDENTICAL */
+        .product-btn, .bundle-btn {
+            width: 100% !important;
+            background: transparent !important;
+            color: var(--charcoal) !important;
+            border: 1px solid var(--charcoal) !important;
+            padding: 18px 24px !important;
+            font-size: 13px !important;
+            font-weight: 500 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 1.5px !important;
+            border-radius: 2px !important;
+            transition: all 0.3s ease !important;
+            cursor: pointer !important;
+            min-height: 56px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+        .product-btn:hover, .bundle-btn:hover {
+            background: var(--charcoal) !important;
+            color: white !important;
+            transform: translateY(-1px) !important;
         }
     </style>
 </head>
