@@ -1651,15 +1651,14 @@
         }
 
         .products-grid {
-            display: flex;
-            flex-wrap: nowrap !important;
-            gap: 16px;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 20px;
             width: 100%;
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0;
+            padding: 0 20px;
             box-sizing: border-box;
-            justify-content: space-evenly;
         }
 
         .product-showcase-card {
@@ -2522,8 +2521,8 @@
 
         .bundle-cards {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 30px;
             width: 100%;
             justify-content: space-between;
         }
@@ -2694,6 +2693,46 @@
             padding: 24px;
         }
 
+        /* ========================================
+           BADGE STYLING - RMS BEAUTY INSPIRED
+           ======================================== */
+        .bundle-badge, .product-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            padding: 6px 12px;
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            z-index: 10;
+        }
+
+        /* New Badge - Black */
+        .bundle-badge.new, .product-badge.new {
+            background: #000;
+            color: white;
+        }
+
+        /* Best Seller Badge - Warm Coral */
+        .bundle-badge.bestseller, .product-badge.bestseller {
+            background: #FF6B6B;
+            color: white;
+        }
+
+        /* Subscribe & Save Badge - Sage Green */
+        .bundle-badge.subscribe, .product-badge.subscribe {
+            background: #C3C2AE;
+            color: #2C2C2C;
+        }
+
+        /* Limited Edition Badge - Terracotta */
+        .bundle-badge.limited, .product-badge.limited {
+            background: var(--terracotta);
+            color: white;
+        }
+
         /* Mobile Responsive */
         @media (max-width: 1400px) {
             .bundle-cards {
@@ -2708,8 +2747,25 @@
             }
 
             .bundle-cards {
-                grid-template-columns: repeat(4, 1fr);
-                gap: 30px;
+                grid-template-columns: repeat(6, 1fr);
+                gap: 20px;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 16px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .bundle-cards {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
             }
         }
 
@@ -5703,7 +5759,45 @@
                 </div>
 
                 <!-- Body Butter -->
-                <!-- REMOVED: Only showing 4 products like Dr. Squatch -->
+                <!-- Product 5 -->
+                <div class="product-showcase-card" data-categories="bestsellers new">
+                    <div class="product-badge new">New</div>
+                    <div class="product-image-container">
+                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/Naturally_Wyld_Muscle_Balm.webp?v=1750293854" alt="Muscle Relief Balm">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-title">Muscle Relief Balm</div>
+                        <div class="product-rating">
+                            <span class="product-stars">★★★★★</span>
+                            <span class="product-reviews">134 reviews</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="product-current-price">$28.00</span>
+                            <span class="product-original-price">$35.00</span>
+                        </div>
+                        <button class="product-btn">Shop Now</button>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-showcase-card" data-categories="skincare subscribe">
+                    <div class="product-badge subscribe">Subscribe & Save</div>
+                    <div class="product-image-container">
+                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/naturally-wyld-lip-balm.webp?v=1750293854" alt="Organic Lip Balm Set">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-title">Organic Lip Balm Set</div>
+                        <div class="product-rating">
+                            <span class="product-stars">★★★★★</span>
+                            <span class="product-reviews">298 reviews</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="product-current-price">$22.00</span>
+                            <span class="product-original-price">$28.00</span>
+                        </div>
+                        <button class="product-btn">Shop Now</button>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -5812,6 +5906,7 @@
                 <div class="bundle-cards">
                     <!-- Bundle 1 -->
                     <div class="bundle-card">
+                        <div class="bundle-badge bestseller">Best Seller</div>
                         <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/Multi_colour_cream_bundle_sharpened.jpg?v=1756846735" alt="Natural Beauty Starter Kit" class="bundle-image">
                         <div class="bundle-info">
                             <div class="bundle-name">Natural Beauty Starter Kit</div>
@@ -5829,6 +5924,7 @@
 
                     <!-- Bundle 2 -->
                     <div class="bundle-card">
+                        <div class="bundle-badge subscribe">Subscribe & Save</div>
                         <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/compressed_deodorants_image.png?v=1750293854" alt="Essential Deodorant Kit" class="bundle-image">
                         <div class="bundle-info">
                             <div class="bundle-name">Essential Deodorant Kit</div>
@@ -5846,6 +5942,7 @@
 
                     <!-- Bundle 3 -->
                     <div class="bundle-card">
+                        <div class="bundle-badge new">New</div>
                         <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/optimized-lavender-jasmine-deodorant.webp?v=1750293861" alt="Complete Skincare Kit" class="bundle-image">
                         <div class="bundle-info">
                             <div class="bundle-name">Complete Skincare Kit</div>
@@ -5863,6 +5960,7 @@
 
                     <!-- Bundle 4 -->
                     <div class="bundle-card">
+                        <div class="bundle-badge limited">Limited Edition</div>
                         <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/products/Organic_Ozonated_Olive_Oil_Natural_Skincare_Canada.webp" alt="Premium Ozonated Oil Bundle" class="bundle-image">
                         <div class="bundle-info">
                             <div class="bundle-name">Premium Oil Collection</div>
@@ -5878,7 +5976,41 @@
                         </div>
                     </div>
 
-                    <!-- Removed Bundle 5 for better spacing -->
+                    <!-- Bundle 5 -->
+                    <div class="bundle-card">
+                        <div class="bundle-badge new">New</div>
+                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/Naturally_Wyld_Ozonated_Whitening_Toothpaste_Activated_Charcoal_Fluoride-Free_SLS-Free_Remineralizing_Formula..jpg?v=1755557553" alt="Complete Oral Care Kit" class="bundle-image">
+                        <div class="bundle-info">
+                            <div class="bundle-name">Complete Oral Care Kit</div>
+                            <div class="bundle-rating">
+                                <span class="bundle-stars">★★★★★</span>
+                                <span class="bundle-reviews">89 reviews</span>
+                            </div>
+                            <div class="bundle-price">
+                                <span class="bundle-current-price">$72.00</span>
+                                <span class="bundle-original-price">$95.00</span>
+                            </div>
+                            <button class="bundle-btn">Shop Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Bundle 6 -->
+                    <div class="bundle-card">
+                        <div class="bundle-badge subscribe">Subscribe & Save</div>
+                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/Multi_colour_cream_bundle_sharpened.jpg?v=1756846735" alt="Natural Makeup Collection" class="bundle-image">
+                        <div class="bundle-info">
+                            <div class="bundle-name">Natural Makeup Collection</div>
+                            <div class="bundle-rating">
+                                <span class="bundle-stars">★★★★★</span>
+                                <span class="bundle-reviews">267 reviews</span>
+                            </div>
+                            <div class="bundle-price">
+                                <span class="bundle-current-price">$45.00</span>
+                                <span class="bundle-original-price">$68.00</span>
+                            </div>
+                            <button class="bundle-btn">Shop Now</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
