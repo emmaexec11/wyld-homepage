@@ -2619,6 +2619,81 @@
             transform: translateY(-1px);
         }
 
+        /* ========================================
+           PRODUCT SHOWCASE STYLING TO MATCH BUNDLES
+           ======================================== */
+        .product-btn {
+            width: 100%;
+            background: transparent;
+            color: var(--charcoal);
+            border: 1px solid var(--charcoal);
+            padding: 18px 24px;
+            font-size: 13px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            min-height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-btn:hover {
+            background: var(--charcoal);
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        .product-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 8px;
+        }
+
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .product-stars {
+            color: #FFD700;
+            font-size: 14px;
+        }
+
+        .product-reviews {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .product-price {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .product-current-price {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--charcoal);
+        }
+
+        .product-original-price {
+            font-size: 14px;
+            text-decoration: line-through;
+            color: #999;
+        }
+
+        .product-info {
+            padding: 24px;
+        }
+
         /* Mobile Responsive */
         @media (max-width: 1400px) {
             .bundle-cards {
@@ -5552,23 +5627,18 @@
                     <div class="product-badge bestseller">BEST SELLER</div>
                     <div class="product-image-container">
                         <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/optimized-lavender-jasmine-deodorant.webp?v=1750293861" alt="Natural Vegan Eco-Friendly Deodorants">
-                        <div class="product-hover-overlay">
-                            <button class="hover-add-to-cart">ADD TO CART</button>
-                        </div>
                     </div>
                     <div class="product-info">
-                        <h3 class="product-title">Natural Deodorant</h3>
-                        <div class="product-pricing">
-                            <span class="current-price">$32.95</span>
-                            <span class="original-price">$42.00</span>
-                            <span class="discount-text">Save 22%</span>
-                        </div>
+                        <div class="product-title">Natural Deodorant</div>
                         <div class="product-rating">
-                            <div class="stars">★★★★★</div>
-                            <span class="review-count">160+ Reviews</span>
+                            <span class="product-stars">★★★★★</span>
+                            <span class="product-reviews">160 reviews</span>
                         </div>
-                        <p class="product-description">Medical-grade ozonated healing oil - Only in Canada</p>
-                        <!-- Hover add to cart replaces subscription info -->
+                        <div class="product-price">
+                            <span class="product-current-price">$32.95</span>
+                            <span class="product-original-price">$42.00</span>
+                        </div>
+                        <button class="product-btn">Shop Now</button>
                     </div>
                 </div>
 
@@ -5577,23 +5647,18 @@
                     <div class="product-badge bestseller">BEST SELLER</div>
                     <div class="product-image-container">
                         <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/compressed_deodorants_image.png?v=1750293854" alt="5 Deodorant Gift Pack">
-                        <div class="product-hover-overlay">
-                            <button class="hover-add-to-cart">ADD TO CART</button>
-                        </div>
                     </div>
                     <div class="product-info">
-                        <h3 class="product-title">Deodorant 5-Pack</h3>
-                        <div class="product-pricing">
-                            <span class="current-price">$44.00</span>
-                            <span class="original-price">$52.00</span>
-                            <span class="discount-text">Save 15%</span>
-                        </div>
+                        <div class="product-title">Essential Deodorant Kit</div>
                         <div class="product-rating">
-                            <div class="stars">★★★★★</div>
-                            <span class="review-count">240+ Reviews</span>
+                            <span class="product-stars">★★★★★</span>
+                            <span class="product-reviews">412 reviews</span>
                         </div>
-                        <p class="product-description">Your choice of 4 natural deodorants</p>
-                        <!-- Hover add to cart replaces subscription info -->
+                        <div class="product-price">
+                            <span class="product-current-price">$58.00</span>
+                            <span class="product-original-price">$75.00</span>
+                        </div>
+                        <button class="product-btn">Shop Now</button>
                     </div>
                 </div>
 
@@ -5602,23 +5667,18 @@
                     <div class="product-badge bestseller">BEST SELLER</div>
                     <div class="product-image-container">
                         <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/ozonated-olive-oil-naturally-wyld.webp?v=1750293854" alt="Medical Grade Ozonated Olive Oil">
-                        <div class="product-hover-overlay">
-                            <button class="hover-add-to-cart">ADD TO CART</button>
-                        </div>
                     </div>
                     <div class="product-info">
-                        <h3 class="product-title">Ozonated Olive Oil</h3>
-                        <div class="product-pricing">
-                            <span class="current-price">$32.95</span>
-                            <span class="original-price">$36.95</span>
-                            <span class="discount-text">Save 11%</span>
-                        </div>
+                        <div class="product-title">Complete Skincare Kit</div>
                         <div class="product-rating">
-                            <div class="stars">★★★★★</div>
-                            <span class="review-count">160+ Reviews</span>
+                            <span class="product-stars">★★★★★</span>
+                            <span class="product-reviews">156 reviews</span>
                         </div>
-                        <p class="product-description">Medical-grade ozone infusion for healing skin</p>
-                        <!-- Hover add to cart replaces subscription info -->
+                        <div class="product-price">
+                            <span class="product-current-price">$89.00</span>
+                            <span class="product-original-price">$115.00</span>
+                        </div>
+                        <button class="product-btn">Shop Now</button>
                     </div>
                 </div>
 
@@ -5627,23 +5687,18 @@
                     <div class="product-badge limited">LIMITED EDITION</div>
                     <div class="product-image-container">
                         <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/Multi_colour_cream_bundle_sharpened.jpg?v=1756846735" alt="Multi Colour Cream Tester Pack">
-                        <div class="product-hover-overlay">
-                            <button class="hover-add-to-cart">ADD TO CART</button>
-                        </div>
                     </div>
                     <div class="product-info">
-                        <h3 class="product-title">Fruit Makeup 3-Pack</h3>
-                        <div class="product-pricing">
-                            <span class="current-price">$24.00</span>
-                            <span class="original-price">$32.00</span>
-                            <span class="discount-text">Save 25%</span>
-                        </div>
+                        <div class="product-title">Premium Oil Collection</div>
                         <div class="product-rating">
-                            <div class="stars">★★★★★</div>
-                            <span class="review-count">1,243 Reviews</span>
+                            <span class="product-stars">★★★★★</span>
+                            <span class="product-reviews">203 reviews</span>
                         </div>
-                        <p class="product-description">Natural fruit pigmented makeup - full size trio</p>
-                        <!-- Hover add to cart replaces subscription info -->
+                        <div class="product-price">
+                            <span class="product-current-price">$95.00</span>
+                            <span class="product-original-price">$125.00</span>
+                        </div>
+                        <button class="product-btn">Shop Now</button>
                     </div>
                 </div>
 
