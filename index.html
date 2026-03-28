@@ -443,10 +443,18 @@
             content: none !important;
         }
         
-        /* Removed hover effect to prevent styling conflicts */
+        .testimonial-text {
+            flex: 1;
+        }
+        
+        .testimonial-text p {
+            margin: 0;
+        }
         
         .testimonial-content {
-            display: block;
+            display: flex;
+            align-items: center;
+            gap: 16px;
         }
         
         .testimonial-avatar {
@@ -454,9 +462,9 @@
             height: 50px;
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid rgba(156, 82, 89, 0.3);
+            border: 3px solid rgba(156, 82, 89, 0.3);
             flex-shrink: 0;
-            transform: translateY(-8px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
         
         /* Removed - using testimonial-quote now */
@@ -470,17 +478,7 @@
             white-space: nowrap;
         }
         
-        .inline-avatar {
-            width: 42px !important;
-            height: 42px !important;
-            border-radius: 50% !important;
-            display: inline !important;
-            vertical-align: middle !important;
-            margin-left: 8px !important;
-            margin-right: 0 !important;
-            border: 2px solid rgba(156, 82, 89, 0.3) !important;
-            object-fit: cover !important;
-        }
+        /* Removed inline-avatar - using side-by-side layout now */
         
         .hero-features-visual {
             margin: -28px 0 4px -20px;
@@ -1310,12 +1308,13 @@
             }
             
             .testimonial-content {
-                display: block;
+                display: flex;
+                gap: 12px;
             }
             
-            .inline-avatar {
-                width: 36px !important;
-                height: 36px !important;
+            .testimonial-avatar {
+                width: 42px;
+                height: 42px;
             }
             
             .testimonial-text p {
@@ -1364,12 +1363,13 @@
             }
             
             .testimonial-content {
-                display: block;
+                display: flex;
+                gap: 10px;
             }
             
-            .inline-avatar {
-                width: 32px !important;
-                height: 32px !important;
+            .testimonial-avatar {
+                width: 38px;
+                height: 38px;
             }
             
             .testimonial-text p {
@@ -5531,7 +5531,12 @@
                     <p class="hero-subtitle"><strong>All natural personal care and cosmetics made in Canada</strong></p>
                     
                     <div class="hero-testimonial">
-                        <p class="testimonial-quote">"I'm really picky about ingredients, and this is one of the few brands I actually trust." <span class="testimonial-author">— Shaye, Kelowna</span> <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/Sarah_Testimonial_7bbfe559-aa29-4b88-9f87-785caac8c755.png?v=1752441393" alt="Customer testimonial" class="testimonial-avatar inline-avatar"></p>
+                        <div class="testimonial-content">
+                            <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/Sarah_Testimonial_7bbfe559-aa29-4b88-9f87-785caac8c755.png?v=1752441393" alt="Customer testimonial" class="testimonial-avatar">
+                            <div class="testimonial-text">
+                                <p class="testimonial-quote">"I'm really picky about ingredients, and this is one of the few brands I actually trust." <span class="testimonial-author">— Shaye, Kelowna</span></p>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="hero-checks">
