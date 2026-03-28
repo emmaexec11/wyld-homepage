@@ -429,9 +429,7 @@
         }
         
         .testimonial-content {
-            display: flex;
-            align-items: center;
-            gap: 16px;
+            display: block;
         }
         
         .testimonial-avatar {
@@ -456,6 +454,19 @@
             font-size: 11px;
             color: var(--text-primary);
             font-weight: 500;
+            display: inline;
+            margin-left: 4px;
+        }
+        
+        .inline-avatar {
+            width: 32px !important;
+            height: 32px !important;
+            border-radius: 50% !important;
+            display: inline !important;
+            vertical-align: middle !important;
+            margin-left: 8px !important;
+            margin-right: 0 !important;
+            border: 2px solid #ddd !important;
         }
         
         .hero-features-visual {
@@ -1287,13 +1298,12 @@
             }
             
             .testimonial-content {
-                gap: 10px;
+                display: block;
             }
             
-            .testimonial-avatar {
-                width: 38px;
-                height: 38px;
-                transform: translateY(-6px);
+            .inline-avatar {
+                width: 28px !important;
+                height: 28px !important;
             }
             
             .testimonial-text p {
@@ -1343,13 +1353,12 @@
             }
             
             .testimonial-content {
-                gap: 8px;
+                display: block;
             }
             
-            .testimonial-avatar {
-                width: 34px;
-                height: 34px;
-                transform: translateY(-5px);
+            .inline-avatar {
+                width: 24px !important;
+                height: 24px !important;
             }
             
             .testimonial-text p {
@@ -5512,10 +5521,8 @@
                     
                     <div class="hero-testimonial">
                         <div class="testimonial-content">
-                            <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/Sarah_Testimonial_7bbfe559-aa29-4b88-9f87-785caac8c755.png?v=1752441393" alt="Customer testimonial" class="testimonial-avatar">
                             <div class="testimonial-text">
-                                <p>"As a new mother, I'm extra cautious about ingredients. Naturally Wyld is the only brand I truly trust - everything is ultra clean!"</p>
-                                <span class="testimonial-author">— Shaye, Kelowna</span>
+                                <p>"As a new mother, I'm extra cautious about ingredients. Naturally Wyld is the only brand I truly trust - everything is ultra clean!" <span class="testimonial-author">— Shaye, Kelowna</span> <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/Sarah_Testimonial_7bbfe559-aa29-4b88-9f87-785caac8c755.png?v=1752441393" alt="Customer testimonial" class="testimonial-avatar inline-avatar"></p>
                             </div>
                         </div>
                     </div>
