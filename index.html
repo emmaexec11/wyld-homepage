@@ -412,15 +412,35 @@
         
         .hero-testimonial {
             margin: 8px 0 6px 0;
-            padding: 6px 10px 4px 10px;
-            background: transparent;
-            border-radius: 12px;
-            border: none;
-            backdrop-filter: none;
             max-width: 480px;
-            transition: all 0.3s ease;
+        }
+        
+        .testimonial-quote {
+            font-size: 13px;
+            font-style: italic;
+            color: var(--text-primary);
+            line-height: 1.3;
+            margin: 0 !important;
+            background: transparent !important;
+            background-color: transparent !important;
+            background-image: none !important;
+            border: none !important;
+            border-radius: 0 !important;
+            padding: 0 !important;
             box-shadow: none !important;
-            filter: none !important;
+            outline: none !important;
+        }
+        
+        .testimonial-quote::before,
+        .testimonial-quote::after {
+            display: none !important;
+            content: none !important;
+        }
+        
+        .hero-testimonial::before,
+        .hero-testimonial::after {
+            display: none !important;
+            content: none !important;
         }
         
         .hero-testimonial:hover {
@@ -443,13 +463,7 @@
             transform: translateY(-8px);
         }
         
-        .testimonial-text p {
-            margin: 0 0 4px 0;
-            font-style: italic;
-            color: var(--text-primary);
-            font-size: 13px;
-            line-height: 1.3;
-        }
+        /* Removed - using testimonial-quote now */
         
         .testimonial-author {
             font-size: 11px;
@@ -5522,11 +5536,7 @@
                     <p class="hero-subtitle"><strong>All natural personal care and cosmetics made in Canada</strong></p>
                     
                     <div class="hero-testimonial">
-                        <div class="testimonial-content">
-                            <div class="testimonial-text">
-                                <p>"As a new mother, I'm extra cautious about ingredients. Naturally Wyld is the only brand I truly trust - everything is ultra clean!" <span class="testimonial-author">— Shaye, Kelowna</span> <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/Sarah_Testimonial_7bbfe559-aa29-4b88-9f87-785caac8c755.png?v=1752441393" alt="Customer testimonial" class="testimonial-avatar inline-avatar"></p>
-                            </div>
-                        </div>
+                        <p class="testimonial-quote">"As a new mother, I'm extra cautious about ingredients. Naturally Wyld is the only brand I truly trust - everything is ultra clean!" <span class="testimonial-author">— Shaye, Kelowna</span> <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/Sarah_Testimonial_7bbfe559-aa29-4b88-9f87-785caac8c755.png?v=1752441393" alt="Customer testimonial" class="testimonial-avatar inline-avatar"></p>
                     </div>
 
                     <div class="hero-checks">
