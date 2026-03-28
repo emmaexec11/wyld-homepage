@@ -2720,16 +2720,18 @@
 
         .floating-badge {
             position: absolute;
-            top: 30px;
-            right: 30px;
-            background: rgba(255, 255, 255, 0.95);
+            bottom: -20px;
+            left: 30px;
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            padding: 16px 20px;
-            border-radius: 50px;
-            text-align: center;
-            box-shadow: 0 8px 32px rgba(195, 194, 174, 0.3);
+            padding: 20px 24px;
+            border-radius: 16px;
+            text-align: left;
+            box-shadow: 0 12px 40px rgba(195, 194, 174, 0.25);
             border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 320px;
+            z-index: 10;
         }
 
         .badge-text {
@@ -2748,13 +2750,49 @@
             letter-spacing: 2px;
         }
 
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .customer-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid var(--sage);
+            flex-shrink: 0;
+        }
+
+        .avatar-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .customer-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .customer-name {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--terracotta);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
         .testimonial-text {
-            font-size: 12px;
+            font-size: 13px;
             font-style: italic;
             color: var(--charcoal);
             line-height: 1.4;
-            margin: 8px 0 6px 0;
-            text-align: center;
+            margin: 0;
+            text-align: left;
         }
 
         .testimonial-author {
@@ -2838,9 +2876,10 @@
             }
 
             .floating-badge {
-                top: 20px;
-                right: 20px;
-                padding: 12px 16px;
+                bottom: -15px;
+                left: 20px;
+                padding: 16px 18px;
+                max-width: 280px;
             }
 
             .why-features {
@@ -5840,9 +5879,16 @@
                         <div class="image-overlay"></div>
                     </div>
                     <div class="floating-badge">
-                        <div class="badge-stars">★★★★★</div>
+                        <div class="testimonial-header">
+                            <div class="customer-avatar">
+                                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b5c8?w=60&h=60&fit=crop&crop=face" alt="Jennifer T." class="avatar-image">
+                            </div>
+                            <div class="customer-info">
+                                <div class="badge-stars">★★★★★</div>
+                                <span class="customer-name">Jennifer T.</span>
+                            </div>
+                        </div>
                         <p class="testimonial-text">"I've tried SO many 'clean' brands. This is the first one that actually stays on and looks natural!"</p>
-                        <span class="testimonial-author">— Jennifer T.</span>
                     </div>
                 </div>
                 <div class="why-choose-content">
