@@ -2363,34 +2363,35 @@
            ======================================== */
         .product-btn {
             width: 100%;
-            background: transparent;
-            color: var(--charcoal);
-            border: 1px solid var(--charcoal);
-            padding: 18px 24px;
-            font-size: 13px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #333333;
+            border: 1px solid #333333;
+            padding: 13px 23px;
+            font-size: 12px;
             font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            border-radius: 2px;
+            border-radius: 50px;
             transition: all 0.3s ease;
             cursor: pointer;
-            min-height: 56px;
-            display: flex;
+            min-height: 48px;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
+            gap: 5px;
         }
 
         .product-btn:hover {
-            background: var(--charcoal);
-            color: white;
-            transform: translateY(-1px);
+            background: #C3C2AE;
+            color: var(--white);
+            border-color: #C3C2AE;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(195, 194, 174, 0.4);
         }
 
         .product-title {
             font-size: 16px;
-            font-weight: 600;
+            font-weight: 500;
             color: var(--charcoal);
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             font-family: inherit;
         }
 
@@ -2419,8 +2420,8 @@
         }
 
         .product-current-price {
-            font-size: 18px;
-            font-weight: 600;
+            font-size: 19px;
+            font-weight: 700;
             color: var(--charcoal);
         }
 
@@ -2450,27 +2451,24 @@
             z-index: 10;
         }
 
-        /* New Badge - Clean Black */
+        /* Unified Badge Style - Premium & Consistent */
         .bundle-badge.new, .product-badge.new {
-            background: #000000;
+            background: #9A6B65;
             color: white;
         }
 
-        /* Best Seller Badge - Coral */
         .bundle-badge.bestseller, .product-badge.bestseller {
-            background: #E8A898;
+            background: #9A6B65;
             color: white;
         }
 
-        /* Subscribe & Save Badge - Light Gray */
         .bundle-badge.subscribe, .product-badge.subscribe {
-            background: #F5F3F0;
-            color: #5D4037;
+            background: #C3C2AE;
+            color: white;
         }
 
-        /* Limited Edition Badge - Coral */
         .bundle-badge.limited, .product-badge.limited {
-            background: #E8A898;
+            background: #9A6B65;
             color: white;
         }
 
@@ -3954,7 +3952,7 @@
         .products-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
+            gap: 40px;
         }
 
         .product-card {
@@ -3963,27 +3961,28 @@
             overflow: hidden;
             transition: all var(--transition-smooth);
             position: relative;
-            border: 1px solid rgba(156, 82, 89, 0.15);
+            border: 1px solid rgba(195, 194, 174, 0.1);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
             group: true;
         }
 
         .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
-            border-color: rgba(156, 82, 89, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            border-color: rgba(195, 194, 174, 0.2);
         }
 
         .product-badge {
             position: absolute;
-            top: 16px;
-            left: 16px;
-            background: var(--terracotta);
-            color: var(--white);
-            padding: 6px 14px;
-            border-radius: 50px;
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 1px;
+            top: 12px;
+            left: 12px;
+            background: #9A6B65;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
             text-transform: uppercase;
             z-index: 5;
         }
@@ -4039,7 +4038,7 @@
         }
 
         .product-info {
-            padding: 24px 28px 28px;
+            padding: 28px 32px 32px;
         }
 
         .product-category {
