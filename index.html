@@ -690,7 +690,51 @@
 
         /* Hero floating cards removed for premium clean aesthetic */
 
-        /* Floating card styles removed for clean premium design */
+        /* Premium Review Badge */
+        .premium-review-badge {
+            position: absolute;
+            bottom: 40px;
+            left: -30px;
+            background: rgba(255, 251, 248, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 16px 20px;
+            border: 1px solid rgba(195, 194, 174, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+        
+        .premium-review-content {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .premium-rating-display {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2C2C2C;
+            letter-spacing: -0.5px;
+        }
+        
+        .premium-stars {
+            display: flex;
+            gap: 1px;
+        }
+        
+        .premium-star {
+            width: 12px;
+            height: 12px;
+            fill: #9A6B65;
+        }
+        
+        .premium-review-text {
+            font-size: 11px;
+            color: #666;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
 
         /* Customer benefits section removed */
 
@@ -1275,6 +1319,25 @@
             .scrolling-content span {
                 font-size: 11px;
                 gap: 4px;
+            }
+            
+            .premium-review-badge {
+                left: 10px;
+                bottom: 20px;
+                padding: 12px 14px;
+            }
+            
+            .premium-rating-display {
+                font-size: 14px;
+            }
+            
+            .premium-star {
+                width: 9px;
+                height: 9px;
+            }
+            
+            .premium-review-text {
+                font-size: 10px;
             }
 
             /* Trust banner padding now standard */
@@ -5222,7 +5285,20 @@
                 height: 342px;
             }
 
-            /* Floating cards removed for premium aesthetic */
+            .premium-review-badge {
+                left: -15px;
+                bottom: 30px;
+                padding: 14px 16px;
+            }
+            
+            .premium-rating-display {
+                font-size: 16px;
+            }
+            
+            .premium-star {
+                width: 10px;
+                height: 10px;
+            }
 
             .trust-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -5565,7 +5641,19 @@
                     <div class="hero-image-container">
                         <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/Naturally_Wyld_Header_Image_Optimized_Main_Image_1.png?v=1772736025" alt="Naturally Wyld natural skincare products header image" loading="eager">
                     </div>
-                    <!-- Review badge removed for premium, clean aesthetic -->
+                    <div class="premium-review-badge">
+                        <div class="premium-review-content">
+                            <div class="premium-rating-display">5.0</div>
+                            <div class="premium-stars">
+                                <svg class="premium-star" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                                <svg class="premium-star" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                                <svg class="premium-star" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                                <svg class="premium-star" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                                <svg class="premium-star" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                            </div>
+                        </div>
+                        <div class="premium-review-text">780+ Reviews</div>
+                    </div>
                     <!-- Floating card removed per Devon's request -->
                 </div>
             </div>
