@@ -1735,11 +1735,11 @@
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 20px;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 30px;
             width: 100%;
             margin: 0;
-            padding: 0 20px;
+            padding: 0 80px;
             box-sizing: border-box;
         }
 
@@ -2480,9 +2480,9 @@
             }
 
             .products-grid {
-                grid-template-columns: repeat(5, 1fr);
-                gap: 20px;
-                padding: 0 20px;
+                grid-template-columns: repeat(6, 1fr);
+                gap: 30px;
+                padding: 0 80px;
             }
         }
 
@@ -5491,19 +5491,19 @@
         
         /* RESPONSIVE - ALL SCREEN SIZES */
         @media (min-width: 1400px) {
-            .products-grid { grid-template-columns: repeat(5, 1fr) !important; gap: 24px !important; padding: 0 20px !important; }
+            .products-grid { grid-template-columns: repeat(6, 1fr) !important; gap: 30px !important; padding: 0 80px !important; }
             .bundles-grid { grid-template-columns: repeat(4, 1fr) !important; gap: 30px !important; }
         }
         @media (min-width: 1200px) and (max-width: 1399px) {
-            .products-grid { grid-template-columns: repeat(5, 1fr) !important; padding: 0 20px !important; }
+            .products-grid { grid-template-columns: repeat(6, 1fr) !important; padding: 0 60px !important; }
             .bundles-grid { grid-template-columns: repeat(4, 1fr) !important; }
         }
         @media (min-width: 900px) and (max-width: 1199px) {
-            .products-grid { grid-template-columns: repeat(4, 1fr) !important; padding: 0 15px !important; }
+            .products-grid { grid-template-columns: repeat(4, 1fr) !important; padding: 0 40px !important; }
             .bundles-grid { grid-template-columns: repeat(3, 1fr) !important; }
         }
         @media (min-width: 768px) and (max-width: 899px) {
-            .products-grid { grid-template-columns: repeat(3, 1fr) !important; padding: 0 10px !important; }
+            .products-grid { grid-template-columns: repeat(3, 1fr) !important; padding: 0 30px !important; }
             .bundles-grid { grid-template-columns: repeat(2, 1fr) !important; }
         }
         @media (max-width: 767px) {
@@ -5802,6 +5802,26 @@
                         <div class="product-price">
                             <span class="product-current-price">$22.00</span>
                             <span class="product-original-price">$28.00</span>
+                        </div>
+                        <button class="product-btn">Shop Now</button>
+                    </div>
+                </div>
+
+                <!-- Essential Deodorant Kit -->
+                <div class="product-showcase-card" data-categories="deodorants bestsellers">
+                    <div class="product-badge bestseller">BEST SELLER</div>
+                    <div class="product-image-container">
+                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/compressed_deodorants_image.png?v=1750293854" alt="Essential Deodorant Kit">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-title">Essential Deodorant Kit</div>
+                        <div class="product-rating">
+                            <span class="product-stars">★★★★★</span>
+                            <span class="product-reviews">412 reviews</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="product-current-price">$58.00</span>
+                            <span class="product-original-price">$75.00</span>
                         </div>
                         <button class="product-btn">Shop Now</button>
                     </div>
@@ -6919,3 +6939,5 @@
 <!-- WIDER PRODUCTS + SINGLE IMAGES FIX: 20260328185504 -->
 
 <!-- FULL SCREEN 5 PRODUCTS + WIDER CARDS: 20260328185819 -->
+
+<!-- 6 PRODUCTS MATCHING BUNDLE WIDTH: 20260328190045 -->
