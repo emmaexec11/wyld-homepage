@@ -2129,8 +2129,8 @@
            BUNDLES SECTION - RMS BEAUTY STYLE
            ======================================== */
         .bundles-section {
-            background: white;
-            padding: 80px 60px 80px 80px;
+            background: var(--cream);
+            padding: 100px 60px 100px 80px;
             position: relative;
             width: 100%;
         }
@@ -2146,11 +2146,13 @@
         }
 
         .bundles-hero {
-            background: linear-gradient(135deg, #C3C2AE 0%, #B5B49A 100%);
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 16px;
-            padding: 30px 25px;
+            padding: 40px 35px;
             text-align: center;
             position: relative;
+            border: 1px solid rgba(195, 194, 174, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
             overflow: hidden;
             height: 405px;
             display: flex;
@@ -2269,15 +2271,17 @@
 
         .bundle-card {
             background: white;
-            border: 1px solid #eee;
-            border-radius: 8px;
+            border: 1px solid rgba(195, 194, 174, 0.1);
+            border-radius: var(--radius-lg);
             overflow: hidden;
-            transition: all 0.3s ease;
+            transition: all var(--transition-smooth);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
         }
 
         .bundle-card:hover {
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
             transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            border-color: rgba(195, 194, 174, 0.2);
         }
 
         .bundle-image {
@@ -2287,7 +2291,7 @@
         }
 
         .bundle-info {
-            padding: 20px;
+            padding: 28px 32px 32px;
         }
 
         .bundle-name {
@@ -2335,27 +2339,28 @@
 
         .bundle-btn {
             width: 100%;
-            background: transparent;
-            color: var(--charcoal);
-            border: 1px solid var(--charcoal);
-            padding: 18px 24px;
-            font-size: 13px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #333333;
+            border: 1px solid #333333;
+            padding: 13px 23px;
+            font-size: 12px;
             font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            border-radius: 2px;
+            border-radius: 50px;
             transition: all 0.3s ease;
             cursor: pointer;
-            min-height: 56px;
-            display: flex;
+            min-height: 48px;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
+            gap: 5px;
         }
 
         .bundle-btn:hover {
-            background: var(--charcoal);
-            color: white;
-            transform: translateY(-1px);
+            background: #C3C2AE;
+            color: var(--white);
+            border-color: #C3C2AE;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(195, 194, 174, 0.4);
         }
 
         /* ========================================
@@ -5913,9 +5918,9 @@
             <!-- Left Hero Section -->
             <div class="bundles-hero">
                 <div class="bundles-hero-content">
-                    <h2>STARTER<br>BUNDLES</h2>
-                    <div style="background: rgba(44, 44, 44, 0.1); color: #2C2C2C; padding: 6px 12px; border-radius: 12px; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; display: inline-block;">Save 20% on Bundles</div>
-                    <p>Perfect starter sets for natural beginners.</p>
+                    <div class="section-tag" style="color: #9A6B65; margin-bottom: 16px;">Bundle & Save</div>
+                    <h2>Curated Collections,<br><em>Simplified</em></h2>
+                    <p style="font-size: 15px; color: rgba(44, 44, 44, 0.7); line-height: 1.5; max-width: 300px; margin: 0 auto 28px;">Everything you need to start your natural beauty journey</p>
                     <div class="bundles-actions">
                         <a href="#bundles-grid" class="bundles-shop-btn">
                             Shop Bundles
