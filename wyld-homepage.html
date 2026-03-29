@@ -2394,7 +2394,7 @@
 
         .product-title {
             font-size: 16px;
-            font-weight: 500;
+            font-weight: 400;
             color: var(--charcoal);
             margin-bottom: 10px;
             font-family: inherit;
@@ -2414,7 +2414,7 @@
 
         .product-reviews {
             font-size: 14px;
-            color: #666;
+            color: #999;
         }
 
         .product-price {
@@ -2425,8 +2425,8 @@
         }
 
         .product-current-price {
-            font-size: 19px;
-            font-weight: 700;
+            font-size: 20px;
+            font-weight: 800;
             color: var(--charcoal);
         }
 
@@ -5417,13 +5417,13 @@
         }
         
         .product-showcase-card, .bundle-card {
-            background: white !important;
-            border: 1px solid #eee !important;
-            border-radius: 8px !important;
+            background: var(--cream) !important;
+            border: 1px solid rgba(195, 194, 174, 0.1) !important;
+            border-radius: var(--radius-lg) !important;
             overflow: hidden !important;
             transition: all 0.3s ease !important;
             position: relative !important;
-            box-shadow: none !important;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04) !important;
             width: 100% !important;
             height: 468px !important;
             display: flex !important;
@@ -5523,8 +5523,9 @@
             .bundles-grid { grid-template-columns: 1fr !important; }
         }
         .product-showcase-card:hover, .bundle-card:hover {
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1) !important;
             transform: translateY(-4px) !important;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08) !important;
+            border-color: rgba(195, 194, 174, 0.2) !important;
         }
         .product-image-container, .bundle-image {
             position: relative !important;
@@ -5544,29 +5545,30 @@
             color: #FFD700 !important;
             font-size: 14px !important;
         }
-        /* MAKE BUTTONS IDENTICAL */
+        /* DEVON'S EXACT REQUIREMENTS - ROUNDED BUTTONS LIKE HERO */
         .product-btn, .bundle-btn {
             width: 100% !important;
-            background: transparent !important;
-            color: var(--charcoal) !important;
-            border: 1px solid var(--charcoal) !important;
-            padding: 18px 24px !important;
-            font-size: 13px !important;
+            background: rgba(255, 255, 255, 0.9) !important;
+            color: #333333 !important;
+            border: 1px solid #333333 !important;
+            padding: 13px 23px !important;
+            font-size: 12px !important;
             font-weight: 500 !important;
-            text-transform: uppercase !important;
-            letter-spacing: 1.5px !important;
-            border-radius: 2px !important;
+            border-radius: 50px !important;
             transition: all 0.3s ease !important;
             cursor: pointer !important;
-            min-height: 56px !important;
-            display: flex !important;
+            min-height: 48px !important;
+            display: inline-flex !important;
             align-items: center !important;
             justify-content: center !important;
+            gap: 5px !important;
         }
         .product-btn:hover, .bundle-btn:hover {
-            background: var(--charcoal) !important;
-            color: white !important;
-            transform: translateY(-1px) !important;
+            background: #C3C2AE !important;
+            color: var(--white) !important;
+            border-color: #C3C2AE !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 8px 25px rgba(195, 194, 174, 0.4) !important;
         }
     </style>
 </head>
@@ -6917,3 +6919,5 @@
 
 <!-- FINAL CACHE DESTRUCTION: 20260328180508 -->
 <script>console.log('BUNDLES TRANSFORM LOADED: 20260328180508');</script>
+
+<!-- DEVON'S 5 EXACT CHANGES APPLIED: 20260328181051 -->
