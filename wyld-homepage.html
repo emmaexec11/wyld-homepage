@@ -2366,11 +2366,151 @@
 
         .bundle-cards {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(5, 1fr);
             gap: 30px;
             width: 100%;
             padding: 0;
             margin: 0;
+        }
+
+        /* Professional Subscribe & Save Card - 2026 Design */
+        .subscription-card {
+            background: linear-gradient(135deg, #C3C2AE 0%, #B8B7A4 100%);
+            border-radius: 20px;
+            padding: 32px 24px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                0 8px 32px rgba(195, 194, 174, 0.25),
+                0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .subscription-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+        }
+
+        .subscription-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 
+                0 20px 60px rgba(195, 194, 174, 0.35),
+                0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .subscription-content {
+            text-align: center;
+            color: white;
+        }
+
+        .subscription-badge {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            display: inline-block;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .subscription-title {
+            font-size: 24px;
+            font-weight: 400;
+            margin: 0 0 12px;
+            color: white;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .subscription-title em {
+            color: rgba(255, 255, 255, 0.9);
+            font-style: italic;
+        }
+
+        .subscription-subtitle {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .subscription-benefits {
+            margin-bottom: 24px;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.95);
+            justify-content: flex-start;
+        }
+
+        .benefit-icon {
+            width: 16px;
+            height: 16px;
+            color: rgba(255, 255, 255, 0.9);
+            flex-shrink: 0;
+        }
+
+        .subscription-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .subscription-cta {
+            background: rgba(255, 255, 255, 0.95);
+            color: #5A5A52;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .subscription-cta:hover {
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .subscription-learn {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .subscription-learn:hover {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.4);
         }
 
         .bundle-card {
@@ -2545,7 +2685,15 @@
 
             .bundle-cards {
                 grid-template-columns: repeat(4, 1fr);
-                gap: 30px;
+                gap: 25px;
+            }
+
+            .subscription-card {
+                padding: 28px 20px;
+            }
+
+            .subscription-title {
+                font-size: 22px;
             }
 
             .products-grid {
@@ -5566,29 +5714,33 @@
         /* RESPONSIVE - ALL SCREEN SIZES */
         @media (min-width: 1400px) {
             .products-grid { grid-template-columns: repeat(4, 1fr) !important; gap: 30px !important; padding: 0 60px !important; }
-            .bundle-cards { grid-template-columns: repeat(4, 1fr) !important; gap: 30px !important; padding: 0 !important; }
+            .bundle-cards { grid-template-columns: repeat(5, 1fr) !important; gap: 30px !important; padding: 0 !important; }
         }
         @media (min-width: 1200px) and (max-width: 1399px) {
             .products-grid { grid-template-columns: repeat(4, 1fr) !important; padding: 0 60px !important; }
-            .bundle-cards { grid-template-columns: repeat(4, 1fr) !important; padding: 0 !important; }
+            .bundle-cards { grid-template-columns: repeat(4, 1fr) !important; gap: 25px !important; padding: 0 !important; }
         }
         @media (min-width: 900px) and (max-width: 1199px) {
             .products-grid { grid-template-columns: repeat(3, 1fr) !important; padding: 0 40px !important; }
-            .bundle-cards { grid-template-columns: repeat(3, 1fr) !important; padding: 0 !important; }
+            .bundle-cards { grid-template-columns: repeat(3, 1fr) !important; gap: 20px !important; padding: 0 !important; }
         }
         @media (min-width: 768px) and (max-width: 899px) {
             .products-grid { grid-template-columns: repeat(2, 1fr) !important; padding: 0 30px !important; }
-            .bundle-cards { grid-template-columns: repeat(2, 1fr) !important; padding: 0 !important; }
+            .bundle-cards { grid-template-columns: repeat(2, 1fr) !important; gap: 18px !important; padding: 0 !important; }
         }
         @media (max-width: 767px) {
             .products-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 16px !important; }
             .bundle-cards { grid-template-columns: repeat(2, 1fr) !important; gap: 16px !important; }
             .product-showcase-card, .bundle-card { height: 432px !important; }
             .product-info, .bundle-info { height: 240px !important; }
+            .subscription-card { padding: 20px 16px !important; }
+            .subscription-title { font-size: 18px !important; }
+            .subscription-subtitle { font-size: 12px !important; }
         }
         @media (max-width: 480px) {
             .products-grid { grid-template-columns: 1fr !important; }
             .bundle-cards { grid-template-columns: 1fr !important; }
+            .subscription-card { padding: 24px 20px !important; }
         }
         .product-showcase-card:hover, .bundle-card:hover {
             transform: translateY(-4px) !important;
@@ -5856,43 +6008,56 @@
                                 <button class="bundle-btn">Shop Now</button>
                             </div>
                         </div>
+
+                        <!-- Subscribe & Save Card -->
+                        <div class="subscription-card">
+                            <div class="subscription-content">
+                                <div class="subscription-badge">Subscribe & Save</div>
+                                <h3 class="subscription-title">Never Run <em>Out</em></h3>
+                                <p class="subscription-subtitle">Save 15% on every order and never worry about running out of your favorites again.</p>
+                                <div class="subscription-benefits">
+                                    <div class="benefit-item">
+                                        <svg viewBox="0 0 20 20" fill="currentColor" class="benefit-icon">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>15% off every order</span>
+                                    </div>
+                                    <div class="benefit-item">
+                                        <svg viewBox="0 0 20 20" fill="currentColor" class="benefit-icon">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>Free shipping always</span>
+                                    </div>
+                                    <div class="benefit-item">
+                                        <svg viewBox="0 0 20 20" fill="currentColor" class="benefit-icon">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>Cancel anytime</span>
+                                    </div>
+                                </div>
+                                <div class="subscription-actions">
+                                    <button class="subscription-cta">Start Subscription</button>
+                                    <a href="#how-it-works" class="subscription-learn">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Right Hero Section -->
                 <div class="bundles-hero">
                     <div class="bundles-hero-content">
-                        <div class="section-tag" style="color: #2C7A2C; margin-bottom: 16px; font-weight: 600;">Subscribe & Save</div>
-                        <h2>Never Run <em>Out</em></h2>
-                        <p style="font-size: 15px; color: rgba(44, 44, 44, 0.7); line-height: 1.5; max-width: 300px; margin: 0 auto 20px;">Save 15% on every order. Skip, pause or cancel anytime. Always delivered when you need it.</p>
-                        <div class="subscription-perks" style="margin-bottom: 28px;">
-                            <div class="perk" style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #2C7A2C; margin-bottom: 6px;">
-                                <svg viewBox="0 0 16 16" fill="currentColor" style="width: 14px; height: 14px; flex-shrink: 0;">
-                                    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-                                </svg>
-                                Save 15% on every order
-                            </div>
-                            <div class="perk" style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #2C7A2C; margin-bottom: 6px;">
-                                <svg viewBox="0 0 16 16" fill="currentColor" style="width: 14px; height: 14px; flex-shrink: 0;">
-                                    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-                                </svg>
-                                Free shipping always
-                            </div>
-                            <div class="perk" style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #2C7A2C;">
-                                <svg viewBox="0 0 16 16" fill="currentColor" style="width: 14px; height: 14px; flex-shrink: 0;">
-                                    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-                                </svg>
-                                Skip, pause or cancel anytime
-                            </div>
-                        </div>
+                        <div class="section-tag" style="color: #9A6B65; margin-bottom: 16px;">Shop Individual</div>
+                        <h2>Our <em>Bestsellers</em></h2>
+                        <p style="font-size: 15px; color: rgba(44, 44, 44, 0.7); line-height: 1.5; max-width: 300px; margin: 0 auto 28px;">Discover the natural products our customers love most</p>
                         <div class="bundles-actions">
-                            <a href="#subscribe-products" class="bundles-shop-btn" style="background: #2C7A2C; border-color: #2C7A2C;">
-                                Start Subscription
+                            <a href="#products-grid" class="bundles-shop-btn">
+                                Shop Products
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                             </a>
-                            <a href="#how-it-works" class="bundle-builder-btn" style="color: #2C7A2C; border-color: #2C7A2C;">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px; margin-left: 0;"><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01"/><circle cx="12" cy="12" r="10"/></svg>
-                                How It Works
+                            <a href="#find-routine" class="bundle-builder-btn">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                Find Your Routine
                             </a>
                         </div>
                     </div>
@@ -6981,3 +7146,5 @@
 <!-- SIMPLE CLEAN DESIGN: Now matches the top sections perfectly: 20260329195417 -->
 
 <!-- SUBSCRIBE & SAVE CARD: Professional 2026 clean beauty brand pitch: 20260329200233 -->
+
+<!-- PROFESSIONAL SAGE GREEN SUBSCRIBE & SAVE CARD: 2026 design with product cards: 20260329200943 -->
