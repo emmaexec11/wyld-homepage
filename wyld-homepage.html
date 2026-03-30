@@ -1546,10 +1546,113 @@
            PRODUCT SHOWCASE (DR. SQUATCH STYLE)
            ======================================== */
         .product-showcase {
-            background: linear-gradient(135deg, #FFFBF8 0%, #F8F5F2 100%);
-            padding: 29px 0 72px;
+            background: var(--cream);
+            padding: 100px 60px 100px 80px;
             position: relative;
+            width: 100%;
+        }
+
+        .products-inner {
+            display: grid;
+            grid-template-columns: 1fr 4fr;
+            gap: 60px;
+            align-items: flex-start;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .products-hero {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 16px;
+            padding: 40px 35px;
+            text-align: center;
+            position: relative;
+            border: 1px solid rgba(195, 194, 174, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
             overflow: hidden;
+            height: 405px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .products-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .products-hero h2 {
+            font-family: var(--font-serif);
+            font-size: 36px;
+            font-weight: 300;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--charcoal);
+        }
+
+        .products-hero h2 em {
+            color: var(--brown);
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .products-actions {
+            display: flex;
+            flex-direction: row;
+            gap: 12px;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .products-shop-btn {
+            background: #333333;
+            color: white;
+            border: none;
+            padding: 18px 24px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .products-shop-btn:hover {
+            background: #1a1a1a;
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(51, 51, 51, 0.3);
+        }
+
+        .products-finder-btn {
+            background: transparent;
+            color: var(--charcoal);
+            border: 1px solid var(--charcoal);
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 500;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .products-finder-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-1px);
+        }
+
+        .products-content {
+            padding: 0;
         }
 
         .product-showcase .container {
@@ -1735,12 +1838,11 @@
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(6, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 30px;
             width: 100%;
             margin: 0;
-            padding: 0 60px;
-            box-sizing: border-box;
+            padding: 0;
         }
 
         /* Product showcase cards - matches bundle-card styling exactly */
@@ -2026,6 +2128,33 @@
             .product-showcase {
                 padding: 30px 0 50px;
             }
+
+            .products-inner {
+                grid-template-columns: 1fr 4fr;
+                gap: 40px;
+            }
+
+            .products-hero {
+                height: 405px;
+                padding: 30px 25px;
+            }
+
+            .products-hero h2 {
+                font-size: 36px;
+            }
+
+        @media (max-width: 1024px) {
+            .products-inner {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .products-hero {
+                height: auto;
+                min-height: 350px;
+                padding: 40px 30px;
+            }
+        }
 
             .showcase-header h2 {
                 font-size: 28px;
@@ -5362,12 +5491,11 @@
         
         .products-grid {
             display: grid !important;
-            grid-template-columns: repeat(6, 1fr) !important;
+            grid-template-columns: repeat(4, 1fr) !important;
             gap: 30px !important;
-            max-width: 1400px !important;
-            margin: 0 auto !important;
-            padding: 0 60px !important;
             width: 100% !important;
+            padding: 0 !important;
+            margin: 0 !important;
         }
         
         .bundle-cards {
@@ -5425,19 +5553,19 @@
         
         /* RESPONSIVE - ALL SCREEN SIZES */
         @media (min-width: 1400px) {
-            .products-grid { grid-template-columns: repeat(6, 1fr) !important; gap: 30px !important; padding: 0 60px !important; }
+            .products-grid { grid-template-columns: repeat(4, 1fr) !important; gap: 30px !important; padding: 0 !important; }
             .bundle-cards { grid-template-columns: repeat(4, 1fr) !important; gap: 30px !important; padding: 0 !important; }
         }
         @media (min-width: 1200px) and (max-width: 1399px) {
-            .products-grid { grid-template-columns: repeat(6, 1fr) !important; padding: 0 60px !important; }
+            .products-grid { grid-template-columns: repeat(4, 1fr) !important; padding: 0 !important; }
             .bundle-cards { grid-template-columns: repeat(4, 1fr) !important; padding: 0 !important; }
         }
         @media (min-width: 900px) and (max-width: 1199px) {
-            .products-grid { grid-template-columns: repeat(4, 1fr) !important; padding: 0 40px !important; }
+            .products-grid { grid-template-columns: repeat(3, 1fr) !important; padding: 0 !important; }
             .bundle-cards { grid-template-columns: repeat(3, 1fr) !important; padding: 0 !important; }
         }
         @media (min-width: 768px) and (max-width: 899px) {
-            .products-grid { grid-template-columns: repeat(3, 1fr) !important; padding: 0 30px !important; }
+            .products-grid { grid-template-columns: repeat(2, 1fr) !important; padding: 0 !important; }
             .bundle-cards { grid-template-columns: repeat(2, 1fr) !important; padding: 0 !important; }
         }
         @media (max-width: 767px) {
@@ -5610,37 +5738,29 @@
 
     <!-- ====== PRODUCT SHOWCASE (DR. SQUATCH STYLE) ====== -->
     <section class="product-showcase" id="products">
-        <div class="container">
-            <div class="showcase-header">
-                <div class="section-tag">Our Bestsellers</div>
-                <h2>Find Your <em>Wyld</em></h2>
-            </div>
-            
-            <div class="product-categories">
-                <button class="category-tab active" data-category="favorites">FAN FAVORITES</button>
-                <button class="category-tab" data-category="ozonated">OZONATED OILS</button>
-                <button class="category-tab" data-category="deodorants">DEODORANT</button>
-                <button class="category-tab" data-category="makeup">MAKEUP</button>
-                <button class="category-tab" data-category="skincare">SKINCARE</button>
-                <div class="category-more">
-                    <button class="category-tab more-tab" data-category="more">
-                        MORE
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M7 10l5 5 5-5z"/>
-                        </svg>
-                    </button>
-                    <div class="more-dropdown">
-                        <button class="category-tab dropdown-item" data-category="balms">MUSCLE BALMS</button>
-                        <button class="category-tab dropdown-item" data-category="lipbalm">LIP BALM</button>
-                        <button class="category-tab dropdown-item" data-category="oils">ESSENTIAL OILS</button>
-                        <button class="category-tab dropdown-item" data-category="toothpaste">TOOTHPASTE</button>
-                        <button class="category-tab dropdown-item" data-category="candles">CANDLES</button>
-                        <button class="category-tab dropdown-item" data-category="tattoo">TATTOO CARE</button>
+        <div class="products-inner">
+            <!-- Left Hero Section -->
+            <div class="products-hero">
+                <div class="products-hero-content">
+                    <div class="section-tag" style="color: #9A6B65; margin-bottom: 16px;">Our Bestsellers</div>
+                    <h2>Find Your <em>Wyld</em></h2>
+                    <p style="font-size: 15px; color: rgba(44, 44, 44, 0.7); line-height: 1.5; max-width: 300px; margin: 0 auto 28px;">Discover natural products that actually work</p>
+                    <div class="products-actions">
+                        <a href="#products-grid" class="products-shop-btn">
+                            Shop Products
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                        <a href="#find-routine" class="products-finder-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            Find Your Routine
+                        </a>
                     </div>
                 </div>
             </div>
 
-            <div class="products-grid">
+            <!-- Right Products Section -->
+            <div class="products-content">
+                <div class="products-grid">
                 <!-- Natural Deodorant - New -->
                 <div class="product-showcase-card" data-categories="ozonated bestsellers">
                     <div class="product-badge new">NEW</div>
@@ -5721,50 +5841,6 @@
                     </div>
                 </div>
 
-                <!-- Organic Lip Balm Set -->
-                <div class="product-showcase-card" data-categories="skincare subscribe">
-                    <!-- No badge for clean look -->
-                    <div class="product-image-container">
-                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/naturally-wyld-lip-balm.webp?v=1750293854" alt="Organic Lip Balm Set">
-                    </div>
-                    <div class="product-info">
-                        <div class="product-title">Organic Lip Balm Set</div>
-                        <div class="product-rating">
-                            <span class="product-stars">★★★★★</span>
-                            <span class="product-reviews">298 reviews</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="product-current-price">$22.00</span>
-                            <span class="product-original-price">$28.00</span>
-                        </div>
-                        <button class="product-btn">Shop Now</button>
-                    </div>
-                </div>
-
-                <!-- Natural Body Butter -->
-                <div class="product-showcase-card" data-categories="skincare bestsellers">
-                    <div class="product-badge bestseller">BEST SELLER</div>
-                    <div class="product-image-container">
-                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/Multi_colour_cream_bundle_sharpened.jpg?v=1756846735" alt="Natural Body Butter">
-                    </div>
-                    <div class="product-info">
-                        <div class="product-title">Natural Body Butter</div>
-                        <div class="product-rating">
-                            <span class="product-stars">★★★★★</span>
-                            <span class="product-reviews">189 reviews</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="product-current-price">$24.95</span>
-                            <span class="product-original-price">$29.95</span>
-                        </div>
-                        <button class="product-btn">Shop Now</button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <script>
             // Category dropdown functionality
             document.addEventListener('DOMContentLoaded', function() {
                 const moreTab = document.querySelector('.more-tab');
@@ -6896,3 +6972,5 @@
 <!-- UNIFIED BUTTON STYLING - REMOVED CONFLICTS: 20260329170713 -->
 
 <!-- 6 PRODUCTS + MATCHED CARD SIZES: 20260329172342 -->
+
+<!-- PRODUCTS SECTION NOW MATCHES BUNDLES SECTION EXACTLY: 20260329180636 -->
