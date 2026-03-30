@@ -1996,8 +1996,9 @@
             }
 
         @media (max-width: 1024px) {
-            .product-showcase .bundles-inner {
-                grid-template-columns: 1fr;
+            .product-showcase .bundles-inner,
+            .product-showcase .products-layout {
+                grid-template-columns: 1fr !important;
                 gap: 40px;
             }
 
@@ -2117,12 +2118,17 @@
 
         .bundles-inner {
             display: grid;
-            grid-template-columns: 4fr 1fr;
+            grid-template-columns: 1fr 4fr;
             gap: 60px;
             align-items: flex-start;
             max-width: 100%;
             margin: 0;
             padding: 0;
+        }
+
+        /* Products section: cards left, hero right */
+        .products-layout {
+            grid-template-columns: 4fr 1fr !important;
         }
 
         .bundles-hero {
@@ -2418,8 +2424,12 @@
 
         @media (max-width: 1200px) {
             .bundles-inner {
-                grid-template-columns: 4fr 1fr;
+                grid-template-columns: 1fr 4fr;
                 gap: 40px;
+            }
+
+            .products-layout {
+                grid-template-columns: 4fr 1fr !important;
             }
 
             .bundle-cards {
@@ -2448,8 +2458,9 @@
         }
 
         @media (max-width: 1024px) {
-            .bundles-inner {
-                grid-template-columns: 1fr;
+            .bundles-inner,
+            .products-layout {
+                grid-template-columns: 1fr !important;
                 gap: 40px;
             }
 
@@ -5629,7 +5640,7 @@
             </div>
 
             <!-- Products in Bundle Layout Style -->
-            <div class="bundles-inner">
+            <div class="bundles-inner products-layout">
                 <!-- Left Product Grid -->
                 <div class="bundles-content">
                     <div class="bundle-cards">
@@ -6872,3 +6883,5 @@
 <!-- BACK TO WORKING VERSION: 20260329192650 -->
 
 <!-- SWAPPED LAYOUT: Hero moved to right side: 20260329192954 -->
+
+<!-- FIXED BUNDLES SECTION: Only products swapped, bundles back to normal: 20260329193249 -->
