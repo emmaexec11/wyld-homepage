@@ -2315,6 +2315,22 @@
             box-shadow: 0 4px 12px rgba(51, 51, 51, 0.3);
         }
 
+        /* Subscribe & Save green button hover state */
+        .bundles-shop-btn[style*="background: #2C7A2C"]:hover {
+            background: #237A23 !important;
+            border-color: #237A23 !important;
+            box-shadow: 0 8px 24px rgba(44, 122, 44, 0.35) !important;
+            transform: translateY(-2px);
+        }
+
+        .bundle-builder-btn[style*="color: #2C7A2C"]:hover {
+            background: #2C7A2C !important;
+            color: white !important;
+            border-color: #2C7A2C !important;
+            box-shadow: 0 8px 24px rgba(44, 122, 44, 0.25) !important;
+            transform: translateY(-2px);
+        }
+
         .bundle-builder-btn {
             background: transparent;
             color: var(--charcoal);
@@ -5846,17 +5862,37 @@
                 <!-- Right Hero Section -->
                 <div class="bundles-hero">
                     <div class="bundles-hero-content">
-                        <div class="section-tag" style="color: #9A6B65; margin-bottom: 16px;">Shop Individual</div>
-                        <h2>Our <em>Bestsellers</em></h2>
-                        <p style="font-size: 15px; color: rgba(44, 44, 44, 0.7); line-height: 1.5; max-width: 300px; margin: 0 auto 28px;">Discover the natural products our customers love most</p>
+                        <div class="section-tag" style="color: #2C7A2C; margin-bottom: 16px; font-weight: 600;">Subscribe & Save</div>
+                        <h2>Never Run <em>Out</em></h2>
+                        <p style="font-size: 15px; color: rgba(44, 44, 44, 0.7); line-height: 1.5; max-width: 300px; margin: 0 auto 20px;">Save 15% on every order. Skip, pause or cancel anytime. Always delivered when you need it.</p>
+                        <div class="subscription-perks" style="margin-bottom: 28px;">
+                            <div class="perk" style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #2C7A2C; margin-bottom: 6px;">
+                                <svg viewBox="0 0 16 16" fill="currentColor" style="width: 14px; height: 14px; flex-shrink: 0;">
+                                    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                                </svg>
+                                Save 15% on every order
+                            </div>
+                            <div class="perk" style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #2C7A2C; margin-bottom: 6px;">
+                                <svg viewBox="0 0 16 16" fill="currentColor" style="width: 14px; height: 14px; flex-shrink: 0;">
+                                    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                                </svg>
+                                Free shipping always
+                            </div>
+                            <div class="perk" style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #2C7A2C;">
+                                <svg viewBox="0 0 16 16" fill="currentColor" style="width: 14px; height: 14px; flex-shrink: 0;">
+                                    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                                </svg>
+                                Skip, pause or cancel anytime
+                            </div>
+                        </div>
                         <div class="bundles-actions">
-                            <a href="#products-grid" class="bundles-shop-btn">
-                                Shop Products
+                            <a href="#subscribe-products" class="bundles-shop-btn" style="background: #2C7A2C; border-color: #2C7A2C;">
+                                Start Subscription
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                             </a>
-                            <a href="#find-routine" class="bundle-builder-btn">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                Find Your Routine
+                            <a href="#how-it-works" class="bundle-builder-btn" style="color: #2C7A2C; border-color: #2C7A2C;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px; margin-left: 0;"><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01"/><circle cx="12" cy="12" r="10"/></svg>
+                                How It Works
                             </a>
                         </div>
                     </div>
@@ -6943,3 +6979,5 @@
 <!-- PROFESSIONAL MILLION-DOLLAR DESIGN: Matches theme like clean beauty brand: 20260329194837 -->
 
 <!-- SIMPLE CLEAN DESIGN: Now matches the top sections perfectly: 20260329195417 -->
+
+<!-- SUBSCRIBE & SAVE CARD: Professional 2026 clean beauty brand pitch: 20260329200233 -->
