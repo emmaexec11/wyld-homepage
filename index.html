@@ -1735,7 +1735,7 @@
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(6, 1fr);
             gap: 30px;
             width: 100%;
             margin: 0;
@@ -2129,7 +2129,7 @@
 
         .bundles-inner {
             display: grid;
-            grid-template-columns: 1.5fr 3fr;
+            grid-template-columns: 1fr 4fr;
             gap: 60px;
             align-items: flex-start;
             max-width: 100%;
@@ -2264,10 +2264,8 @@
             grid-template-columns: repeat(4, 1fr);
             gap: 30px;
             width: 100%;
-            padding: 0 60px;
-            box-sizing: border-box;
-            margin: 0 auto;
-            max-width: 1400px;
+            padding: 0;
+            margin: 0;
         }
 
         .bundle-card {
@@ -2432,7 +2430,7 @@
 
         @media (max-width: 1200px) {
             .bundles-inner {
-                grid-template-columns: 1.5fr 3fr;
+                grid-template-columns: 1fr 4fr;
                 gap: 40px;
             }
 
@@ -5364,7 +5362,7 @@
         
         .products-grid {
             display: grid !important;
-            grid-template-columns: repeat(4, 1fr) !important;
+            grid-template-columns: repeat(6, 1fr) !important;
             gap: 30px !important;
             max-width: 1400px !important;
             margin: 0 auto !important;
@@ -5376,10 +5374,9 @@
             display: grid !important;
             grid-template-columns: repeat(4, 1fr) !important;
             gap: 30px !important;
-            max-width: 1400px !important;
-            margin: 0 auto !important;
-            padding: 0 60px !important;
             width: 100% !important;
+            padding: 0 !important;
+            margin: 0 !important;
         }
         
         .product-showcase-card, .bundle-card {
@@ -5428,20 +5425,20 @@
         
         /* RESPONSIVE - ALL SCREEN SIZES */
         @media (min-width: 1400px) {
-            .products-grid { grid-template-columns: repeat(4, 1fr) !important; gap: 30px !important; padding: 0 60px !important; }
-            .bundle-cards { grid-template-columns: repeat(4, 1fr) !important; gap: 30px !important; padding: 0 60px !important; }
+            .products-grid { grid-template-columns: repeat(6, 1fr) !important; gap: 30px !important; padding: 0 60px !important; }
+            .bundle-cards { grid-template-columns: repeat(4, 1fr) !important; gap: 30px !important; padding: 0 !important; }
         }
         @media (min-width: 1200px) and (max-width: 1399px) {
-            .products-grid { grid-template-columns: repeat(4, 1fr) !important; padding: 0 60px !important; }
-            .bundle-cards { grid-template-columns: repeat(4, 1fr) !important; padding: 0 60px !important; }
+            .products-grid { grid-template-columns: repeat(6, 1fr) !important; padding: 0 60px !important; }
+            .bundle-cards { grid-template-columns: repeat(4, 1fr) !important; padding: 0 !important; }
         }
         @media (min-width: 900px) and (max-width: 1199px) {
-            .products-grid { grid-template-columns: repeat(3, 1fr) !important; padding: 0 40px !important; }
-            .bundle-cards { grid-template-columns: repeat(3, 1fr) !important; padding: 0 40px !important; }
+            .products-grid { grid-template-columns: repeat(4, 1fr) !important; padding: 0 40px !important; }
+            .bundle-cards { grid-template-columns: repeat(3, 1fr) !important; padding: 0 !important; }
         }
         @media (min-width: 768px) and (max-width: 899px) {
-            .products-grid { grid-template-columns: repeat(2, 1fr) !important; padding: 0 30px !important; }
-            .bundle-cards { grid-template-columns: repeat(2, 1fr) !important; padding: 0 30px !important; }
+            .products-grid { grid-template-columns: repeat(3, 1fr) !important; padding: 0 30px !important; }
+            .bundle-cards { grid-template-columns: repeat(2, 1fr) !important; padding: 0 !important; }
         }
         @media (max-width: 767px) {
             .products-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 16px !important; }
@@ -5719,6 +5716,46 @@
                         <div class="product-price">
                             <span class="product-current-price">$28.00</span>
                             <span class="product-original-price">$35.00</span>
+                        </div>
+                        <button class="product-btn">Shop Now</button>
+                    </div>
+                </div>
+
+                <!-- Organic Lip Balm Set -->
+                <div class="product-showcase-card" data-categories="skincare subscribe">
+                    <!-- No badge for clean look -->
+                    <div class="product-image-container">
+                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/naturally-wyld-lip-balm.webp?v=1750293854" alt="Organic Lip Balm Set">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-title">Organic Lip Balm Set</div>
+                        <div class="product-rating">
+                            <span class="product-stars">★★★★★</span>
+                            <span class="product-reviews">298 reviews</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="product-current-price">$22.00</span>
+                            <span class="product-original-price">$28.00</span>
+                        </div>
+                        <button class="product-btn">Shop Now</button>
+                    </div>
+                </div>
+
+                <!-- Natural Body Butter -->
+                <div class="product-showcase-card" data-categories="skincare bestsellers">
+                    <div class="product-badge bestseller">BEST SELLER</div>
+                    <div class="product-image-container">
+                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/Multi_colour_cream_bundle_sharpened.jpg?v=1756846735" alt="Natural Body Butter">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-title">Natural Body Butter</div>
+                        <div class="product-rating">
+                            <span class="product-stars">★★★★★</span>
+                            <span class="product-reviews">189 reviews</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="product-current-price">$24.95</span>
+                            <span class="product-original-price">$29.95</span>
                         </div>
                         <button class="product-btn">Shop Now</button>
                     </div>
@@ -6857,3 +6894,5 @@
 <!-- MADE BUTTONS SMALLER TO MATCH BUNDLE SIZE: 20260329170323 -->
 
 <!-- UNIFIED BUTTON STYLING - REMOVED CONFLICTS: 20260329170713 -->
+
+<!-- 6 PRODUCTS + MATCHED CARD SIZES: 20260329172342 -->
