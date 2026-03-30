@@ -1546,10 +1546,10 @@
            PRODUCT SHOWCASE (DR. SQUATCH STYLE)
            ======================================== */
         .product-showcase {
-            background: linear-gradient(135deg, #FFFBF8 0%, #F8F5F2 100%);
-            padding: 29px 0 72px;
+            background: var(--cream);
+            padding: 100px 60px 100px 80px;
             position: relative;
-            overflow: hidden;
+            width: 100%;
         }
 
         .product-showcase .container {
@@ -1966,40 +1966,7 @@
             font-size: 18px;
         }
 
-        @media (min-width: 769px) {
-            .products-grid {
-                display: flex !important;
-                flex-wrap: nowrap !important;
-                gap: 16px !important;
-                padding: 0 20px !important;
-                justify-content: space-evenly !important;
-            }
-            
-            .product-showcase-card {
-                flex: 1 !important;
-                width: auto !important;
-                max-width: none !important;
-                min-width: auto !important;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .products-grid {
-                display: grid !important;
-                grid-template-columns: repeat(2, 1fr) !important;
-                gap: 16px !important;
-                padding: 0 30px !important;
-            }
-            
-            .product-showcase-card {
-                width: auto !important;
-                max-width: none !important;
-                min-width: auto !important;
-                flex: none !important;
-            }
-        }
-
-        /* Mobile scrolling styles removed - using grid instead */
+        /* Products grid - centered layout matching bundle-cards */
 
         @media (max-width: 1024px) {
             .product-categories {
@@ -2027,6 +1994,19 @@
             .product-showcase {
                 padding: 30px 0 50px;
             }
+
+        @media (max-width: 1024px) {
+            .product-showcase .bundles-inner {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .product-showcase .bundles-hero {
+                height: auto;
+                min-height: 350px;
+                padding: 40px 30px;
+            }
+        }
 
 
 
@@ -5648,87 +5628,103 @@
                 </div>
             </div>
 
-            <div class="products-grid">
-                <!-- Natural Deodorant - New -->
-                <div class="product-showcase-card" data-categories="ozonated bestsellers">
-                    <div class="product-badge new">NEW</div>
-                    <div class="product-image-container">
-                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/optimized-lavender-jasmine-deodorant.webp?v=1750293861" alt="Natural Vegan Eco-Friendly Deodorants">
-                    </div>
-                    <div class="product-info">
-                        <div class="product-title">Natural Deodorant</div>
-                        <div class="product-rating">
-                            <span class="product-stars">★★★★★</span>
-                            <span class="product-reviews">160 reviews</span>
+            <!-- Products in Bundle Layout Style -->
+            <div class="bundles-inner">
+                <!-- Left Hero Section -->
+                <div class="bundles-hero">
+                    <div class="bundles-hero-content">
+                        <div class="section-tag" style="color: #9A6B65; margin-bottom: 16px;">Shop Individual</div>
+                        <h2>Our <em>Bestsellers</em></h2>
+                        <p style="font-size: 15px; color: rgba(44, 44, 44, 0.7); line-height: 1.5; max-width: 300px; margin: 0 auto 28px;">Discover the natural products our customers love most</p>
+                        <div class="bundles-actions">
+                            <a href="#products-grid" class="bundles-shop-btn">
+                                Shop Products
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </a>
+                            <a href="#find-routine" class="bundle-builder-btn">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                Find Your Routine
+                            </a>
                         </div>
-                        <div class="product-price">
-                            <span class="product-current-price">$32.95</span>
-                            <span class="product-original-price">$42.00</span>
-                        </div>
-                        <button class="product-btn">Shop Now</button>
-                    </div>
-                </div>
-
-                <!-- Ozonated Olive Oil -->
-                <div class="product-showcase-card" data-categories="ozonated bestsellers">
-                    <!-- No badge for clean look -->
-                    <div class="product-image-container">
-                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/ozonated-olive-oil-naturally-wyld.webp?v=1750293854" alt="Medical Grade Ozonated Olive Oil">
-                    </div>
-                    <div class="product-info">
-                        <div class="product-title">Ozonated Olive Oil</div>
-                        <div class="product-rating">
-                            <span class="product-stars">★★★★★</span>
-                            <span class="product-reviews">156 reviews</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="product-current-price">$32.95</span>
-                            <span class="product-original-price">$42.00</span>
-                        </div>
-                        <button class="product-btn">Shop Now</button>
                     </div>
                 </div>
 
-                <!-- Multi Colour Cream -->
-                <div class="product-showcase-card" data-categories="makeup bestsellers">
-                    <div class="product-badge bestseller">BEST SELLER</div>
-                    <div class="product-image-container">
-                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/Multi_colour_cream_bundle_sharpened.jpg?v=1756846735" alt="Multi Colour Cream Natural Makeup">
-                    </div>
-                    <div class="product-info">
-                        <div class="product-title">Multi Colour Cream</div>
-                        <div class="product-rating">
-                            <span class="product-stars">★★★★★</span>
-                            <span class="product-reviews">287 reviews</span>
+                <!-- Right Product Grid -->
+                <div class="bundles-content">
+                    <div class="bundle-cards">
+                        <!-- Product 1 -->
+                        <div class="bundle-card">
+                            <div class="bundle-badge bestseller">Best Seller</div>
+                            <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/optimized-lavender-jasmine-deodorant.webp?v=1750293861" alt="Natural Deodorant" class="bundle-image">
+                            <div class="bundle-info">
+                                <div class="bundle-name">Natural Deodorant</div>
+                                <div class="bundle-rating">
+                                    <span class="bundle-stars">★★★★★</span>
+                                    <span class="bundle-reviews">160 reviews</span>
+                                </div>
+                                <div class="bundle-price">
+                                    <span class="bundle-current-price">$32.95</span>
+                                    <span class="bundle-original-price">$42.00</span>
+                                </div>
+                                <button class="bundle-btn">Shop Now</button>
+                            </div>
                         </div>
-                        <div class="product-price">
-                            <span class="product-current-price">$26.00</span>
-                            <span class="product-original-price">$32.00</span>
+
+                        <!-- Product 2 -->
+                        <div class="bundle-card">
+                            <div class="bundle-badge new">New</div>
+                            <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/ozonated-olive-oil-naturally-wyld.webp?v=1750293854" alt="Ozonated Olive Oil" class="bundle-image">
+                            <div class="bundle-info">
+                                <div class="bundle-name">Ozonated Olive Oil</div>
+                                <div class="bundle-rating">
+                                    <span class="bundle-stars">★★★★★</span>
+                                    <span class="bundle-reviews">156 reviews</span>
+                                </div>
+                                <div class="bundle-price">
+                                    <span class="bundle-current-price">$32.95</span>
+                                    <span class="bundle-original-price">$42.00</span>
+                                </div>
+                                <button class="bundle-btn">Shop Now</button>
+                            </div>
                         </div>
-                        <button class="product-btn">Shop Now</button>
+
+                        <!-- Product 3 -->
+                        <div class="bundle-card">
+                            <div class="bundle-badge subscribe">Subscribe & Save</div>
+                            <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/Multi_colour_cream_bundle_sharpened.jpg?v=1756846735" alt="Multi Colour Cream" class="bundle-image">
+                            <div class="bundle-info">
+                                <div class="bundle-name">Multi Colour Cream</div>
+                                <div class="bundle-rating">
+                                    <span class="bundle-stars">★★★★★</span>
+                                    <span class="bundle-reviews">287 reviews</span>
+                                </div>
+                                <div class="bundle-price">
+                                    <span class="bundle-current-price">$26.00</span>
+                                    <span class="bundle-original-price">$32.00</span>
+                                </div>
+                                <button class="bundle-btn">Shop Now</button>
+                            </div>
+                        </div>
+
+                        <!-- Product 4 -->
+                        <div class="bundle-card">
+                            <div class="bundle-badge limited">Limited Edition</div>
+                            <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/Naturally_Wyld_Muscle_Balm.webp?v=1750293854" alt="Muscle Relief Balm" class="bundle-image">
+                            <div class="bundle-info">
+                                <div class="bundle-name">Muscle Relief Balm</div>
+                                <div class="bundle-rating">
+                                    <span class="bundle-stars">★★★★★</span>
+                                    <span class="bundle-reviews">134 reviews</span>
+                                </div>
+                                <div class="bundle-price">
+                                    <span class="bundle-current-price">$28.00</span>
+                                    <span class="bundle-original-price">$35.00</span>
+                                </div>
+                                <button class="bundle-btn">Shop Now</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Muscle Relief Balm -->
-                <div class="product-showcase-card" data-categories="skincare new">
-                    <div class="product-badge new">NEW</div>
-                    <div class="product-image-container">
-                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/Naturally_Wyld_Muscle_Balm.webp?v=1750293854" alt="Natural Muscle Relief Balm">
-                    </div>
-                    <div class="product-info">
-                        <div class="product-title">Muscle Relief Balm</div>
-                        <div class="product-rating">
-                            <span class="product-stars">★★★★★</span>
-                            <span class="product-reviews">134 reviews</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="product-current-price">$28.00</span>
-                            <span class="product-original-price">$35.00</span>
-                        </div>
-                        <button class="product-btn">Shop Now</button>
-                    </div>
-                </div>
-
             </div>
         </div>
 
@@ -6868,3 +6864,5 @@
 <!-- PRODUCTS SECTION NOW MATCHES BUNDLES SECTION EXACTLY: 20260329180636 -->
 
 <!-- REVERTED TO ORIGINAL FIND YOUR WYLD LAYOUT BUT KEPT CARD SIZE MATCHING: 20260329181126 -->
+
+<!-- EXACT DUPLICATE: Products section now identical to bundles section: 20260329183049 -->
