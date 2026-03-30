@@ -2116,6 +2116,83 @@
             width: 100%;
         }
 
+        .clean-bundles-section {
+            background: var(--cream);
+            padding: 120px 40px;
+            position: relative;
+            width: 100%;
+        }
+
+        .clean-bundle-card {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 24px;
+            padding: 80px 60px;
+            text-align: center;
+            position: relative;
+            border: 1px solid rgba(195, 194, 174, 0.15);
+            box-shadow: 
+                0 20px 60px rgba(149, 104, 79, 0.08),
+                0 8px 24px rgba(0, 0, 0, 0.04);
+        }
+
+        .clean-bundle-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .clean-bundle-actions {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .clean-shop-btn {
+            background: var(--terracotta);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 24px rgba(156, 82, 89, 0.25);
+        }
+
+        .clean-shop-btn:hover {
+            background: #8A4B52;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(156, 82, 89, 0.35);
+        }
+
+        .clean-build-btn {
+            background: transparent;
+            color: var(--brown);
+            padding: 18px 40px;
+            border: 2px solid var(--brown);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .clean-build-btn:hover {
+            background: var(--brown);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(154, 107, 101, 0.25);
+        }
+
         .bundles-inner {
             display: grid;
             grid-template-columns: 1fr 4fr;
@@ -2514,6 +2591,26 @@
 
             .bundles-section {
                 padding: 80px 20px;
+            }
+
+            .clean-bundles-section {
+                padding: 100px 30px;
+            }
+
+            .clean-bundle-card {
+                padding: 60px 40px;
+            }
+
+            .clean-bundle-actions {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .clean-shop-btn,
+            .clean-build-btn {
+                width: 100%;
+                justify-content: center;
+                padding: 16px 32px;
             }
 
             .bundles-actions {
@@ -5817,107 +5914,24 @@
     </section>
 
     <!-- ====== BUNDLES SECTION - RMS BEAUTY STYLE ====== -->
-    <section class="bundles-section">
-        <div class="bundles-inner">
-            <!-- Left Hero Section -->
-            <div class="bundles-hero">
-                <div class="bundles-hero-content">
-                    <div class="section-tag" style="color: #9A6B65; margin-bottom: 16px;">Bundle & Save</div>
-                    <h2>Bundle & <em>Save</em></h2>
-                    <p style="font-size: 15px; color: rgba(44, 44, 44, 0.7); line-height: 1.5; max-width: 300px; margin: 0 auto 28px;">Everything you need to start your natural beauty journey</p>
-                    <div class="bundles-actions">
-                        <a href="#bundles-grid" class="bundles-shop-btn">
-                            Shop Bundles
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                        </a>
-                        <a href="#bundle-builder" class="bundle-builder-btn">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            Build a Bundle
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right Product Grid -->
-            <div class="bundles-content">
-                <div class="bundle-cards">
-                    <!-- Bundle 1 -->
-                    <div class="bundle-card">
-                        <div class="bundle-badge bestseller">Best Seller</div>
-                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/Multi_colour_cream_bundle_sharpened.jpg?v=1756846735" alt="Natural Beauty Starter Kit" class="bundle-image">
-                        <div class="bundle-info">
-                            <div class="bundle-name">Natural Beauty Starter Kit</div>
-                            <div class="bundle-rating">
-                                <span class="bundle-stars">★★★★★</span>
-                                <span class="bundle-reviews">287 reviews</span>
-                            </div>
-                            <div class="bundle-price">
-                                <span class="bundle-current-price">$65.00</span>
-                                <span class="bundle-original-price">$85.00</span>
-                            </div>
-                            <button class="bundle-btn">Shop Now</button>
-                        </div>
-                    </div>
-
-                    <!-- Bundle 2 -->
-                    <div class="bundle-card">
-                        <div class="bundle-badge subscribe">Subscribe & Save</div>
-                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/compressed_deodorants_image.png?v=1750293854" alt="Essential Deodorant Kit" class="bundle-image">
-                        <div class="bundle-info">
-                            <div class="bundle-name">Essential Deodorant Kit</div>
-                            <div class="bundle-rating">
-                                <span class="bundle-stars">★★★★★</span>
-                                <span class="bundle-reviews">412 reviews</span>
-                            </div>
-                            <div class="bundle-price">
-                                <span class="bundle-current-price">$58.00</span>
-                                <span class="bundle-original-price">$75.00</span>
-                            </div>
-                            <button class="bundle-btn">Shop Now</button>
-                        </div>
-                    </div>
-
-                    <!-- Bundle 3 -->
-                    <div class="bundle-card">
-                        <div class="bundle-badge new">New</div>
-                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/files/optimized-lavender-jasmine-deodorant.webp?v=1750293861" alt="Complete Skincare Kit" class="bundle-image">
-                        <div class="bundle-info">
-                            <div class="bundle-name">Complete Skincare Kit</div>
-                            <div class="bundle-rating">
-                                <span class="bundle-stars">★★★★★</span>
-                                <span class="bundle-reviews">156 reviews</span>
-                            </div>
-                            <div class="bundle-price">
-                                <span class="bundle-current-price">$89.00</span>
-                                <span class="bundle-original-price">$115.00</span>
-                            </div>
-                            <button class="bundle-btn">Shop Now</button>
-                        </div>
-                    </div>
-
-                    <!-- Bundle 4 -->
-                    <div class="bundle-card">
-                        <div class="bundle-badge limited">Limited Edition</div>
-                        <img src="https://cdn.shopify.com/s/files/1/0640/4977/4849/products/Organic_Ozonated_Olive_Oil_Natural_Skincare_Canada.webp" alt="Premium Ozonated Oil Bundle" class="bundle-image">
-                        <div class="bundle-info">
-                            <div class="bundle-name">Premium Oil Collection</div>
-                            <div class="bundle-rating">
-                                <span class="bundle-stars">★★★★★</span>
-                                <span class="bundle-reviews">203 reviews</span>
-                            </div>
-                            <div class="bundle-price">
-                                <span class="bundle-current-price">$95.00</span>
-                                <span class="bundle-original-price">$125.00</span>
-                            </div>
-                            <button class="bundle-btn">Shop Now</button>
-                        </div>
-                    </div>
-
-                    <!-- Back to 4 bundles as requested -->
+    <section class="clean-bundles-section">
+        <div class="clean-bundle-card">
+            <div class="clean-bundle-content">
+                <div class="section-tag" style="color: #9A6B65; margin-bottom: 20px; text-transform: uppercase; font-weight: 600; letter-spacing: 2px;">Bundle & Save</div>
+                <h2 style="font-size: 48px; font-weight: 400; margin: 0 0 20px; color: #2C2C2C;">Bundle & <em style="color: #9A6B65;">Save</em></h2>
+                <p style="font-size: 18px; color: rgba(44, 44, 44, 0.7); line-height: 1.6; margin: 0 0 40px; max-width: 500px;">Everything you need to start your natural beauty journey. Curated collections designed to work together perfectly.</p>
+                <div class="clean-bundle-actions">
+                    <a href="#bundles-grid" class="clean-shop-btn">
+                        Shop Bundles
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; height: 20px; margin-left: 8px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="#bundle-builder" class="clean-build-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; height: 20px; margin-right: 8px;"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        Build a Bundle
+                    </a>
                 </div>
             </div>
         </div>
-    </section>
 
     <!-- ====== WHY CHOOSE NATURALLY WYLD SECTION ====== -->
     <section class="why-choose-section">
@@ -6885,3 +6899,5 @@
 <!-- SWAPPED LAYOUT: Hero moved to right side: 20260329192954 -->
 
 <!-- FIXED BUNDLES SECTION: Only products swapped, bundles back to normal: 20260329193249 -->
+
+<!-- BIG CLEAN BUNDLE CARD: Elegant focused messaging: 20260329193816 -->
