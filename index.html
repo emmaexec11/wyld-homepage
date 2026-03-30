@@ -2117,7 +2117,7 @@
 
         .bundles-inner {
             display: grid;
-            grid-template-columns: 1fr 4fr;
+            grid-template-columns: 4fr 1fr;
             gap: 60px;
             align-items: flex-start;
             max-width: 100%;
@@ -2418,7 +2418,7 @@
 
         @media (max-width: 1200px) {
             .bundles-inner {
-                grid-template-columns: 1fr 4fr;
+                grid-template-columns: 4fr 1fr;
                 gap: 40px;
             }
 
@@ -5630,26 +5630,7 @@
 
             <!-- Products in Bundle Layout Style -->
             <div class="bundles-inner">
-                <!-- Left Hero Section -->
-                <div class="bundles-hero">
-                    <div class="bundles-hero-content">
-                        <div class="section-tag" style="color: #9A6B65; margin-bottom: 16px;">Shop Individual</div>
-                        <h2>Our <em>Bestsellers</em></h2>
-                        <p style="font-size: 15px; color: rgba(44, 44, 44, 0.7); line-height: 1.5; max-width: 300px; margin: 0 auto 28px;">Discover the natural products our customers love most</p>
-                        <div class="bundles-actions">
-                            <a href="#products-grid" class="bundles-shop-btn">
-                                Shop Products
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                            </a>
-                            <a href="#find-routine" class="bundle-builder-btn">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                Find Your Routine
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Product Grid -->
+                <!-- Left Product Grid -->
                 <div class="bundles-content">
                     <div class="bundle-cards">
                         <!-- Product 1 -->
@@ -5722,6 +5703,25 @@
                                 </div>
                                 <button class="bundle-btn">Shop Now</button>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Hero Section -->
+                <div class="bundles-hero">
+                    <div class="bundles-hero-content">
+                        <div class="section-tag" style="color: #9A6B65; margin-bottom: 16px;">Shop Individual</div>
+                        <h2>Our <em>Bestsellers</em></h2>
+                        <p style="font-size: 15px; color: rgba(44, 44, 44, 0.7); line-height: 1.5; max-width: 300px; margin: 0 auto 28px;">Discover the natural products our customers love most</p>
+                        <div class="bundles-actions">
+                            <a href="#products-grid" class="bundles-shop-btn">
+                                Shop Products
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </a>
+                            <a href="#find-routine" class="bundle-builder-btn">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                Find Your Routine
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -6870,3 +6870,5 @@
 <!-- REVERTED TO WORKING VERSION: 20260329183607 -->
 
 <!-- BACK TO WORKING VERSION: 20260329192650 -->
+
+<!-- SWAPPED LAYOUT: Hero moved to right side: 20260329192954 -->
